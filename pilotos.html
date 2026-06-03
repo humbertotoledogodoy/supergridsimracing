@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Campeonatos — SuperGrid BR</title>
+  <title>Pilotos — SuperGrid BR</title>
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="shared.css"/>
 </head>
@@ -19,7 +19,7 @@
     </a>
     <ul class="nav-menu" id="navMenu">
 
-      <li data-menu="campeonatos" class="active">
+      <li data-menu="campeonatos">
         <a href="campeonatos.html">Campeonatos <svg class="chevron" viewBox="0 0 10 6"><polyline points="1 1 5 5 9 1"/></svg></a>
         <div class="dropdown mega">
           <div class="mega-grid">
@@ -62,7 +62,7 @@
         </div>
       </li>
 
-      <li data-menu="pilotos">
+      <li data-menu="pilotos" class="active">
         <a href="pilotos.html">Pilotos <svg class="chevron" viewBox="0 0 10 6"><polyline points="1 1 5 5 9 1"/></svg></a>
         <div class="dropdown">
           <a href="pilotos.html#ranking">Ranking Geral</a>
@@ -104,8 +104,7 @@
         </div>
       </li>
 
-
-     
+      
     </ul>
 
     <div class="nav-cta">
@@ -132,132 +131,118 @@
 </nav>
 
 <!-- ===================== CONTEÚDO DA PÁGINA ===================== -->
-<section class="page-hero" id="our-categories">
+<section class="page-hero">
   <div class="page-hero-inner">
     <div class="page-hero-eyebrow"><div class="page-hero-line"></div><span class="page-hero-tag">Temporada 2026</span></div>
-    <h1>Nossas <em>Categorias</em></h1>
-    <p>Campeonatos para todos os perfis — do piloto iniciante ao competidor mais experiente. Escolha sua categoria e acelere.</p>
+    <h1>Nossos <em>Pilotos</em></h1>
+    <p>Conheça o grid da SuperGrid BR. Rankings, perfis, Safety Rating e as estrelas de cada categoria.</p>
     <div class="page-hero-stats">
-      <div><div class="stat-num">5<span>+</span></div><div class="stat-label">Categorias ativas</div></div>
-      <div><div class="stat-num">120<span>+</span></div><div class="stat-label">Pilotos inscritos</div></div>
-      <div><div class="stat-num">5</div><div class="stat-label">Etapas por série</div></div>
-      <div><div class="stat-num">1<span>ª</span></div><div class="stat-label">Temporada</div></div>
+      <div><div class="stat-num">120<span>+</span></div><div class="stat-label">Pilotos ativos</div></div>
+      <div><div class="stat-num">2<span>k+</span></div><div class="stat-label">SA médio</div></div>
+      <div><div class="stat-num">A</div><div class="stat-label">SR médio do grid</div></div>
+      <div><div class="stat-num">18</div><div class="stat-label">Rookies na temporada</div></div>
     </div>
   </div>
 </section>
 
-<section class="section" id="gt-sprint">
+<section class="section" id="mes">
   <div class="section-inner">
-    <div class="section-eyebrow fade-up"><div class="section-line"></div><span class="section-eyebrow-text">Categoria Principal</span></div>
-    <h2 class="section-h2 fade-up">GT Sprint Series</h2>
-    <p class="section-desc fade-up">A categoria mais competitiva da SuperGrid BR. GT3 nas pistas mais icônicas do mundo. 4 etapas de pura adrenalina.</p>
-    <div class="grid-3" style="margin-top:2.5rem">
-      <div class="card fade-up"><div class="card-icon"><svg viewBox="0 0 24 24"><path d="M3 17l4-8 4 5 3-3 4 6"/></svg></div><div class="card-title">Formato</div><div class="card-desc">Qualifying 15min + Corrida 45min com pit obrigatório.</div></div>
-      <div class="card fade-up"><div class="card-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div><div class="card-title">Requisitos</div><div class="card-desc">SA mínimo obrigatorio 90. SA recomendado 90+. Licença Ouro ou Platina no ACC e 3 medalhas de pista.</div></div>
-      <div class="card fade-up"><div class="card-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div class="card-title">Carros</div><div class="card-desc">GT3: Porsche 992, Ferrari 296, BMW M4. 									</div></div>
-    </div>
-    <div id="calendario" style="margin-top:3rem">
-      <h3 style="font-family:'Sora',sans-serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:1.5rem">📅 Calendário GT Sprint 2026</h3>
-      <div class="data-table">
-        <div class="table-header" style="grid-template-columns:60px 80px 1fr 120px 100px"><span>Etapa</span><span>Data</span><span>Circuito</span><span>Categoria</span><span>Status</span></div>
-		<div class="table-row" style="grid-template-columns:60px 80px 1fr 120px 100px"><span class="col-pos">E6</span><span style="font-size:.8rem;color:var(--gray)">00/00</span><span style="color:#fff;font-weight:500">Barcelona</span><span><span class="badge badge-green">GT3</span></span><span><span class="badge badge-yellow">Próxima</span></span></div>
-        <div class="table-row" style="grid-template-columns:60px 80px 1fr 120px 100px"><span class="col-pos">E7</span><span style="font-size:.8rem;color:var(--gray)">00/00</span><span style="color:#fff;font-weight:500">Spa-Francorchamps</span><span><span class="badge badge-green">GT3</span></span><span><span class="badge badge-gray">Programada</span></span></div>
-        <div class="table-row" style="grid-template-columns:60px 80px 1fr 120px 100px"><span class="col-pos">E8</span><span style="font-size:.8rem;color:var(--gray)">00/00</span><span style="color:#fff;font-weight:500">Nürburgring GP</span><span><span class="badge badge-green">GT3</span></span><span><span class="badge badge-gray">Programada</span></span></div>
-        <div class="table-row" style="grid-template-columns:60px 80px 1fr 120px 100px"><span class="col-pos">E9</span><span style="font-size:.8rem;color:var(--gray)">00/00</span><span style="color:#fff;font-weight:500">Silverstone</span><span><span class="badge badge-green">GT3</span></span><span><span class="badge badge-gray">Programada</span></span></div>
-        <div class="table-row" style="grid-template-columns:60px 80px 1fr 120px 100px"><span class="col-pos">E10</span><span style="font-size:.8rem;color:var(--gray)">00/00</span><span style="color:#fff;font-weight:500">Misano</span><span><span class="badge badge-green">GT3</span></span><span><span class="badge badge-gray">Programada</span></span></div>
+    <div class="section-eyebrow fade-up"><div class="section-line"></div><span class="section-eyebrow-text">Destaque</span></div>
+    <h2 class="section-h2 fade-up">Piloto do Mês — Março 2026</h2>
+    <div class="grid-2" style="margin-top:2.5rem;align-items:start">
+      <div class="card fade-up" style="text-align:center;padding:2.5rem">
+        <div class="pilot-avatar-lg" style="width:80px;height:80px;font-size:1.5rem;background:var(--yellow)">RM</div>
+        <div style="font-family:'Sora',sans-serif;font-size:1.5rem;font-weight:800;color:#fff;margin-bottom:.25rem">Rafael Moura</div>
+        <div style="color:var(--gray);font-size:.88rem;margin-bottom:1.25rem">Speed Factory BR</div>
+        <div style="display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;margin-bottom:1.5rem">
+          <span class="badge badge-yellow">GT Sprint Líder</span>
+          <span class="badge badge-green">SR: A 4.81</span>
+          <span class="badge badge-blue">SA: 3.241</span>
+        </div>
+        <p style="font-size:.88rem;color:var(--gray);line-height:1.65">"Corrida perfeita em Spa. Saiu do pit na frente após estratégia brilhante — ganhou 4s no undercut."</p>
+        <div style="display:flex;justify-content:center;gap:2.5rem;margin-top:1.5rem;padding-top:1.25rem;border-top:1px solid var(--border)">
+          <div><div class="pilot-stat-val">4</div><div class="pilot-stat-lbl">Vitórias</div></div>
+          <div><div class="pilot-stat-val">6</div><div class="pilot-stat-lbl">Pódios</div></div>
+          <div><div class="pilot-stat-val">312</div><div class="pilot-stat-lbl">Pontos</div></div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:1rem">
+        <div class="card fade-up"><div class="card-title" style="margin-bottom:1rem">📊 Estatísticas da Temporada</div>
+          <div style="display:flex;flex-direction:column;gap:.5rem;font-size:.85rem">
+            <div><div class="progress-label"><span style="color:var(--gray)">Vitórias</span><span style="color:var(--green)">4/6 corridas (67%)</span></div><div class="progress-bar"><div class="progress-fill" style="width:67%"></div></div></div>
+            <div><div class="progress-label"><span style="color:var(--gray)">Pódios</span><span style="color:#fff">6/6 corridas (100%)</span></div><div class="progress-bar"><div class="progress-fill" style="width:100%"></div></div></div>
+            <div><div class="progress-label"><span style="color:var(--gray)">Poles</span><span style="color:#fff">3/6 qualifyings</span></div><div class="progress-bar"><div class="progress-fill" style="width:50%"></div></div></div>
+            <div><div class="progress-label"><span style="color:var(--gray)">Voltas rápidas</span><span style="color:#fff">2/6 corridas</span></div><div class="progress-bar"><div class="progress-fill" style="width:33%"></div></div></div>
+          </div>
+        </div>
+        <div class="card fade-up"><div class="card-title" style="margin-bottom:.75rem">🏆 Conquistas</div><div style="display:flex;flex-direction:column;gap:.5rem"><span class="badge badge-yellow" style="display:inline-block;width:fit-content">🥇 Vencedor Etapa 1 — Spa</span><span class="badge badge-green" style="display:inline-block;width:fit-content">⚡ Volta Rápida — Catalunya</span><span class="badge badge-blue" style="display:inline-block;width:fit-content">🏁 Hat-trick Etapas 3,4,5</span></div></div>
       </div>
     </div>
   </div>
 </section>
 
-
-<section class="section section-dark" id="4fun">
+<section class="section section-dark" id="ranking">
   <div class="section-inner">
-    <div class="section-eyebrow fade-up"><div class="section-line"></div><span class="section-eyebrow-text">Para Todos</span></div>
-    <h2 class="section-h2 fade-up">4Fun Series — Sim racing sem pressão</h2>
-    <p class="section-desc fade-up">Regras simplificadas, penalidades leves e muito entretenimento. Toda semana uma surpresa — carro diferente, pista diferente, sempre 4Fun!</p>
-    <div class="grid-3" style="margin-top:2.5rem">
-      <div class="card fade-up"><div class="card-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div><div class="card-title">Quem pode entrar?</div><div class="card-desc">Qualquer pessoa com uma conta no ACC. Sem requisitos de SR ou SA. Abertura de vagas semanal.</div><span class="card-tag">Livre · Sem requisitos</span></div>
-      <div class="card fade-up"><div class="card-icon"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18"/></svg></div><div class="card-title">Próximas Corridas</div><div class="card-desc">Votações sobre pista e carro são feitas no grupo whatsapp. Nossas corridas 4FUN são as segundas-feiras.</div></div>
-      <div class="card fade-up"><div class="card-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div class="card-title">Premiação</div><div class="card-desc">Troféus simbólicos, destaque nas redes e o direito de zoar todos os outros. É 4Fun, não a F1!</div><span class="card-tag">Diversão garantida</span></div>
+    <div class="section-eyebrow fade-up"><div class="section-line"></div><span class="section-eyebrow-text">Classificação</span></div>
+    <h2 class="section-h2 fade-up">Ranking Geral — Todas as Categorias</h2>
+    <div class="data-table fade-up" style="margin-top:2rem">
+      <div class="table-header" style="grid-template-columns:50px 1fr 120px 80px 80px 70px"><span>Pos</span><span>Piloto</span><span>Categoria</span><span>SR</span><span>SA</span><span>Pontos</span></div>
+      <div class="table-row" style="grid-template-columns:50px 1fr 120px 80px 80px 70px"><span class="col-pos gold">1</span><div class="pilot-cell"><div class="avatar" style="background:var(--yellow)">RM</div><div><div class="pilot-name">Rafael Moura</div><div class="pilot-sub">Speed Factory BR</div></div></div><span><span class="badge badge-green">GT Sprint</span></span><span style="color:var(--green);font-weight:700">A 4.81</span><span style="color:#fff">3.241</span><span class="col-pts">312</span></div>
+      <div class="table-row" style="grid-template-columns:50px 1fr 120px 80px 80px 70px"><span class="col-pos silver">2</span><div class="pilot-cell"><div class="avatar" style="background:#6BA3FF">LS</div><div><div class="pilot-name">Lucas Silva</div><div class="pilot-sub">Apex Motorsport</div></div></div><span><span class="badge badge-green">GT Sprint</span></span><span style="color:var(--green);font-weight:700">A 4.12</span><span style="color:#fff">2.890</span><span class="col-pts">287</span></div>
+      <div class="table-row" style="grid-template-columns:50px 1fr 120px 80px 80px 70px"><span class="col-pos bronze">3</span><div class="pilot-cell"><div class="avatar" style="background:#CD7F32">MB</div><div><div class="pilot-name">Marcos Braga</div><div class="pilot-sub">BR Racing</div></div></div><span><span class="badge badge-blue">Stock Pro</span></span><span style="color:var(--green);font-weight:700">B 3.90</span><span style="color:#fff">2.211</span><span class="col-pts">348</span></div>
+      <div class="table-row" style="grid-template-columns:50px 1fr 120px 80px 80px 70px"><span class="col-pos">4</span><div class="pilot-cell"><div class="avatar" style="background:#555">GC</div><div><div class="pilot-name">Gabriel Costa</div><div class="pilot-sub">Team Bravo</div></div></div><span><span class="badge badge-green">GT Sprint</span></span><span style="color:var(--green);font-weight:700">A 3.75</span><span style="color:#fff">2.650</span><span class="col-pts">261</span></div>
+      <div class="table-row" style="grid-template-columns:50px 1fr 120px 80px 80px 70px"><span class="col-pos">5</span><div class="pilot-cell"><div class="avatar" style="background:#555">CL</div><div><div class="pilot-name">Carlos Lima</div><div class="pilot-sub">Free Agent</div></div></div><span><span class="badge badge-yellow">Formula Open</span></span><span style="color:var(--green);font-weight:700">A 4.02</span><span style="color:#fff">2.780</span><span class="col-pts">290</span></div>
     </div>
   </div>
-</section> 
-<!-- <section class="section section-dark" id="stock-pro"> -->
-  <!-- <div class="section-inner"> -->
-    <!-- <div class="section-eyebrow fade-up"><div class="section-line"></div><span class="section-eyebrow-text">Categoria Intermediária</span></div> -->
-    <!-- <h2 class="section-h2 fade-up">GT Sprint Silver Series</h2> -->
-    <!-- <p class="section-desc fade-up">Inspirada na categoria Pro, uma categoria com pilotos de nível intermediarios. GT3 nas pistas mais icônicas do mundo. 5 etapas de pura adrenalina.</p> -->
-    <!-- <!-- <div class="grid-3" style="margin-top:2.5rem"> --> 
-      <!-- <!-- <div class="card fade-up"><div class="card-icon"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div><div class="card-title">Oval Series</div><div class="card-desc">Superspeedways e ovals de médio porte. Drafting, estratégia de pit e posicionamento são decisivos.</div><span class="card-tag">Talladega · Daytona · Michigan</span></div> --> 
-      <!-- <!-- <div class="card fade-up"><div class="card-icon"><svg viewBox="0 0 24 24"><path d="M3 17l4-8 4 5 3-3 4 6"/></svg></div><div class="card-title">Road Course</div><div class="card-desc">Circuitos mistos desafiadores. Frenagem, tração e consistência fazem a diferença. Corridas de 30 a 60min.</div><span class="card-tag">Watkins Glen · Road America</span></div> --> 
-      <!-- <!-- <div class="card fade-up"><div class="card-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div class="card-title">Requisitos</div><div class="card-desc">SA mínimo 50. SA recomendado 60+. Carro fixo da série — sem customização de setup estrutural.</div><span class="card-tag">Grátis · SR B+</span></div> --> 
-    <!-- <!-- </div> --> 
-	<!-- <div class="grid-3" style="margin-top:2.5rem"> -->
-      <!-- <div class="card fade-up"><div class="card-icon"><svg viewBox="0 0 24 24"><path d="M3 17l4-8 4 5 3-3 4 6"/></svg></div><div class="card-title">Formato</div><div class="card-desc">Qualifying 15min + Corrida 45min com pit obrigatório.</div></div> -->
-      <!-- <div class="card fade-up"><div class="card-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div><div class="card-title">Requisitos</div><div class="card-desc">SA mínimo obrigatorio 60. SA recomendado 60+. Licença Silver, Ouro ou Platina no ACC e 2 medalhas de pista.</div></div> -->
-      <!-- <div class="card fade-up"><div class="card-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div class="card-title">Carros</div><div class="card-desc">GT3: Porsche 992, Ferrari 296, BMW M4. 									</div></div> -->
-    <!-- </div> -->
-    <!-- <div id="calendario" style="margin-top:3rem"> -->
-      <!-- <h3 style="font-family:'Sora',sans-serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:1.5rem">📅 GT Sprint Silver Series 2026</h3> -->
-      <!-- <div class="data-table"> -->
-        <!-- <div class="table-header" style="grid-template-columns:60px 80px 1fr 120px 100px"><span>Etapa</span><span>Data</span><span>Circuito</span><span>Categoria</span><span>Status</span></div> -->
-		<!-- <div class="table-row" style="grid-template-columns:60px 80px 1fr 120px 100px"><span class="col-pos">E6</span><span style="font-size:.8rem;color:var(--gray)">00/00</span><span style="color:#fff;font-weight:500">Barcelona</span><span><span class="badge badge-green">GT3</span></span><span><span class="badge badge-yellow">Próxima</span></span></div> -->
-        <!-- <div class="table-row" style="grid-template-columns:60px 80px 1fr 120px 100px"><span class="col-pos">E7</span><span style="font-size:.8rem;color:var(--gray)">00/00</span><span style="color:#fff;font-weight:500">Spa-Francorchamps</span><span><span class="badge badge-green">GT3</span></span><span><span class="badge badge-gray">Programada</span></span></div> -->
-        <!-- <div class="table-row" style="grid-template-columns:60px 80px 1fr 120px 100px"><span class="col-pos">E8</span><span style="font-size:.8rem;color:var(--gray)">00/00</span><span style="color:#fff;font-weight:500">Nürburgring GP</span><span><span class="badge badge-green">GT3</span></span><span><span class="badge badge-gray">Programada</span></span></div> -->
-        <!-- <div class="table-row" style="grid-template-columns:60px 80px 1fr 120px 100px"><span class="col-pos">E9</span><span style="font-size:.8rem;color:var(--gray)">00/00</span><span style="color:#fff;font-weight:500">Silverstone</span><span><span class="badge badge-green">GT3</span></span><span><span class="badge badge-gray">Programada</span></span></div> -->
-        <!-- <div class="table-row" style="grid-template-columns:60px 80px 1fr 120px 100px"><span class="col-pos">E10</span><span style="font-size:.8rem;color:var(--gray)">00/00</span><span style="color:#fff;font-weight:500">Misano</span><span><span class="badge badge-green">GT3</span></span><span><span class="badge badge-gray">Programada</span></span></div> -->
-      <!-- </div> -->
-    <!-- </div> -->
-  <!-- </div> -->
-<!-- </section> -->
+</section>
 
-
-
-<section class="section " id="endurance">
+<section class="section" id="perfis">
   <div class="section-inner">
-    <div class="section-eyebrow fade-up"><div class="section-line"></div><span class="section-eyebrow-text">Corridas de Resistência</span></div>
-    <h2 class="section-h2 fade-up">SuperGrid Endurance</h2>
-    <p class="section-desc fade-up">Corridas de 3 horas com equipes de até 3 pilotos. Comunicação, estratégia e consistência decidem o campeão.</p>
+    <div class="section-eyebrow fade-up"><div class="section-line"></div><span class="section-eyebrow-text">Grid</span></div>
+    <h2 class="section-h2 fade-up">Pilotos em Destaque</h2>
+    <div class="grid-4" style="margin-top:2.5rem">
+      <div class="pilot-card fade-up"><div class="pilot-avatar-lg" style="background:var(--yellow)">RM</div><div class="pilot-nm">Rafael Moura</div><div class="pilot-tm">Speed Factory BR</div><div class="pilot-stats"><div><div class="pilot-stat-val">4</div><div class="pilot-stat-lbl">Vitórias</div></div><div><div class="pilot-stat-val">312</div><div class="pilot-stat-lbl">Pontos</div></div></div></div>
+      <div class="pilot-card fade-up"><div class="pilot-avatar-lg" style="background:#6BA3FF">LS</div><div class="pilot-nm">Lucas Silva</div><div class="pilot-tm">Apex Motorsport</div><div class="pilot-stats"><div><div class="pilot-stat-val">2</div><div class="pilot-stat-lbl">Vitórias</div></div><div><div class="pilot-stat-val">287</div><div class="pilot-stat-lbl">Pontos</div></div></div></div>
+      <div class="pilot-card fade-up"><div class="pilot-avatar-lg" style="background:#CD7F32">MB</div><div class="pilot-nm">Marcos Braga</div><div class="pilot-tm">BR Racing</div><div class="pilot-stats"><div><div class="pilot-stat-val">3</div><div class="pilot-stat-lbl">Vitórias</div></div><div><div class="pilot-stat-val">348</div><div class="pilot-stat-lbl">Pontos</div></div></div></div>
+      <div class="pilot-card fade-up"><div class="pilot-avatar-lg" style="background:var(--green)">CL</div><div class="pilot-nm">Carlos Lima</div><div class="pilot-tm">Free Agent</div><div class="pilot-stats"><div><div class="pilot-stat-val">2</div><div class="pilot-stat-lbl">Vitórias</div></div><div><div class="pilot-stat-val">290</div><div class="pilot-stat-lbl">Pontos</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-dark" id="sr">
+  <div class="section-inner">
+    <div class="section-eyebrow fade-up"><div class="section-line"></div><span class="section-eyebrow-text">Licença</span></div>
+    <h2 class="section-h2 fade-up">Safety Rating — Guia de Licenças</h2>
     <div class="grid-2" style="margin-top:2.5rem">
-      <div class="card fade-up"><div class="card-title" style="margin-bottom:1rem">📋 Formato das Corridas</div>
+      <div class="card fade-up"><div class="card-title" style="margin-bottom:1rem">Níveis de Licença</div>
+        <div style="display:flex;flex-direction:column;gap:.6rem;font-size:.85rem">
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:.5rem .75rem;background:rgba(0,196,90,.08);border-radius:8px;border:1px solid rgba(0,196,90,.2)"><span style="color:var(--green);font-weight:700">Classe A · 4.0+</span><span style="color:#fff">GT Sprint, Formula Open</span></div>
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:.5rem .75rem;background:rgba(107,163,255,.08);border-radius:8px;border:1px solid rgba(107,163,255,.2)"><span style="color:#6BA3FF;font-weight:700">Classe B · 3.0+</span><span style="color:#fff">Stock Pro, Endurance</span></div>
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:.5rem .75rem;background:rgba(245,196,0,.08);border-radius:8px;border:1px solid rgba(245,196,0,.2)"><span style="color:var(--yellow);font-weight:700">Classe C · 2.0+</span><span style="color:#fff">4Fun Series</span></div>
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:.5rem .75rem;background:rgba(255,255,255,.04);border-radius:8px;border:1px solid var(--border)"><span style="color:var(--gray);font-weight:700">Rookies</span><span style="color:#fff">4Fun apenas · sem requisito</span></div>
+        </div>
+      </div>
+      <div class="card fade-up"><div class="card-title" style="margin-bottom:1rem">Distribuição do Grid</div>
         <div style="display:flex;flex-direction:column;gap:.75rem">
-          <div style="display:flex;justify-content:space-between;padding:.5rem 0;border-bottom:1px solid var(--border)"><span style="color:var(--gray)">Duração</span><span style="color:#fff;font-weight:600">3h</span></div>
-          <div style="display:flex;justify-content:space-between;padding:.5rem 0;border-bottom:1px solid var(--border)"><span style="color:var(--gray)">Pilotos por equipe</span><span style="color:#fff;font-weight:600">2 a 3 pilotos</span></div>
-          <div style="display:flex;justify-content:space-between;padding:.5rem 0;border-bottom:1px solid var(--border)"><span style="color:var(--gray)">Pitstop obrigatório</span><span style="color:var(--green);font-weight:600">Sim — combustível e pneus</span></div>
-          <div style="display:flex;justify-content:space-between;padding:.5rem 0;border-bottom:1px solid var(--border)"><span style="color:var(--gray)">Minimum drive time</span><span style="color:#fff;font-weight:600">20% da duração total</span></div>
-          <div style="display:flex;justify-content:space-between;padding:.5rem 0"><span style="color:var(--gray)">Carros</span><span style="color:#fff;font-weight:600">GT3</span></div>
+          <div><div class="progress-label"><span style="color:var(--green)">Classe A</span><span style="color:#fff">38 pilotos</span></div><div class="progress-bar"><div class="progress-fill" style="width:60%"></div></div></div>
+          <div><div class="progress-label"><span style="color:#6BA3FF">Classe B</span><span style="color:#fff">52 pilotos</span></div><div class="progress-bar"><div class="progress-fill" style="width:80%;background:linear-gradient(90deg,#6BA3FF,#8DC0FF)"></div></div></div>
+          <div><div class="progress-label"><span style="color:var(--yellow)">Classe C</span><span style="color:#fff">18 pilotos</span></div><div class="progress-bar"><div class="progress-fill" style="width:28%;background:linear-gradient(90deg,var(--yellow),var(--accent2))"></div></div></div>
+          <div><div class="progress-label"><span style="color:var(--gray)">Rookies</span><span style="color:#fff">12 pilotos</span></div><div class="progress-bar"><div class="progress-fill" style="width:19%;background:rgba(255,255,255,.3)"></div></div></div>
         </div>
-      </div>
-      <div class="card fade-up">
-        <div class="card-title" style="margin-bottom:1rem">🏁 Próxima Prova — 3h RedBull Ring</div>
-        <div style="display:flex;flex-direction:column;gap:.6rem">
-          <div style="display:flex;justify-content:space-between;padding:.5rem 0;border-bottom:1px solid var(--border)"><span style="color:var(--gray)">Data</span><span style="color:var(--yellow);font-weight:600">00 de XX · 21h</span></div>
-          <div style="display:flex;justify-content:space-between;padding:.5rem 0;border-bottom:1px solid var(--border)"><span style="color:var(--gray)">Circuito</span><span style="color:#fff;font-weight:600">RedBull Ring</span></div>
-          <div style="display:flex;justify-content:space-between;padding:.5rem 0;border-bottom:1px solid var(--border)"><span style="color:var(--gray)">Equipes inscritas</span><span style="color:var(--green);font-weight:600">** de **</span></div>
-          <div style="display:flex;justify-content:space-between;padding:.5rem 0;border-bottom:1px solid var(--border)"><span style="color:var(--gray)">Pilotos confirmados</span><span style="color:#fff;font-weight:600">XX pilotos</span></div>
-        </div>
-        <div style="margin-top:1rem">
-          <div class="progress-label"><span>Vagas preenchidas</span><span>**/** equipes</span></div>
-          <div class="progress-bar"><div class="progress-fill" style="width:87%"></div></div>
-        </div>
-        <a href="inscricao.html" class="card-link" style="margin-top:1.25rem">Inscrever equipe →</a>
       </div>
     </div>
   </div>
 </section>
 
-
-
-
-<section class="section section-dark" id="regulamentos">
+<section class="section" id="rookies">
   <div class="section-inner">
-    <div class="section-eyebrow fade-up"><div class="section-line"></div><span class="section-eyebrow-text">Regras</span></div>
-    <h2 class="section-h2 fade-up">Regulamento Geral 2026</h2>
-    <p class="section-desc fade-up">Regras simplificadas, penalidades leves e muito entretenimento. Toda semana uma surpresa — carro diferente, pista diferente, sempre 4Fun!</p>
-    <div class="grid-2" style="margin-top:2.5rem">
-      <div class="card fade-up"><div class="card-title" style="margin-bottom:1rem;color:var(--green)">🏆 Pontuação</div><div style="display:flex;flex-direction:column;gap:.5rem;font-size:.875rem"><div style="display:flex;justify-content:space-between;padding:.4rem 0;border-bottom:1px solid var(--border)"><span style="color:var(--gray)">1º lugar</span><span style="color:var(--yellow);font-weight:700">50 pts</span></div><div style="display:flex;justify-content:space-between;padding:.4rem 0;border-bottom:1px solid var(--border)"><span style="color:var(--gray)">2º lugar</span><span style="color:#fff">40 pts</span></div><div style="display:flex;justify-content:space-between;padding:.4rem 0;border-bottom:1px solid var(--border)"><span style="color:var(--gray)">3º lugar</span><span style="color:#fff">32 pts</span></div><div style="display:flex;justify-content:space-between;padding:.4rem 0;border-bottom:1px solid var(--border)"><span style="color:var(--gray)">Pole Position</span><span style="color:var(--green)">+3 pts</span></div><div style="display:flex;justify-content:space-between;padding:.4rem 0"><span style="color:var(--gray)">Volta Rápida</span><span style="color:var(--green)">+2 pts</span></div></div></div>
-      <div class="card fade-up"><div class="card-title" style="margin-bottom:1rem;color:var(--green)">⚠️ Conduta em Pista</div><div style="display:flex;flex-direction:column;gap:.5rem;font-size:.875rem"><div style="display:flex;justify-content:space-between;padding:.4rem 0;border-bottom:1px solid var(--border)"><span style="color:var(--gray)">Colisão intencional</span><span style="color:#F06070;font-weight:700">DSQ + Suspensão</span></div><div style="display:flex;justify-content:space-between;padding:.4rem 0;border-bottom:1px solid var(--border)"><span style="color:var(--gray)">Corte de pista</span><span style="color:var(--yellow)">Drive Through</span></div><div style="display:flex;justify-content:space-between;padding:.4rem 0;border-bottom:1px solid var(--border)"><span style="color:var(--gray)">Blocking excessivo</span><span style="color:var(--yellow)">Stop & Go</span></div><div style="display:flex;justify-content:space-between;padding:.4rem 0"><span style="color:var(--gray)">Disconnection</span><span style="color:var(--gray)">Posição mantida</span></div></div></div>
+    <div class="section-eyebrow fade-up"><div class="section-line"></div><span class="section-eyebrow-text">Revelações</span></div>
+    <h2 class="section-h2 fade-up">Rookies da Temporada 2026</h2>
+    <div class="grid-4" style="margin-top:2.5rem">
+      <div class="pilot-card fade-up"><div class="pilot-avatar-lg" style="background:#7C3AED">AN</div><div class="pilot-nm">André Neto</div><div class="pilot-tm">Free Agent</div><div class="pilot-stats"><div><div class="pilot-stat-val">1</div><div class="pilot-stat-lbl">Vitória</div></div><div><div class="pilot-stat-val">SR B</div><div class="pilot-stat-lbl">Licença</div></div></div></div>
+      <div class="pilot-card fade-up"><div class="pilot-avatar-lg" style="background:#0EA5E9">JR</div><div class="pilot-nm">Júlia Rocha</div><div class="pilot-tm">Simgirls BR</div><div class="pilot-stats"><div><div class="pilot-stat-val">0</div><div class="pilot-stat-lbl">Vitórias</div></div><div><div class="pilot-stat-val">3 pódios</div><div class="pilot-stat-lbl">4Fun</div></div></div></div>
+      <div class="pilot-card fade-up"><div class="pilot-avatar-lg" style="background:#F59E0B">PB</div><div class="pilot-nm">Paulo Braz</div><div class="pilot-tm">Team Omega</div><div class="pilot-stats"><div><div class="pilot-stat-val">2</div><div class="pilot-stat-lbl">Pódios</div></div><div><div class="pilot-stat-val">SR C+</div><div class="pilot-stat-lbl">Licença</div></div></div></div>
+      <div class="pilot-card fade-up"><div class="pilot-avatar-lg" style="background:#EF4444">MS</div><div class="pilot-nm">Mateus Santos</div><div class="pilot-tm">Free Agent</div><div class="pilot-stats"><div><div class="pilot-stat-val">0</div><div class="pilot-stat-lbl">Vitórias</div></div><div><div class="pilot-stat-val">Top 5</div><div class="pilot-stat-lbl">Estreia</div></div></div></div>
     </div>
   </div>
 </section>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Campeonatos — SuperGrid BR</title>
+  <title>Comunidade — SuperGrid BR</title>
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="shared.css"/>
 </head>
@@ -19,7 +19,7 @@
     </a>
     <ul class="nav-menu" id="navMenu">
 
-      <li data-menu="campeonatos" class="active">
+      <li data-menu="campeonatos">
         <a href="campeonatos.html">Campeonatos <svg class="chevron" viewBox="0 0 10 6"><polyline points="1 1 5 5 9 1"/></svg></a>
         <div class="dropdown mega">
           <div class="mega-grid">
@@ -88,7 +88,7 @@
         </div>
       </li>
 
-      <li data-menu="comunidade">
+      <li data-menu="comunidade" class="active">
         <a href="comunidade.html">Comunidade <svg class="chevron" viewBox="0 0 10 6"><polyline points="1 1 5 5 9 1"/></svg></a>
         <div class="dropdown">
           <div class="dropdown-group-label">Conteúdo</div>
@@ -105,7 +105,6 @@
       </li>
 
 
-     
     </ul>
 
     <div class="nav-cta">
@@ -132,132 +131,72 @@
 </nav>
 
 <!-- ===================== CONTEÚDO DA PÁGINA ===================== -->
-<section class="page-hero" id="our-categories">
+<section class="page-hero">
   <div class="page-hero-inner">
-    <div class="page-hero-eyebrow"><div class="page-hero-line"></div><span class="page-hero-tag">Temporada 2026</span></div>
-    <h1>Nossas <em>Categorias</em></h1>
-    <p>Campeonatos para todos os perfis — do piloto iniciante ao competidor mais experiente. Escolha sua categoria e acelere.</p>
+    <div class="page-hero-eyebrow"><div class="page-hero-line"></div><span class="page-hero-tag">SuperGrid BR</span></div>
+    <h1>Nossa <em>Comunidade</em></h1>
+    <p>Notícias, transmissões, replays, podcast e os melhores canais do sim racing brasileiro. Tudo em um só lugar.</p>
     <div class="page-hero-stats">
-      <div><div class="stat-num">5<span>+</span></div><div class="stat-label">Categorias ativas</div></div>
-      <div><div class="stat-num">120<span>+</span></div><div class="stat-label">Pilotos inscritos</div></div>
-      <div><div class="stat-num">5</div><div class="stat-label">Etapas por série</div></div>
-      <div><div class="stat-num">1<span>ª</span></div><div class="stat-label">Temporada</div></div>
+      <div><div class="stat-num">2<span>k</span></div><div class="stat-label">Membros no Discord</div></div>
+      <div><div class="stat-num">5<span>k</span></div><div class="stat-label">Inscritos no YouTube</div></div>
+      <div><div class="stat-num">48</div><div class="stat-label">Episódios do Podcast</div></div>
+      <div><div class="stat-num">120<span>+</span></div><div class="stat-label">Replays disponíveis</div></div>
     </div>
   </div>
 </section>
 
-<section class="section" id="gt-sprint">
+<section class="section" id="noticias">
   <div class="section-inner">
-    <div class="section-eyebrow fade-up"><div class="section-line"></div><span class="section-eyebrow-text">Categoria Principal</span></div>
-    <h2 class="section-h2 fade-up">GT Sprint Series</h2>
-    <p class="section-desc fade-up">A categoria mais competitiva da SuperGrid BR. GT3 nas pistas mais icônicas do mundo. 4 etapas de pura adrenalina.</p>
+    <div class="section-eyebrow fade-up"><div class="section-line"></div><span class="section-eyebrow-text">Últimas</span></div>
+    <h2 class="section-h2 fade-up">Notícias & Blog</h2>
     <div class="grid-3" style="margin-top:2.5rem">
-      <div class="card fade-up"><div class="card-icon"><svg viewBox="0 0 24 24"><path d="M3 17l4-8 4 5 3-3 4 6"/></svg></div><div class="card-title">Formato</div><div class="card-desc">Qualifying 15min + Corrida 45min com pit obrigatório.</div></div>
-      <div class="card fade-up"><div class="card-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div><div class="card-title">Requisitos</div><div class="card-desc">SA mínimo obrigatorio 90. SA recomendado 90+. Licença Ouro ou Platina no ACC e 3 medalhas de pista.</div></div>
-      <div class="card fade-up"><div class="card-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div class="card-title">Carros</div><div class="card-desc">GT3: Porsche 992, Ferrari 296, BMW M4. 									</div></div>
-    </div>
-    <div id="calendario" style="margin-top:3rem">
-      <h3 style="font-family:'Sora',sans-serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:1.5rem">📅 Calendário GT Sprint 2026</h3>
-      <div class="data-table">
-        <div class="table-header" style="grid-template-columns:60px 80px 1fr 120px 100px"><span>Etapa</span><span>Data</span><span>Circuito</span><span>Categoria</span><span>Status</span></div>
-		<div class="table-row" style="grid-template-columns:60px 80px 1fr 120px 100px"><span class="col-pos">E6</span><span style="font-size:.8rem;color:var(--gray)">00/00</span><span style="color:#fff;font-weight:500">Barcelona</span><span><span class="badge badge-green">GT3</span></span><span><span class="badge badge-yellow">Próxima</span></span></div>
-        <div class="table-row" style="grid-template-columns:60px 80px 1fr 120px 100px"><span class="col-pos">E7</span><span style="font-size:.8rem;color:var(--gray)">00/00</span><span style="color:#fff;font-weight:500">Spa-Francorchamps</span><span><span class="badge badge-green">GT3</span></span><span><span class="badge badge-gray">Programada</span></span></div>
-        <div class="table-row" style="grid-template-columns:60px 80px 1fr 120px 100px"><span class="col-pos">E8</span><span style="font-size:.8rem;color:var(--gray)">00/00</span><span style="color:#fff;font-weight:500">Nürburgring GP</span><span><span class="badge badge-green">GT3</span></span><span><span class="badge badge-gray">Programada</span></span></div>
-        <div class="table-row" style="grid-template-columns:60px 80px 1fr 120px 100px"><span class="col-pos">E9</span><span style="font-size:.8rem;color:var(--gray)">00/00</span><span style="color:#fff;font-weight:500">Silverstone</span><span><span class="badge badge-green">GT3</span></span><span><span class="badge badge-gray">Programada</span></span></div>
-        <div class="table-row" style="grid-template-columns:60px 80px 1fr 120px 100px"><span class="col-pos">E10</span><span style="font-size:.8rem;color:var(--gray)">00/00</span><span style="color:#fff;font-weight:500">Misano</span><span><span class="badge badge-green">GT3</span></span><span><span class="badge badge-gray">Programada</span></span></div>
-      </div>
+      <div class="card fade-up"><div style="font-size:.72rem;color:var(--green);font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.75rem">15 Mar 2026 · GT Sprint</div><div class="card-title">R. Moura vence em Catalunya e amplia liderança do campeonato</div><div class="card-desc" style="margin-top:.5rem">Em uma corrida marcada pelo Safety Car na volta 8, Rafael Moura demonstrou estratégia impecável para cruzar a linha em primeiro.</div><a href="#" class="card-link">Ler mais →</a></div>
+      <div class="card fade-up"><div style="font-size:.72rem;color:var(--yellow);font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.75rem">12 Mar 2026 · Endurance</div><div class="card-title">6h La Sarthe: apenas 2 vagas restantes — inscreva sua equipe!</div><div class="card-desc" style="margin-top:.5rem">A maior prova da temporada está quase lotada. 14 das 16 vagas já foram preenchidas. Garanta a sua antes de 01/04.</div><a href="equipes.html#cadastro" class="card-link">Inscrever equipe →</a></div>
+      <div class="card fade-up"><div style="font-size:.72rem;color:var(--gray);font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.75rem">10 Mar 2026 · Comunidade</div><div class="card-title">SuperGrid Cup 2026: data e formato oficialmente anunciados</div><div class="card-desc" style="margin-top:.5rem">A grande final será em 14 de junho, no Indianapolis Motor Speedway. 40 pilotos, transmissão ao vivo e narração profissional.</div><a href="#" class="card-link">Ler mais →</a></div>
+      <div class="card fade-up"><div style="font-size:.72rem;color:var(--green);font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.75rem">05 Mar 2026 · 4Fun</div><div class="card-title">"Caos Total no Nordschleife" — o evento mais divertido do ano</div><div class="card-desc" style="margin-top:.5rem">Com 34 pilotos e apenas 4 finishing o Safety Car como companheiro, o 4Fun de março vai ficar na memória por muito tempo.</div><a href="#" class="card-link">Assistir replay →</a></div>
+      <div class="card fade-up"><div style="font-size:.72rem;color:var(--yellow);font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.75rem">01 Mar 2026 · Stock Pro</div><div class="card-title">Marcos Braga assume liderança após drama na última volta em Daytona</div><div class="card-desc" style="margin-top:.5rem">Com o líder anterior tendo um incidente mecânico, Braga aproveitou e cruzou em primeiro — assumindo o topo da tabela.</div><a href="#" class="card-link">Ler mais →</a></div>
+      <div class="card fade-up"><div style="font-size:.72rem;color:var(--gray);font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.75rem">25 Fev 2026 · Comunidade</div><div class="card-title">Júlia Rocha: a primeira mulher a pontuar no GT Sprint da SuperGrid</div><div class="card-desc" style="margin-top:.5rem">Em apenas sua segunda corrida na categoria, Júlia marcou pontos pela primeira vez — e ganhou o respeito de todo o grid.</div><a href="#" class="card-link">Ler mais →</a></div>
     </div>
   </div>
 </section>
 
-
-<section class="section section-dark" id="4fun">
+<section class="section section-dark" id="live">
   <div class="section-inner">
-    <div class="section-eyebrow fade-up"><div class="section-line"></div><span class="section-eyebrow-text">Para Todos</span></div>
-    <h2 class="section-h2 fade-up">4Fun Series — Sim racing sem pressão</h2>
-    <p class="section-desc fade-up">Regras simplificadas, penalidades leves e muito entretenimento. Toda semana uma surpresa — carro diferente, pista diferente, sempre 4Fun!</p>
+    <div class="section-eyebrow fade-up"><div class="section-line"></div><span class="section-eyebrow-text">Transmissões</span></div>
+    <h2 class="section-h2 fade-up">Ao Vivo & Replays</h2>
+    <div class="grid-3" style="margin-top:2.5rem" id="replays">
+      <div class="video-card fade-up"><div class="video-thumb"><div class="video-play"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div><div class="video-badge"><span class="badge badge-red">AO VIVO · SAB 22/03</span></div></div><div class="video-info"><div class="video-title">GT Sprint Etapa 7 — Spa-Francorchamps</div><div class="video-meta">22 Mar 2026 · 21h00 · SuperGrid BR</div></div></div>
+      <div class="video-card fade-up"><div class="video-thumb" style="background:linear-gradient(135deg,#0D1530,#111316)"><div class="video-play"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div><div class="video-badge"><span class="badge badge-gray">REPLAY</span></div></div><div class="video-info"><div class="video-title">GT Sprint Etapa 6 — Circuit de Catalunya</div><div class="video-meta">15 Mar 2026 · 2h14min · 8.4k views</div></div></div>
+      <div class="video-card fade-up"><div class="video-thumb" style="background:linear-gradient(135deg,#1a140a,#111316)"><div class="video-play"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div><div class="video-badge"><span class="badge badge-gray">REPLAY</span></div></div><div class="video-info"><div class="video-title">4Fun Caos Total — Nordschleife Completo</div><div class="video-meta">08 Mar 2026 · 1h47min · 12.1k views</div></div></div>
+      <div class="video-card fade-up"><div class="video-thumb" style="background:linear-gradient(135deg,#0a1520,#111316)"><div class="video-play"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div><div class="video-badge"><span class="badge badge-gray">REPLAY</span></div></div><div class="video-info"><div class="video-title">Stock Pro Etapa 5 — Daytona Oval</div><div class="video-meta">01 Mar 2026 · 1h02min · 5.7k views</div></div></div>
+      <div class="video-card fade-up"><div class="video-thumb" style="background:linear-gradient(135deg,#160a1a,#111316)"><div class="video-play"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div><div class="video-badge"><span class="badge badge-gray">REPLAY</span></div></div><div class="video-info"><div class="video-title">Formula Open Etapa 4 — Watkins Glen</div><div class="video-meta">22 Fev 2026 · 55min · 3.2k views</div></div></div>
+      <div class="video-card fade-up"><div class="video-thumb" style="background:linear-gradient(135deg,#0D1F0F,#111316)"><div class="video-play"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div><div class="video-badge"><span class="badge badge-gray">HIGHLIGHT</span></div></div><div class="video-info"><div class="video-title">Top 10 Melhores Momentos — Fevereiro 2026</div><div class="video-meta">01 Mar 2026 · 8min · 22k views</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="podcast">
+  <div class="section-inner">
+    <div class="section-eyebrow fade-up"><div class="section-line"></div><span class="section-eyebrow-text">Áudio</span></div>
+    <h2 class="section-h2 fade-up">Podcast SuperGrid</h2>
+    <p class="section-desc fade-up">Análises pós-corrida, entrevistas com pilotos, debates táticos e muito bate-papo sobre o mundo do sim racing.</p>
+    <div class="grid-2" style="margin-top:2.5rem">
+      <div class="card fade-up"><div style="display:flex;gap:1rem;align-items:flex-start"><div style="width:56px;height:56px;background:rgba(0,196,90,.15);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.5" stroke-linecap="round"><path d="M12 2a3 3 0 00-3 3v7a3 3 0 006 0V5a3 3 0 00-3-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2M12 19v3M8 22h8"/></svg></div><div><div style="font-family:'Sora',sans-serif;font-weight:700;color:#fff;margin-bottom:.25rem">#48 — Análise Pós-Catalunya</div><div style="font-size:.8rem;color:var(--gray)">15 Mar 2026 · 1h12min</div><div style="font-size:.84rem;color:rgba(255,255,255,.55);margin-top:.5rem">Moura imparável? Debatemos a dominância do líder, o Safety Car polêmico e as chances de virada de Silva.</div></div></div></div>
+      <div class="card fade-up"><div style="display:flex;gap:1rem;align-items:flex-start"><div style="width:56px;height:56px;background:rgba(0,196,90,.15);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.5" stroke-linecap="round"><path d="M12 2a3 3 0 00-3 3v7a3 3 0 006 0V5a3 3 0 00-3-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2M12 19v3M8 22h8"/></svg></div><div><div style="font-family:'Sora',sans-serif;font-weight:700;color:#fff;margin-bottom:.25rem">#47 — Entrevista: Marcos Braga</div><div style="font-size:.8rem;color:var(--gray)">08 Mar 2026 · 58min</div><div style="font-size:.84rem;color:rgba(255,255,255,.55);margin-top:.5rem">O líder do Stock Pro fala sobre preparação, setup de oval e como equilibra simulador com vida real.</div></div></div></div>
+      <div class="card fade-up"><div style="display:flex;gap:1rem;align-items:flex-start"><div style="width:56px;height:56px;background:rgba(0,196,90,.15);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.5" stroke-linecap="round"><path d="M12 2a3 3 0 00-3 3v7a3 3 0 006 0V5a3 3 0 00-3-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2M12 19v3M8 22h8"/></svg></div><div><div style="font-family:'Sora',sans-serif;font-weight:700;color:#fff;margin-bottom:.25rem">#46 — O Caos do 4Fun Nordschleife</div><div style="font-size:.8rem;color:var(--gray)">09 Mar 2026 · 47min</div><div style="font-size:.84rem;color:rgba(255,255,255,.55);margin-top:.5rem">Rimos, rimos e rimos mais. Relembre os momentos mais hilários do evento com os próprios pilotos convidados.</div></div></div></div>
+      <div class="card fade-up"><div style="display:flex;gap:1rem;align-items:flex-start"><div style="width:56px;height:56px;background:rgba(0,196,90,.15);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.5" stroke-linecap="round"><path d="M12 2a3 3 0 00-3 3v7a3 3 0 006 0V5a3 3 0 00-3-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2M12 19v3M8 22h8"/></svg></div><div><div style="font-family:'Sora',sans-serif;font-weight:700;color:#fff;margin-bottom:.25rem">#45 — Guia: Como Melhorar seu SA</div><div style="font-size:.8rem;color:var(--gray)">01 Mar 2026 · 1h04min</div><div style="font-size:.84rem;color:rgba(255,255,255,.55);margin-top:.5rem">Dicas práticas para subir de Rookie a Classe A sem se envolver em incidentes. Episódio indispensável.</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-dark">
+  <div class="section-inner">
+    <div class="section-eyebrow fade-up"><div class="section-line"></div><span class="section-eyebrow-text">Redes Sociais</span></div>
+    <h2 class="section-h2 fade-up">Nos siga em todo lugar</h2>
     <div class="grid-3" style="margin-top:2.5rem">
-      <div class="card fade-up"><div class="card-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div><div class="card-title">Quem pode entrar?</div><div class="card-desc">Qualquer pessoa com uma conta no ACC. Sem requisitos de SR ou SA. Abertura de vagas semanal.</div><span class="card-tag">Livre · Sem requisitos</span></div>
-      <div class="card fade-up"><div class="card-icon"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18"/></svg></div><div class="card-title">Próximas Corridas</div><div class="card-desc">Votações sobre pista e carro são feitas no grupo whatsapp. Nossas corridas 4FUN são as segundas-feiras.</div></div>
-      <div class="card fade-up"><div class="card-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div class="card-title">Premiação</div><div class="card-desc">Troféus simbólicos, destaque nas redes e o direito de zoar todos os outros. É 4Fun, não a F1!</div><span class="card-tag">Diversão garantida</span></div>
-    </div>
-  </div>
-</section> 
-<!-- <section class="section section-dark" id="stock-pro"> -->
-  <!-- <div class="section-inner"> -->
-    <!-- <div class="section-eyebrow fade-up"><div class="section-line"></div><span class="section-eyebrow-text">Categoria Intermediária</span></div> -->
-    <!-- <h2 class="section-h2 fade-up">GT Sprint Silver Series</h2> -->
-    <!-- <p class="section-desc fade-up">Inspirada na categoria Pro, uma categoria com pilotos de nível intermediarios. GT3 nas pistas mais icônicas do mundo. 5 etapas de pura adrenalina.</p> -->
-    <!-- <!-- <div class="grid-3" style="margin-top:2.5rem"> --> 
-      <!-- <!-- <div class="card fade-up"><div class="card-icon"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div><div class="card-title">Oval Series</div><div class="card-desc">Superspeedways e ovals de médio porte. Drafting, estratégia de pit e posicionamento são decisivos.</div><span class="card-tag">Talladega · Daytona · Michigan</span></div> --> 
-      <!-- <!-- <div class="card fade-up"><div class="card-icon"><svg viewBox="0 0 24 24"><path d="M3 17l4-8 4 5 3-3 4 6"/></svg></div><div class="card-title">Road Course</div><div class="card-desc">Circuitos mistos desafiadores. Frenagem, tração e consistência fazem a diferença. Corridas de 30 a 60min.</div><span class="card-tag">Watkins Glen · Road America</span></div> --> 
-      <!-- <!-- <div class="card fade-up"><div class="card-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div class="card-title">Requisitos</div><div class="card-desc">SA mínimo 50. SA recomendado 60+. Carro fixo da série — sem customização de setup estrutural.</div><span class="card-tag">Grátis · SR B+</span></div> --> 
-    <!-- <!-- </div> --> 
-	<!-- <div class="grid-3" style="margin-top:2.5rem"> -->
-      <!-- <div class="card fade-up"><div class="card-icon"><svg viewBox="0 0 24 24"><path d="M3 17l4-8 4 5 3-3 4 6"/></svg></div><div class="card-title">Formato</div><div class="card-desc">Qualifying 15min + Corrida 45min com pit obrigatório.</div></div> -->
-      <!-- <div class="card fade-up"><div class="card-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div><div class="card-title">Requisitos</div><div class="card-desc">SA mínimo obrigatorio 60. SA recomendado 60+. Licença Silver, Ouro ou Platina no ACC e 2 medalhas de pista.</div></div> -->
-      <!-- <div class="card fade-up"><div class="card-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div class="card-title">Carros</div><div class="card-desc">GT3: Porsche 992, Ferrari 296, BMW M4. 									</div></div> -->
-    <!-- </div> -->
-    <!-- <div id="calendario" style="margin-top:3rem"> -->
-      <!-- <h3 style="font-family:'Sora',sans-serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:1.5rem">📅 GT Sprint Silver Series 2026</h3> -->
-      <!-- <div class="data-table"> -->
-        <!-- <div class="table-header" style="grid-template-columns:60px 80px 1fr 120px 100px"><span>Etapa</span><span>Data</span><span>Circuito</span><span>Categoria</span><span>Status</span></div> -->
-		<!-- <div class="table-row" style="grid-template-columns:60px 80px 1fr 120px 100px"><span class="col-pos">E6</span><span style="font-size:.8rem;color:var(--gray)">00/00</span><span style="color:#fff;font-weight:500">Barcelona</span><span><span class="badge badge-green">GT3</span></span><span><span class="badge badge-yellow">Próxima</span></span></div> -->
-        <!-- <div class="table-row" style="grid-template-columns:60px 80px 1fr 120px 100px"><span class="col-pos">E7</span><span style="font-size:.8rem;color:var(--gray)">00/00</span><span style="color:#fff;font-weight:500">Spa-Francorchamps</span><span><span class="badge badge-green">GT3</span></span><span><span class="badge badge-gray">Programada</span></span></div> -->
-        <!-- <div class="table-row" style="grid-template-columns:60px 80px 1fr 120px 100px"><span class="col-pos">E8</span><span style="font-size:.8rem;color:var(--gray)">00/00</span><span style="color:#fff;font-weight:500">Nürburgring GP</span><span><span class="badge badge-green">GT3</span></span><span><span class="badge badge-gray">Programada</span></span></div> -->
-        <!-- <div class="table-row" style="grid-template-columns:60px 80px 1fr 120px 100px"><span class="col-pos">E9</span><span style="font-size:.8rem;color:var(--gray)">00/00</span><span style="color:#fff;font-weight:500">Silverstone</span><span><span class="badge badge-green">GT3</span></span><span><span class="badge badge-gray">Programada</span></span></div> -->
-        <!-- <div class="table-row" style="grid-template-columns:60px 80px 1fr 120px 100px"><span class="col-pos">E10</span><span style="font-size:.8rem;color:var(--gray)">00/00</span><span style="color:#fff;font-weight:500">Misano</span><span><span class="badge badge-green">GT3</span></span><span><span class="badge badge-gray">Programada</span></span></div> -->
-      <!-- </div> -->
-    <!-- </div> -->
-  <!-- </div> -->
-<!-- </section> -->
-
-
-
-<section class="section " id="endurance">
-  <div class="section-inner">
-    <div class="section-eyebrow fade-up"><div class="section-line"></div><span class="section-eyebrow-text">Corridas de Resistência</span></div>
-    <h2 class="section-h2 fade-up">SuperGrid Endurance</h2>
-    <p class="section-desc fade-up">Corridas de 3 horas com equipes de até 3 pilotos. Comunicação, estratégia e consistência decidem o campeão.</p>
-    <div class="grid-2" style="margin-top:2.5rem">
-      <div class="card fade-up"><div class="card-title" style="margin-bottom:1rem">📋 Formato das Corridas</div>
-        <div style="display:flex;flex-direction:column;gap:.75rem">
-          <div style="display:flex;justify-content:space-between;padding:.5rem 0;border-bottom:1px solid var(--border)"><span style="color:var(--gray)">Duração</span><span style="color:#fff;font-weight:600">3h</span></div>
-          <div style="display:flex;justify-content:space-between;padding:.5rem 0;border-bottom:1px solid var(--border)"><span style="color:var(--gray)">Pilotos por equipe</span><span style="color:#fff;font-weight:600">2 a 3 pilotos</span></div>
-          <div style="display:flex;justify-content:space-between;padding:.5rem 0;border-bottom:1px solid var(--border)"><span style="color:var(--gray)">Pitstop obrigatório</span><span style="color:var(--green);font-weight:600">Sim — combustível e pneus</span></div>
-          <div style="display:flex;justify-content:space-between;padding:.5rem 0;border-bottom:1px solid var(--border)"><span style="color:var(--gray)">Minimum drive time</span><span style="color:#fff;font-weight:600">20% da duração total</span></div>
-          <div style="display:flex;justify-content:space-between;padding:.5rem 0"><span style="color:var(--gray)">Carros</span><span style="color:#fff;font-weight:600">GT3</span></div>
-        </div>
-      </div>
-      <div class="card fade-up">
-        <div class="card-title" style="margin-bottom:1rem">🏁 Próxima Prova — 3h RedBull Ring</div>
-        <div style="display:flex;flex-direction:column;gap:.6rem">
-          <div style="display:flex;justify-content:space-between;padding:.5rem 0;border-bottom:1px solid var(--border)"><span style="color:var(--gray)">Data</span><span style="color:var(--yellow);font-weight:600">00 de XX · 21h</span></div>
-          <div style="display:flex;justify-content:space-between;padding:.5rem 0;border-bottom:1px solid var(--border)"><span style="color:var(--gray)">Circuito</span><span style="color:#fff;font-weight:600">RedBull Ring</span></div>
-          <div style="display:flex;justify-content:space-between;padding:.5rem 0;border-bottom:1px solid var(--border)"><span style="color:var(--gray)">Equipes inscritas</span><span style="color:var(--green);font-weight:600">** de **</span></div>
-          <div style="display:flex;justify-content:space-between;padding:.5rem 0;border-bottom:1px solid var(--border)"><span style="color:var(--gray)">Pilotos confirmados</span><span style="color:#fff;font-weight:600">XX pilotos</span></div>
-        </div>
-        <div style="margin-top:1rem">
-          <div class="progress-label"><span>Vagas preenchidas</span><span>**/** equipes</span></div>
-          <div class="progress-bar"><div class="progress-fill" style="width:87%"></div></div>
-        </div>
-        <a href="inscricao.html" class="card-link" style="margin-top:1.25rem">Inscrever equipe →</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-
-<section class="section section-dark" id="regulamentos">
-  <div class="section-inner">
-    <div class="section-eyebrow fade-up"><div class="section-line"></div><span class="section-eyebrow-text">Regras</span></div>
-    <h2 class="section-h2 fade-up">Regulamento Geral 2026</h2>
-    <p class="section-desc fade-up">Regras simplificadas, penalidades leves e muito entretenimento. Toda semana uma surpresa — carro diferente, pista diferente, sempre 4Fun!</p>
-    <div class="grid-2" style="margin-top:2.5rem">
-      <div class="card fade-up"><div class="card-title" style="margin-bottom:1rem;color:var(--green)">🏆 Pontuação</div><div style="display:flex;flex-direction:column;gap:.5rem;font-size:.875rem"><div style="display:flex;justify-content:space-between;padding:.4rem 0;border-bottom:1px solid var(--border)"><span style="color:var(--gray)">1º lugar</span><span style="color:var(--yellow);font-weight:700">50 pts</span></div><div style="display:flex;justify-content:space-between;padding:.4rem 0;border-bottom:1px solid var(--border)"><span style="color:var(--gray)">2º lugar</span><span style="color:#fff">40 pts</span></div><div style="display:flex;justify-content:space-between;padding:.4rem 0;border-bottom:1px solid var(--border)"><span style="color:var(--gray)">3º lugar</span><span style="color:#fff">32 pts</span></div><div style="display:flex;justify-content:space-between;padding:.4rem 0;border-bottom:1px solid var(--border)"><span style="color:var(--gray)">Pole Position</span><span style="color:var(--green)">+3 pts</span></div><div style="display:flex;justify-content:space-between;padding:.4rem 0"><span style="color:var(--gray)">Volta Rápida</span><span style="color:var(--green)">+2 pts</span></div></div></div>
-      <div class="card fade-up"><div class="card-title" style="margin-bottom:1rem;color:var(--green)">⚠️ Conduta em Pista</div><div style="display:flex;flex-direction:column;gap:.5rem;font-size:.875rem"><div style="display:flex;justify-content:space-between;padding:.4rem 0;border-bottom:1px solid var(--border)"><span style="color:var(--gray)">Colisão intencional</span><span style="color:#F06070;font-weight:700">DSQ + Suspensão</span></div><div style="display:flex;justify-content:space-between;padding:.4rem 0;border-bottom:1px solid var(--border)"><span style="color:var(--gray)">Corte de pista</span><span style="color:var(--yellow)">Drive Through</span></div><div style="display:flex;justify-content:space-between;padding:.4rem 0;border-bottom:1px solid var(--border)"><span style="color:var(--gray)">Blocking excessivo</span><span style="color:var(--yellow)">Stop & Go</span></div><div style="display:flex;justify-content:space-between;padding:.4rem 0"><span style="color:var(--gray)">Disconnection</span><span style="color:var(--gray)">Posição mantida</span></div></div></div>
+      <div class="card fade-up" id="discord" style="text-align:center;padding:2.25rem"><div style="font-size:3rem;margin-bottom:1rem">💬</div><div class="card-title">Discord Oficial</div><div class="card-desc">2.000+ membros. Canais exclusivos por categoria, resultados em tempo real, suporte e muito meme.</div><a href="#" class="btn-primary" style="display:inline-block;margin-top:1.25rem">Entrar no Discord</a></div>
+      <div class="card fade-up" id="youtube" style="text-align:center;padding:2.25rem"><div style="font-size:3rem;margin-bottom:1rem">▶️</div><div class="card-title">Canal no YouTube</div><div class="card-desc">5.000+ inscritos. Transmissões ao vivo, replays completos, highlights e o Podcast SuperGrid em vídeo.</div><a href="#" class="btn-primary" style="display:inline-block;margin-top:1.25rem">Inscrever no YouTube</a></div>
+      <div class="card fade-up" id="instagram" style="text-align:center;padding:2.25rem"><div style="font-size:3rem;margin-bottom:1rem">📸</div><div class="card-title">Instagram & TikTok</div><div class="card-desc">Fotos das corridas, resultados rápidos, bastidores e os melhores clips do grid. Conteúdo diário.</div><a href="#" class="btn-primary" style="display:inline-block;margin-top:1.25rem">Ver Instagram</a></div>
     </div>
   </div>
 </section>
