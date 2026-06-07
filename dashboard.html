@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YPYZSW6BM9"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-YPYZSW6BM9');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard de Resultados - Assetto Corsa Competizione</title>
@@ -57,9 +66,9 @@
             color: var(--text-main);
         }
 
-        .title-area h1 span {
-            color: var(--accent);
-        }
+            .title-area h1 span {
+                color: var(--accent);
+            }
 
         .session-badge {
             background-color: var(--accent);
@@ -84,19 +93,19 @@
             transition: all 0.3s ease;
         }
 
-        .upload-box:hover {
-            border-color: var(--accent);
-            background: var(--row-hover);
-        }
+            .upload-box:hover {
+                border-color: var(--accent);
+                background: var(--row-hover);
+            }
 
-        .upload-box p {
-            font-size: 14px;
-            color: var(--text-muted);
-        }
+            .upload-box p {
+                font-size: 14px;
+                color: var(--text-muted);
+            }
 
-        .upload-box strong {
-            color: var(--text-main);
-        }
+            .upload-box strong {
+                color: var(--text-main);
+            }
 
         #fileInput {
             display: none;
@@ -119,15 +128,15 @@
             overflow: hidden;
         }
 
-        .stat-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 4px;
-            height: 100%;
-            background-color: var(--accent);
-        }
+            .stat-card::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 4px;
+                height: 100%;
+                background-color: var(--accent);
+            }
 
         .stat-label {
             font-size: 12px;
@@ -148,22 +157,22 @@
             margin-bottom: 40px;
         }
 
-        section h2 {
-            font-size: 20px;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
+            section h2 {
+                font-size: 20px;
+                margin-bottom: 15px;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
 
-        section h2::after {
-            content: '';
-            flex: 1;
-            height: 1px;
-            background-color: var(--border);
-        }
+                section h2::after {
+                    content: '';
+                    flex: 1;
+                    height: 1px;
+                    background-color: var(--border);
+                }
 
         /* Leaderboard Table */
         .table-responsive {
@@ -201,9 +210,9 @@
             transition: background-color 0.2s ease;
         }
 
-        tr:last-child {
-            border-bottom: none;
-        }
+            tr:last-child {
+                border-bottom: none;
+            }
 
         tbody tr:hover {
             background-color: var(--row-hover);
@@ -217,9 +226,20 @@
             color: var(--text-muted);
         }
 
-        tr:nth-child(1) .pos-cell { color: #ffd700; font-size: 16px; }
-        tr:nth-child(2) .pos-cell { color: #c0c0c0; font-size: 15px; }
-        tr:nth-child(3) .pos-cell { color: #cd7f32; font-size: 14px; }
+        tr:nth-child(1) .pos-cell {
+            color: #ffd700;
+            font-size: 16px;
+        }
+
+        tr:nth-child(2) .pos-cell {
+            color: #c0c0c0;
+            font-size: 15px;
+        }
+
+        tr:nth-child(3) .pos-cell {
+            color: #cd7f32;
+            font-size: 14px;
+        }
 
         .driver-name {
             font-weight: 600;
@@ -254,9 +274,9 @@
             user-select: none;
         }
 
-        .driver-group-header:hover {
-            background-color: var(--row-hover);
-        }
+            .driver-group-header:hover {
+                background-color: var(--row-hover);
+            }
 
         .driver-meta {
             display: flex;
@@ -277,7 +297,10 @@
             font-size: 13px;
         }
 
-        .driver-group-card.p1 .driver-pos { background: rgba(255, 215, 0, 0.2); color: #ffd700; }
+        .driver-group-card.p1 .driver-pos {
+            background: rgba(255, 215, 0, 0.2);
+            color: #ffd700;
+        }
 
         .driver-title-text {
             font-size: 16px;
@@ -291,9 +314,9 @@
             color: var(--text-muted);
         }
 
-        .driver-stats-summary span strong {
-            color: var(--text-main);
-        }
+            .driver-stats-summary span strong {
+                color: var(--text-main);
+            }
 
         .driver-group-content {
             display: none;
@@ -333,9 +356,14 @@
         }
 
         /* Utility */
-        .text-center { text-align: center; }
-        .text-right { text-align: right; }
-        
+        .text-center {
+            text-align: center;
+        }
+
+        .text-right {
+            text-align: right;
+        }
+
         .empty-state {
             padding: 40px;
             text-align: center;
@@ -347,14 +375,18 @@
                 flex-direction: column;
                 align-items: flex-start;
             }
+
             .upload-box {
                 width: 100%;
             }
+
             .driver-stats-summary {
                 display: none;
             }
         }
     </style>
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="sim racing, simracing, simracing brasil, super grid, supergrid, supergridbrasil, simulação virtual, assetto corsa competizione, Campeonatos, 4Fun, DirectDrive.">
 </head>
 <body>
 

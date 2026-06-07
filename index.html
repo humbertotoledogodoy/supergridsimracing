@@ -1,220 +1,484 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>SuperGrid — Sim Racing Brasileiro</title>
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="shared.css"/>
-  <style>
-    /* ── PRÓXIMO EVENTO BANNER ── */
-    .event-banner-section{
-      width:100%;
-      background:#000;
-      padding:0;
-      margin-top:64px; /* altura da navbar */
-    }
-    .event-banner-wrapper{
-      max-width:1400px;
-      margin:0 auto;
-      padding:1.5rem 2rem;
-    }
-    .event-banner-link{
-      display:block;
-      border-radius:16px;
-      overflow:hidden;
-      box-shadow:0 8px 40px rgba(0,196,90,.18), 0 2px 12px rgba(0,0,0,.6);
-      transition:transform .25s ease, box-shadow .25s ease;
-    }
-    .event-banner-link:hover{
-      transform:translateY(-3px) scale(1.005);
-      box-shadow:0 16px 56px rgba(0,196,90,.28), 0 4px 20px rgba(0,0,0,.7);
-    }
-    .event-banner-img{
-      display:block;
-      width:100%;
-      height:auto;
-      border-radius:16px;
-    }
-    @media(max-width:768px){
-      .event-banner-section{ margin-top:56px; }
-      .event-banner-wrapper{ padding:1rem; }
-      .event-banner-link{ border-radius:10px; }
-      .event-banner-img{ border-radius:10px; }
-    }
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YPYZSW6BM9"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-    /* ── HERO HOME ── */
-    .home-hero{
-      min-height: 100vh;
-      background: linear-gradient(135deg,#070809 0%,#0D1520 50%,#0B0C0E 100%);
-      display: flex; align-items: center;
-      padding: 0 5%; position: relative; overflow: hidden;
-    }
-    .home-hero::before{
-      content:''; position:absolute; inset:0;
-      background: radial-gradient(ellipse 80% 60% at 60% 40%, rgba(0,196,90,.08) 0%, transparent 70%);
-      pointer-events:none;
-    }
-    .hero-grid-lines{
-      position:absolute; inset:0; pointer-events:none;
-      background-image:
-        linear-gradient(rgba(0,196,90,.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0,196,90,.04) 1px, transparent 1px);
-      background-size: 60px 60px;
-    }
-    .home-hero-inner{
-      max-width:1200px; margin:0 auto; width:100%; position:relative; z-index:1;
-      padding-top:100px; padding-bottom:80px;
-    }
-    .hero-eyebrow{
-      display:flex; align-items:center; gap:.75rem; margin-bottom:1.5rem;
-    }
-    .hero-eyebrow-dot{
-      width:8px; height:8px; border-radius:50%; background:var(--green);
-      box-shadow: 0 0 10px var(--green);
-      animation: pulse-dot 2s ease-in-out infinite;
-    }
-    @keyframes pulse-dot{
-      0%,100%{opacity:1; transform:scale(1);}
-      50%{opacity:.5; transform:scale(1.4);}
-    }
-    .hero-eyebrow-text{
-      font-size:.75rem; font-weight:700; letter-spacing:.12em;
-      text-transform:uppercase; color:var(--green);
-    }
-    .home-hero h1{
-      font-family:'Sora',sans-serif;
-      font-size:clamp(2.8rem, 6vw, 5rem);
-      font-weight:800; line-height:1.05;
-      color:#fff; letter-spacing:-.04em;
-      margin-bottom:1.5rem;
-    }
-    .home-hero h1 em{ font-style:normal; color:var(--green); }
-    .home-hero h1 span.dim{ color:rgba(255,255,255,.35); }
-    .hero-desc{
-      font-size:1.15rem; color:rgba(255,255,255,.55);
-      max-width:580px; line-height:1.75; font-weight:300;
-      margin-bottom:2.5rem;
-    }
-    .hero-cta{
-      display:flex; gap:1rem; flex-wrap:wrap;
-    }
-    .btn-hero-primary{
-      padding:.85rem 2rem; background:var(--green); border-radius:8px;
-      color:#0B0C0E; font-family:'Sora',sans-serif; font-size:.95rem;
-      font-weight:800; text-decoration:none; letter-spacing:.01em;
-      transition:all .2s;
-    }
-    .btn-hero-primary:hover{ background:var(--green2); transform:translateY(-2px); }
-    .btn-hero-secondary{
-      padding:.85rem 2rem; border:1px solid rgba(0,196,90,.4); border-radius:8px;
-      color:var(--green); font-size:.95rem; font-weight:500;
-      text-decoration:none; transition:all .2s;
-    }
-    .btn-hero-secondary:hover{ border-color:var(--green); background:rgba(0,196,90,.07); }
+        gtag('config', 'G-YPYZSW6BM9');
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SuperGrid — Sim Racing Brasileiro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="shared.css" />
+    <style>
+        /* ── PRÓXIMO EVENTO BANNER ── */
+        .event-banner-section {
+            width: 100%;
+            background: #000;
+            padding: 0;
+            margin-top: 64px; /* altura da navbar */
+        }
 
-    .hero-stats-row{
-      display:flex; gap:3rem; margin-top:4rem;
-      padding-top:2.5rem; border-top:1px solid rgba(255,255,255,.08);
-      flex-wrap:wrap;
-    }
-    .hero-stat-val{
-      font-family:'Sora',sans-serif; font-size:2rem; font-weight:800; color:#fff;
-    }
-    .hero-stat-val span{ color:var(--green); }
-    .hero-stat-lbl{ font-size:.78rem; color:rgba(255,255,255,.4); margin-top:.25rem; }
+        .event-banner-wrapper {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+        }
 
-    /* ── FEATURES SECTION ── */
-    .home-features{ padding:6rem 5%; background:var(--bg); }
-    .home-features-inner{ max-width:1200px; margin:0 auto; }
-    .features-header{ text-align:center; margin-bottom:4rem; }
-    .features-header .section-eyebrow{ justify-content:center; }
+        .event-banner-link {
+            display: block;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 40px rgba(0,196,90,.18), 0 2px 12px rgba(0,0,0,.6);
+            transition: transform .25s ease, box-shadow .25s ease;
+        }
 
-    /* ── CATEGORIES PREVIEW ── */
-    .cat-card{
-      background:var(--surface); border:1px solid var(--border);
-      border-radius:20px; padding:2.25rem; position:relative; overflow:hidden;
-      cursor:pointer; text-decoration:none; display:block;
-      transition:all .3s;
-    }
-    .cat-card::after{
-      content:''; position:absolute; inset:0; border-radius:20px;
-      background:linear-gradient(135deg,rgba(0,196,90,.0) 0%,rgba(0,196,90,.06) 100%);
-      opacity:0; transition:opacity .3s;
-    }
-    .cat-card:hover{ border-color:rgba(0,196,90,.4); transform:translateY(-4px); box-shadow:0 24px 60px rgba(0,0,0,.4); }
-    .cat-card:hover::after{ opacity:1; }
-    .cat-badge{
-      display:inline-flex; padding:.3rem .8rem; border-radius:100px;
-      font-size:.72rem; font-weight:700; margin-bottom:1.25rem;
-    }
-    .cat-badge-pro{ background:rgba(245,196,0,.12); color:var(--yellow); }
-    .cat-badge-fun{ background:rgba(0,196,90,.1); color:var(--green); }
-    .cat-badge-end{ background:rgba(107,163,255,.1); color:#6BA3FF; }
-    .cat-title{ font-family:'Sora',sans-serif; font-size:1.3rem; font-weight:800; color:#fff; margin-bottom:.6rem; }
-    .cat-desc{ font-size:.88rem; color:var(--gray); line-height:1.65; }
-    .cat-arrow{
-      display:inline-flex; align-items:center; gap:.4rem;
-      margin-top:1.25rem; font-size:.82rem; font-weight:600;
-      color:var(--green); opacity:0; transform:translateX(-8px);
-      transition:all .3s;
-    }
-    .cat-card:hover .cat-arrow{ opacity:1; transform:translateX(0); }
+            .event-banner-link:hover {
+                transform: translateY(-3px) scale(1.005);
+                box-shadow: 0 16px 56px rgba(0,196,90,.28), 0 4px 20px rgba(0,0,0,.7);
+            }
 
-    /* ── ABOUT BAND ── */
-    .about-band{
-      padding:5rem 5%; background:#111316;
-      border-top:1px solid rgba(255,255,255,.04);
-      border-bottom:1px solid rgba(255,255,255,.04);
-    }
-    .about-band-inner{
-      max-width:1200px; margin:0 auto;
-      display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:center;
-    }
-    .about-text h2{
-      font-family:'Sora',sans-serif; font-size:clamp(1.8rem,3vw,2.6rem);
-      font-weight:800; color:#fff; letter-spacing:-.02em; margin-bottom:1rem;
-    }
-    .about-text h2 em{ font-style:normal; color:var(--green); }
-    .about-text p{ font-size:.95rem; color:rgba(255,255,255,.5); line-height:1.8; margin-bottom:1rem; }
-    .about-checks{ display:flex; flex-direction:column; gap:.6rem; margin-top:1.5rem; }
-    .about-check{
-      display:flex; align-items:center; gap:.75rem;
-      font-size:.88rem; color:rgba(255,255,255,.65);
-    }
-    .check-icon{
-      width:20px; height:20px; border-radius:50%; background:rgba(0,196,90,.15);
-      display:flex; align-items:center; justify-content:center;
-      flex-shrink:0; font-size:.65rem; color:var(--green);
-    }
-    .about-img-mock{
-      background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.06);
-      border-radius:20px; padding:2rem;
-      display:grid; gap:1rem;
-    }
-    .mock-row{
-      display:flex; align-items:center; gap:1rem;
-      padding:.75rem 1rem; background:rgba(255,255,255,.03);
-      border-radius:10px; border:1px solid rgba(255,255,255,.04);
-    }
-    .mock-avatar{
-      width:36px; height:36px; border-radius:50%;
-      display:flex; align-items:center; justify-content:center;
-      font-family:'Sora',sans-serif; font-size:.75rem; font-weight:800; color:#0B0C0E;
-      flex-shrink:0;
-    }
-    .mock-name{ font-size:.88rem; font-weight:600; color:#fff; }
-    .mock-pts{ font-family:'Sora',sans-serif; font-size:.88rem; font-weight:800; color:var(--green); margin-left:auto; }
+        .event-banner-img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 16px;
+        }
 
-    /* ── RESPONSIVE ── */
-    @media(max-width:900px){
-      .about-band-inner{ grid-template-columns:1fr; gap:3rem; }
-      .about-img-mock{ display:none; }
-    }
-    @media(max-width:600px){
-      .hero-stats-row{ gap:1.5rem; }
-    }
-  </style>
+        @media(max-width:768px) {
+            .event-banner-section {
+                margin-top: 56px;
+            }
+
+            .event-banner-wrapper {
+                padding: 1rem;
+            }
+
+            .event-banner-link {
+                border-radius: 10px;
+            }
+
+            .event-banner-img {
+                border-radius: 10px;
+            }
+        }
+
+        /* ── HERO HOME ── */
+        .home-hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg,#070809 0%,#0D1520 50%,#0B0C0E 100%);
+            display: flex;
+            align-items: center;
+            padding: 0 5%;
+            position: relative;
+            overflow: hidden;
+        }
+
+            .home-hero::before {
+                content: '';
+                position: absolute;
+                inset: 0;
+                background: radial-gradient(ellipse 80% 60% at 60% 40%, rgba(0,196,90,.08) 0%, transparent 70%);
+                pointer-events: none;
+            }
+
+        .hero-grid-lines {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background-image: linear-gradient(rgba(0,196,90,.04) 1px, transparent 1px), linear-gradient(90deg, rgba(0,196,90,.04) 1px, transparent 1px);
+            background-size: 60px 60px;
+        }
+
+        .home-hero-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+            padding-top: 100px;
+            padding-bottom: 80px;
+        }
+
+        .hero-eyebrow {
+            display: flex;
+            align-items: center;
+            gap: .75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-eyebrow-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--green);
+            box-shadow: 0 0 10px var(--green);
+            animation: pulse-dot 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-dot {
+            0%,100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: .5;
+                transform: scale(1.4);
+            }
+        }
+
+        .hero-eyebrow-text {
+            font-size: .75rem;
+            font-weight: 700;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            color: var(--green);
+        }
+
+        .home-hero h1 {
+            font-family: 'Sora',sans-serif;
+            font-size: clamp(2.8rem, 6vw, 5rem);
+            font-weight: 800;
+            line-height: 1.05;
+            color: #fff;
+            letter-spacing: -.04em;
+            margin-bottom: 1.5rem;
+        }
+
+            .home-hero h1 em {
+                font-style: normal;
+                color: var(--green);
+            }
+
+            .home-hero h1 span.dim {
+                color: rgba(255,255,255,.35);
+            }
+
+        .hero-desc {
+            font-size: 1.15rem;
+            color: rgba(255,255,255,.55);
+            max-width: 580px;
+            line-height: 1.75;
+            font-weight: 300;
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-hero-primary {
+            padding: .85rem 2rem;
+            background: var(--green);
+            border-radius: 8px;
+            color: #0B0C0E;
+            font-family: 'Sora',sans-serif;
+            font-size: .95rem;
+            font-weight: 800;
+            text-decoration: none;
+            letter-spacing: .01em;
+            transition: all .2s;
+        }
+
+            .btn-hero-primary:hover {
+                background: var(--green2);
+                transform: translateY(-2px);
+            }
+
+        .btn-hero-secondary {
+            padding: .85rem 2rem;
+            border: 1px solid rgba(0,196,90,.4);
+            border-radius: 8px;
+            color: var(--green);
+            font-size: .95rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all .2s;
+        }
+
+            .btn-hero-secondary:hover {
+                border-color: var(--green);
+                background: rgba(0,196,90,.07);
+            }
+
+        .hero-stats-row {
+            display: flex;
+            gap: 3rem;
+            margin-top: 4rem;
+            padding-top: 2.5rem;
+            border-top: 1px solid rgba(255,255,255,.08);
+            flex-wrap: wrap;
+        }
+
+        .hero-stat-val {
+            font-family: 'Sora',sans-serif;
+            font-size: 2rem;
+            font-weight: 800;
+            color: #fff;
+        }
+
+            .hero-stat-val span {
+                color: var(--green);
+            }
+
+        .hero-stat-lbl {
+            font-size: .78rem;
+            color: rgba(255,255,255,.4);
+            margin-top: .25rem;
+        }
+
+        /* ── FEATURES SECTION ── */
+        .home-features {
+            padding: 6rem 5%;
+            background: var(--bg);
+        }
+
+        .home-features-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .features-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+            .features-header .section-eyebrow {
+                justify-content: center;
+            }
+
+        /* ── CATEGORIES PREVIEW ── */
+        .cat-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 2.25rem;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            text-decoration: none;
+            display: block;
+            transition: all .3s;
+        }
+
+            .cat-card::after {
+                content: '';
+                position: absolute;
+                inset: 0;
+                border-radius: 20px;
+                background: linear-gradient(135deg,rgba(0,196,90,.0) 0%,rgba(0,196,90,.06) 100%);
+                opacity: 0;
+                transition: opacity .3s;
+            }
+
+            .cat-card:hover {
+                border-color: rgba(0,196,90,.4);
+                transform: translateY(-4px);
+                box-shadow: 0 24px 60px rgba(0,0,0,.4);
+            }
+
+                .cat-card:hover::after {
+                    opacity: 1;
+                }
+
+        .cat-badge {
+            display: inline-flex;
+            padding: .3rem .8rem;
+            border-radius: 100px;
+            font-size: .72rem;
+            font-weight: 700;
+            margin-bottom: 1.25rem;
+        }
+
+        .cat-badge-pro {
+            background: rgba(245,196,0,.12);
+            color: var(--yellow);
+        }
+
+        .cat-badge-fun {
+            background: rgba(0,196,90,.1);
+            color: var(--green);
+        }
+
+        .cat-badge-end {
+            background: rgba(107,163,255,.1);
+            color: #6BA3FF;
+        }
+
+        .cat-title {
+            font-family: 'Sora',sans-serif;
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: .6rem;
+        }
+
+        .cat-desc {
+            font-size: .88rem;
+            color: var(--gray);
+            line-height: 1.65;
+        }
+
+        .cat-arrow {
+            display: inline-flex;
+            align-items: center;
+            gap: .4rem;
+            margin-top: 1.25rem;
+            font-size: .82rem;
+            font-weight: 600;
+            color: var(--green);
+            opacity: 0;
+            transform: translateX(-8px);
+            transition: all .3s;
+        }
+
+        .cat-card:hover .cat-arrow {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* ── ABOUT BAND ── */
+        .about-band {
+            padding: 5rem 5%;
+            background: #111316;
+            border-top: 1px solid rgba(255,255,255,.04);
+            border-bottom: 1px solid rgba(255,255,255,.04);
+        }
+
+        .about-band-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-family: 'Sora',sans-serif;
+            font-size: clamp(1.8rem,3vw,2.6rem);
+            font-weight: 800;
+            color: #fff;
+            letter-spacing: -.02em;
+            margin-bottom: 1rem;
+        }
+
+            .about-text h2 em {
+                font-style: normal;
+                color: var(--green);
+            }
+
+        .about-text p {
+            font-size: .95rem;
+            color: rgba(255,255,255,.5);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .about-checks {
+            display: flex;
+            flex-direction: column;
+            gap: .6rem;
+            margin-top: 1.5rem;
+        }
+
+        .about-check {
+            display: flex;
+            align-items: center;
+            gap: .75rem;
+            font-size: .88rem;
+            color: rgba(255,255,255,.65);
+        }
+
+        .check-icon {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: rgba(0,196,90,.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: .65rem;
+            color: var(--green);
+        }
+
+        .about-img-mock {
+            background: rgba(255,255,255,.03);
+            border: 1px solid rgba(255,255,255,.06);
+            border-radius: 20px;
+            padding: 2rem;
+            display: grid;
+            gap: 1rem;
+        }
+
+        .mock-row {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: .75rem 1rem;
+            background: rgba(255,255,255,.03);
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,.04);
+        }
+
+        .mock-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Sora',sans-serif;
+            font-size: .75rem;
+            font-weight: 800;
+            color: #0B0C0E;
+            flex-shrink: 0;
+        }
+
+        .mock-name {
+            font-size: .88rem;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .mock-pts {
+            font-family: 'Sora',sans-serif;
+            font-size: .88rem;
+            font-weight: 800;
+            color: var(--green);
+            margin-left: auto;
+        }
+
+        /* ── RESPONSIVE ── */
+        @media(max-width:900px) {
+            .about-band-inner {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .about-img-mock {
+                display: none;
+            }
+        }
+
+        @media(max-width:600px) {
+            .hero-stats-row {
+                gap: 1.5rem;
+            }
+        }
+    </style>
+
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="sim racing, simracing, simracing brasil, super grid, supergrid, supergridbrasil, simulação virtual, assetto corsa competizione, Campeonatos, 4Fun, DirectDrive.">
 </head>
 <body>
 
@@ -304,8 +568,8 @@
           <div class="dropdown-divider"></div>
           <div class="dropdown-group-label">Social</div>
 <a href="https://chat.whatsapp.com/K6X6ShYmsz8CKPKKj7gIKx" target="_blank" rel="noopener">Grupo Whatsapp Oficial</a>            <a href="https://discord.com/invite/ZJPTdwJSnH" target="_blank" rel="noopener">Discord Oficial</a>
-          <a href="comunidade.html#youtube">Canal no YouTube</a>
-          <a href="comunidade.html#instagram">Instagram</a>
+          <a href="https://www.youtube.com/@supergridbrasil" target="_blank" rel="noopener">Canal no YouTube</a>
+          <a href="https://www.instagram.com/supergridbrasil/">Instagram</a>
         </div>
       </li>
 
@@ -535,7 +799,7 @@
       </div>
       <div><div class="footer-col-title">Campeonatos</div><ul class="footer-links"><li><a href="campeonatos.html#gt-sprint">GT Sprint Series</a></li><li><a href="campeonatos.html#4fun">4Fun Series</a></li><li><a href="campeonatos.html#endurance">SuperGrid Endurance</a></li> <li><a href="campeonatos.html#regulamentos">Regulamento Geral</a></li></ul></div>
       <div><div class="footer-col-title">Plataforma</div><ul class="footer-links"><li><a href="pilotos.html#ranking">Ranking de Pilotos</a></li><li><a href="resultados.html">Resultados</a></li><li><a href="campeonatos.html#calendario">Calendário</a></li><li><a href="campeonatos.html#regulamento">Regulamento</a></li><li><a href="equipes.html#cadastro">Cadastrar Equipe</a></li></ul></div>
-      <div><div class="footer-col-title">Comunidade</div><ul class="footer-links"><li><a href="https://discord.com/invite/ZJPTdwJSnH" target="_blank" rel="noopener">Discord Oficial</a></li><li><a href="comunidade.html#youtube">Canal YouTube</a></li><li><a href="comunidade.html#noticias">Blog & Notícias</a></li><li><a href="comunidade.html#instagram">Instagram</a></li><li><a href="inscricao.html">Fale conosco</a></li></ul></div>
+      <div><div class="footer-col-title">Comunidade</div><ul class="footer-links"><li><a href="https://discord.com/invite/ZJPTdwJSnH" target="_blank" rel="noopener">Discord Oficial</a></li><li><a href="comunidade.html#youtube">Canal YouTube</a></li><li><a href="comunidade.html#noticias">Blog & Notícias</a></li><li><a href="https://www.instagram.com/supergridbrasil/">Instagram</a></li><li><a href="inscricao.html">Fale conosco</a></li></ul></div>
     </div>
     <div class="footer-bottom">
       <div>© 2026 SuperGrid BR — Sim Racing Brasileiro</div>
