@@ -164,6 +164,15 @@
   </div>
 </section>
 
+<style>
+  .team-name-toggle{padding:0;border:0;background:none;color:#fff;font:700 1rem 'Sora',sans-serif;text-align:left;cursor:pointer;}
+  .team-name-toggle:hover,.team-name-toggle:focus-visible{color:var(--green);text-decoration:underline;outline:none;}
+  .team-pilots-details{grid-column:1/-1;display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;padding:.85rem 1rem 1rem 4.15rem;border-top:1px solid var(--border);background:rgba(0,196,90,.04);font-size:.82rem;color:var(--gray);}
+  .team-pilots-details strong{color:var(--green);font-family:'Sora',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;}
+  .team-pilots-details span{padding:.3rem .55rem;border:1px solid var(--border);border-radius:5px;color:var(--text);background:var(--surface);}
+  .team-pilots-details span:empty{display:none;}
+</style>
+
 <script>
   const teamSourceFiles = [
     'supergrid_4fun_2026_05_04_race_brands.html', 'supergrid_4fun_2026_05_11_race_misano.html',
@@ -186,6 +195,14 @@
     return team === 'XÃ”MANOS' ? 'XÔMANOS' : team;
   };
   const teamKey = team => team.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+  const pilotFromTeamName = name => name.replace(/\s*\|.*$|\s*\[[^\]]+\]|\s*\([^\)]+\)$/g, '').replace(/\s+-\s+.*$/, '').trim();
+
+  function toggleTeamPilots(button) {
+    const details = button.closest('.team-ranking-row').nextElementSibling;
+    const expanded = details.classList.toggle('team-pilots-open');
+    button.setAttribute('aria-expanded', expanded);
+    details.hidden = !expanded;
+  }
 
   async function loadTeamData() {
     const teams = new Map();
@@ -213,7 +230,7 @@
     const namedTeams = teams.filter(team => team.name !== 'Sem equipe informada');
     document.getElementById('teamStats').innerHTML = `<div><div class="stat-num">${namedTeams.length}</div><div class="stat-label">Equipes identificadas</div></div><div><div class="stat-num">${teamSourceFiles.length}</div><div class="stat-label">Corridas analisadas</div></div><div><div class="stat-num">${namedTeams.reduce((sum, team) => sum + team.pilots.size, 0)}</div><div class="stat-label">Vínculos de pilotos</div></div>`;
     const columns = '50px minmax(220px,1fr) 120px 100px 90px 110px';
-    document.getElementById('teamRanking').innerHTML = `<div class="table-header" style="grid-template-columns:${columns}"><span>Pos</span><span>Equipe</span><span>Pilotos</span><span>Participações</span><span>Vitórias</span><span>Pódios</span></div>` + namedTeams.map((team, index) => `<div class="table-row" style="grid-template-columns:${columns}"><span class="col-pos ${index < 3 ? ['gold','silver','bronze'][index] : ''}">${index + 1}</span><span style="color:#fff;font-weight:700;font-family:'Sora',sans-serif">${escapeTeamHtml(team.name)}</span><span style="color:var(--gray);font-size:.82rem">${team.pilots.size}</span><span>${team.races}</span><span class="col-win">${team.wins}</span><span class="col-win">${team.podiums}</span></div>`).join('');
+    document.getElementById('teamRanking').innerHTML = `<div class="table-header" style="grid-template-columns:${columns}"><span>Pos</span><span>Equipe</span><span>Pilotos</span><span>Participações</span><span>Vitórias</span><span>Pódios</span></div>` + namedTeams.map((team, index) => { const pilots = [...new Map([...team.pilots].map(pilot => [pilotFromTeamName(pilot).toLowerCase(), pilotFromTeamName(pilot)])).values()].sort((a, b) => a.localeCompare(b)); return `<div class="table-row team-ranking-row" style="grid-template-columns:${columns}"><span class="col-pos ${index < 3 ? ['gold','silver','bronze'][index] : ''}">${index + 1}</span><button type="button" class="team-name-toggle" aria-expanded="false" onclick="toggleTeamPilots(this)">${escapeTeamHtml(team.name)}</button><span style="color:var(--gray);font-size:.82rem">${team.pilots.size}</span><span>${team.races}</span><span class="col-win">${team.wins}</span><span class="col-win">${team.podiums}</span></div><div class="team-pilots-details" hidden><strong>Pilotos da equipe</strong><span>${pilots.map(pilot => escapeTeamHtml(pilot)).join('</span><span>')}</span></div>`; }).join('');
     document.querySelectorAll('.fade-up').forEach(element => element.classList.add('visible'));
   }
 
