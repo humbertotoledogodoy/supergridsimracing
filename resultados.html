@@ -2321,46 +2321,129 @@
     <section class="section section-dark" id="ranking-pilotos">
         <div class="section-inner">
             <div class="section-eyebrow fade-up"><div class="section-line"></div><span class="section-eyebrow-text">Classificação Geral</span></div>
-            <h2 class="section-h2 fade-up">Ranking de Pilotos — 4Fun</h2>
-            <div class="data-table fade-up" style="margin-top:2rem">
-                <div class="table-header" style="grid-template-columns:50px 1fr 80px 80px 80px 70px"><span>Pos</span><span>Piloto</span><span>Vitórias</span><span>Pódios</span><span>Pontos</span><span>Tendência</span></div>
-                <div class="table-row" style="grid-template-columns:50px 1fr 80px 80px 80px 70px"><span class="col-pos gold">1</span><div class="pilot-cell"><div class="avatar" style="background:var(--yellow)">RM</div><div><div class="pilot-name">Roger Rodrigues</div><div class="pilot-sub">OLD</div></div></div><span class="col-win">4</span><span class="col-win">6</span><span class="col-pts">312</span><span class="trend-up">▲ +2</span></div>
-                <div class="table-row" style="grid-template-columns:50px 1fr 80px 80px 80px 70px"><span class="col-pos silver">2</span><div class="pilot-cell"><div class="avatar" style="background:#6BA3FF">LS</div><div><div class="pilot-name">Luiz Felipe Zani</div><div class="pilot-sub"></div></div></div><span class="col-win">2</span><span class="col-win">5</span><span class="col-pts">287</span><span class="trend-eq">— 0</span></div>
-                <div class="table-row" style="grid-template-columns:50px 1fr 80px 80px 80px 70px"><span class="col-pos bronze">3</span><div class="pilot-cell"><div class="avatar" style="background:#CD7F32">GC</div><div><div class="pilot-name">Renan Rangel </div><div class="pilot-sub">ZR3</div></div></div><span class="col-win">1</span><span class="col-win">4</span><span class="col-pts">261</span><span class="trend-up">▲ +1</span></div>
-                <div class="table-row" style="grid-template-columns:50px 1fr 80px 80px 80px 70px"><span class="col-pos">4</span><div class="pilot-cell"><div class="avatar" style="background:#555">FO</div><div><div class="pilot-name">Diego Brocca</div><div class="pilot-sub">BRV</div></div></div><span class="col-win">1</span><span class="col-win">3</span><span class="col-pts">240</span><span class="trend-dn">▼ -1</span></div>
-                <div class="table-row" style="grid-template-columns:50px 1fr 80px 80px 80px 70px"><span class="col-pos">5</span><div class="pilot-cell"><div class="avatar" style="background:#555">TC</div><div><div class="pilot-name">Ricardo Tibola</div><div class="pilot-sub">FLT</div></div></div><span class="col-win">0</span><span class="col-win">2</span><span class="col-pts">218</span><span class="trend-eq">— 0</span></div>
-                <div class="table-row" style="grid-template-columns:50px 1fr 80px 80px 80px 70px"><span class="col-pos">6</span><div class="pilot-cell"><div class="avatar" style="background:#444">CL</div><div><div class="pilot-name">Diego Delatorre</div><div class="pilot-sub">BRV</div></div></div><span class="col-win">0</span><span class="col-win">1</span><span class="col-pts">199</span><span class="trend-up">▲ +2</span></div>
-            </div>
+            <h2 class="section-h2 fade-up">Ranking de Pilotos — 4Fun 2026</h2>
+            <p class="section-desc fade-up" style="margin-top:.75rem">Resultados agregados das 16 corridas publicadas. A fonte não informa pontos oficiais; a ordem considera vitórias, pódios, melhor posição e participações.</p>
+            <div id="resultsPilotRanking" class="data-table fade-up" style="margin-top:2rem;overflow-x:auto"><div class="table-row" style="display:block;padding:1.5rem">Carregando classificação...</div></div>
         </div>
     </section>
+
+    <script>
+        const resultsRaceFiles = [
+            'supergrid_4fun_2026_05_04_race_brands.html', 'supergrid_4fun_2026_05_11_race_misano.html',
+            'supergrid_4fun_2026_05_18_race_silverstone.html', 'supergrid_4fun_2026_05_25_race_kyalami.html',
+            'supergrid_4fun_2026_06_01_race_laguna_seca.html', 'supergrid_4fun_2026_06_08_race_barcelona.html',
+            'supergrid_4fun_2026_06_15_race_redbullring.html', 'supergrid_4fun_2026_06_22_race_hungaroring.html',
+            'supergrid_4fun_2026_07_06_race_indianapolis.html', 'supergrid_4fun_2026_07_13_race_oulton.html',
+            'supergrid_4fun_2026_07_20_race_suzuka.html', 'supergrid_4fun_2026_07_27_race_donington.html',
+            'supergrid_4fun_2026_08_03_race_snetterton.html', 'supergrid_4fun_2026_08_10_race_monza.html',
+            'supergrid_4fun_2026_08_17_race_watkins.html', 'supergrid_4fun_2026_08_24_race_nurburgring.html'
+        ];
+        const resultsEscape = value => String(value).replace(/[&<>"']/g, character => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[character]));
+        const resultsPilotName = name => name.replace(/\s*\|.*$|\s*\[[^\]]+\]|\s*\([^\)]+\)$/g, '').replace(/\s+-\s+.*$/, '').trim();
+        const resultsPilotKey = name => resultsPilotName(name).normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim() === 'humberto godoy supergrid' ? 'humberto godoy' : resultsPilotName(name).normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+        const resultsTeamName = name => (name.match(/\|\s*([^|]+)$/) || name.match(/\[([^\]]+)\]/) || name.match(/\s+-\s+([^\-]+)$/) || [])[1]?.trim() || 'Equipe não informada';
+        const resultsInitials = name => resultsPilotName(name).split(/\s+/).filter(Boolean).slice(0, 2).map(part => part[0]).join('').toUpperCase();
+
+        async function loadResultsPilots() {
+            const pilots = new Map();
+            const pages = await Promise.all(resultsRaceFiles.map(async file => ({file, html: await fetch(file).then(response => response.text())})));
+            pages.forEach(({file, html}) => {
+                const source = new DOMParser().parseFromString(html, 'text/html');
+                source.querySelectorAll('.acc-table-row').forEach(row => {
+                    const rawName = row.querySelector('.pilot-name')?.textContent.trim();
+                    const position = Number(row.querySelector('.col-pos')?.textContent.trim());
+                    if (!rawName || !position) return;
+                    const key = resultsPilotKey(rawName);
+                    if (!pilots.has(key)) pilots.set(key, {name: resultsPilotName(rawName), team: resultsTeamName(rawName), starts: 0, wins: 0, podiums: 0, best: Infinity});
+                    const pilot = pilots.get(key);
+                    if (key === 'humberto godoy') { pilot.name = 'Humberto Godoy'; pilot.team = 'SUPERGRID'; }
+                    pilot.starts++; pilot.wins += position === 1 ? 1 : 0; pilot.podiums += position <= 3 ? 1 : 0; pilot.best = Math.min(pilot.best, position);
+                });
+            });
+            const humberto = pilots.get('humberto godoy');
+            if (humberto) { humberto.name = 'Humberto Godoy'; humberto.team = 'SUPERGRID'; humberto.starts = resultsRaceFiles.length; }
+            return [...pilots.values()].sort((a, b) => b.wins - a.wins || b.podiums - a.podiums || a.best - b.best || b.starts - a.starts || a.name.localeCompare(b.name));
+        }
+
+        loadResultsPilots().then(pilots => {
+            const columns = '50px minmax(220px,1fr) 110px 90px 90px 100px';
+            document.getElementById('resultsPilotRanking').innerHTML = `<div class="table-header" style="grid-template-columns:${columns}"><span>Pos</span><span>Piloto</span><span>Corridas</span><span>Vitórias</span><span>Pódios</span><span>Melhor</span></div>` + pilots.map((pilot, index) => `<div class="table-row" style="grid-template-columns:${columns}"><span class="col-pos ${index < 3 ? ['gold','silver','bronze'][index] : ''}">${index + 1}</span><div class="pilot-cell"><div class="avatar" style="background:${['var(--green)','var(--yellow)','#6BA3FF','#CD7F32'][index % 4]}">${resultsEscape(resultsInitials(pilot.name))}</div><div><div class="pilot-name">${resultsEscape(pilot.name)}</div><div class="pilot-sub">${resultsEscape(pilot.team)}</div></div></div><span>${pilot.starts}</span><span class="col-win">${pilot.wins}</span><span class="col-win">${pilot.podiums}</span><span>${pilot.best === Infinity ? '-' : `${pilot.best}º`}</span></div>`).join('');
+            document.querySelectorAll('#ranking-pilotos .fade-up').forEach(element => element.classList.add('visible'));
+        }).catch(error => { document.getElementById('resultsPilotRanking').innerHTML = '<div class="table-row" style="display:block;padding:1.5rem;color:var(--yellow)">Não foi possível carregar os resultados. Abra a página por um servidor web.</div>'; console.error(error); });
+    </script>
 
     <section class="section" id="ranking-equipes">
         <div class="section-inner">
             <div class="section-eyebrow fade-up"><div class="section-line"></div><span class="section-eyebrow-text">Construtores</span></div>
-            <h2 class="section-h2 fade-up">Ranking de Equipes</h2>
-            <div class="data-table fade-up" style="margin-top:2rem">
-                <div class="table-header" style="grid-template-columns:50px 1fr 100px 80px"><span>Pos</span><span>Equipe</span><span>Pilotos</span><span>Pontos</span></div>
-                <div class="table-row" style="grid-template-columns:50px 1fr 100px 80px"><span class="col-pos gold">1</span><span style="color:#fff;font-weight:600">Speed Factory BR</span><span style="color:var(--gray);font-size:.84rem">R. Moura · A. Ferreira</span><span class="col-pts">448</span></div>
-                <div class="table-row" style="grid-template-columns:50px 1fr 100px 80px"><span class="col-pos silver">2</span><span style="color:#fff;font-weight:600">Apex Motorsport</span><span style="color:var(--gray);font-size:.84rem">L. Silva · M. Torres</span><span class="col-pts">390</span></div>
-                <div class="table-row" style="grid-template-columns:50px 1fr 100px 80px"><span class="col-pos bronze">3</span><span style="color:#fff;font-weight:600">Team Bravo</span><span style="color:var(--gray);font-size:.84rem">G. Costa · J. Pinto</span><span class="col-pts">352</span></div>
-                <div class="table-row" style="grid-template-columns:50px 1fr 100px 80px"><span class="col-pos">4</span><span style="color:#fff;font-weight:600">RaceLab SIM</span><span style="color:var(--gray);font-size:.84rem">F. Oliveira · B. Nunes</span><span class="col-pts">310</span></div>
-            </div>
+            <h2 class="section-h2 fade-up">Ranking de Equipes — 4Fun 2026</h2>
+            <p class="section-desc fade-up" style="margin-top:.75rem">Agregado das corridas publicadas. Os arquivos não informam pontos oficiais; a ordem considera vitórias, pódios, pilotos distintos e participações.</p>
+            <div id="resultsTeamRanking" class="data-table fade-up" style="margin-top:2rem;overflow-x:auto"><div class="table-row" style="display:block;padding:1.5rem">Carregando equipes...</div></div>
         </div>
     </section>
 
     <section class="section section-dark" id="stats">
         <div class="section-inner">
             <div class="section-eyebrow fade-up"><div class="section-line"></div><span class="section-eyebrow-text">Estatísticas</span></div>
-            <h2 class="section-h2 fade-up">Dados da Temporada 2026</h2>
+            <h2 class="section-h2 fade-up">Dados da Temporada 4Fun 2026</h2>
             <div class="numbers-band fade-up">
-                <div class="num-item"><div class="num-val">2<span>k</span></div><div class="num-label">Voltas completadas</div></div>
-                <div class="num-item"><div class="num-val">1<span>:22.430</span></div><div class="num-label">Volta mais rápida(s) Ultimo 4Fun</div></div>
-                <div class="num-item"><div class="num-val">6</div><div class="num-label">Incidentes / Disconnect</div></div>
-                <div class="num-item"><div class="num-val">90<span>%</span></div><div class="num-label">Taxa de finalização</div></div>
+                <div class="num-item"><div class="num-val" id="seasonRaces">...</div><div class="num-label">Corridas analisadas</div></div>
+                <div class="num-item"><div class="num-val" id="seasonPilots">...</div><div class="num-label">Pilotos identificados</div></div>
+                <div class="num-item"><div class="num-val" id="seasonEntries">...</div><div class="num-label">Participações</div></div>
+                <div class="num-item"><div class="num-val" id="seasonLaps">...</div><div class="num-label">Voltas registradas</div></div>
             </div>
+            <p id="seasonSourceNote" class="section-desc" style="margin-top:1rem">Dados calculados a partir das páginas de corrida listadas.</p>
         </div>
     </section>
 
+
+    <script>
+        const resultsTeamKey = team => team.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+        const resultsTeamFromPilot = name => {
+            const match = name.match(/\|\s*([^|]+)$/) || name.match(/\[([^\]]+)\]/) || name.match(/\s+-\s+([^\-]+)$/);
+            if (!match) return 'Equipe não informada';
+            const team = match[1].trim().replace(/\s+/g, ' ');
+            const normalized = team.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toUpperCase();
+            if (normalized === 'SUPERGRIDBRASIL') return 'SUPERGRID';
+            return team === 'XÃ”MANOS' ? 'XÔMANOS' : team;
+        };
+
+        Promise.all(resultsRaceFiles.map(async file => ({ file, html: await fetch(file).then(response => response.text()) }))).then(pages => {
+            const teams = new Map();
+            const pilotKeys = new Set();
+            let entries = 0;
+            let laps = 0;
+            pages.forEach(({ html }) => {
+                const source = new DOMParser().parseFromString(html, 'text/html');
+                source.querySelectorAll('.acc-table-row').forEach(row => {
+                    const rawName = row.querySelector('.pilot-name')?.textContent.trim();
+                    const position = Number(row.querySelector('.col-pos')?.textContent.trim());
+                    if (!rawName || !position) return;
+                    const pilotKey = resultsPilotKey(rawName);
+                    pilotKeys.add(pilotKey);
+                    entries++;
+                    const directSpans = [...row.children].filter(child => child.tagName === 'SPAN');
+                    laps += Number(directSpans[1]?.textContent.trim()) || 0;
+                    const teamName = resultsTeamFromPilot(rawName);
+                    if (teamName === 'Equipe não informada') return;
+                    const key = resultsTeamKey(teamName);
+                    if (!teams.has(key)) teams.set(key, { name: teamName, pilots: new Set(), entries: 0, wins: 0, podiums: 0 });
+                    const team = teams.get(key);
+                    team.pilots.add(pilotKey);
+                    team.entries++;
+                    team.wins += position === 1 ? 1 : 0;
+                    team.podiums += position <= 3 ? 1 : 0;
+                });
+            });
+            const rankedTeams = [...teams.values()].sort((a, b) => b.wins - a.wins || b.podiums - a.podiums || b.pilots.size - a.pilots.size || b.entries - a.entries || a.name.localeCompare(b.name));
+            const teamColumns = '50px minmax(220px,1fr) 100px 120px 90px 90px';
+            document.getElementById('resultsTeamRanking').innerHTML = `<div class="table-header" style="grid-template-columns:${teamColumns}"><span>Pos</span><span>Equipe</span><span>Pilotos</span><span>Participações</span><span>Vitórias</span><span>Pódios</span></div>` + rankedTeams.map((team, index) => `<div class="table-row" style="grid-template-columns:${teamColumns}"><span class="col-pos ${index < 3 ? ['gold','silver','bronze'][index] : ''}">${index + 1}</span><span style="color:#fff;font-weight:600">${resultsEscape(team.name)}</span><span style="color:var(--gray);font-size:.84rem">${team.pilots.size}</span><span>${team.entries}</span><span class="col-win">${team.wins}</span><span class="col-win">${team.podiums}</span></div>`).join('');
+            document.getElementById('seasonRaces').textContent = resultsRaceFiles.length;
+            document.getElementById('seasonPilots').textContent = pilotKeys.size;
+            document.getElementById('seasonEntries').textContent = entries;
+            document.getElementById('seasonLaps').textContent = laps.toLocaleString('pt-BR');
+            document.querySelectorAll('#ranking-equipes .fade-up, #stats .fade-up').forEach(element => element.classList.add('visible'));
+        }).catch(error => { document.getElementById('resultsTeamRanking').innerHTML = '<div class="table-row" style="display:block;padding:1.5rem;color:var(--yellow)">Não foi possível carregar os resultados. Abra a página por um servidor web.</div>'; console.error(error); });
+    </script>
 
     <footer>
         <div class="footer-inner">
