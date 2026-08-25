@@ -156,16 +156,37 @@
   <div class="section-inner">
     <div class="section-eyebrow fade-up"><div class="section-line"></div><span class="section-eyebrow-text">Últimas</span></div>
     <h2 class="section-h2 fade-up">Notícias & Blog</h2>
-    <div class="grid-3" style="margin-top:2.5rem">
-      <div class="card fade-up"><div style="font-size:.72rem;color:var(--green);font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.75rem">15 Mar 2026 · GT Sprint</div><div class="card-title">Roger Rodrigues vence em Laguna Seca e amplia liderança dos 4Funs</div><div class="card-desc" style="margin-top:.5rem">Em uma corrida muito constante, Roger Rodrigues demonstrou estratégia impecável para cruzar a linha em primeiro.</div><a href="#" class="card-link">Ler mais →</a></div>
-      <div class="card fade-up"><div style="font-size:.72rem;color:var(--yellow);font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.75rem">12 Mar 2026 · Endurance</div><div class="card-title">6h RedBull Ring: apenas 2 vagas restantes — inscreva sua equipe!</div><div class="card-desc" style="margin-top:.5rem">A maior prova da temporada está quase lotada. 14 das 16 vagas já foram preenchidas. Garanta a sua antes de 01/04.</div><a href="equipes.html#cadastro" class="card-link">Inscrever equipe →</a></div>
-      <div class="card fade-up"><div style="font-size:.72rem;color:var(--gray);font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.75rem">10 Mar 2026 · Comunidade</div><div class="card-title">SuperGrid Cup 2026: data e formato oficialmente anunciados</div><div class="card-desc" style="margin-top:.5rem">A grande final será em 14 de junho, no Indianapolis Motor Speedway. 40 pilotos, transmissão ao vivo e narração profissional.</div><a href="#" class="card-link">Ler mais →</a></div>
-      <div class="card fade-up"><div style="font-size:.72rem;color:var(--green);font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.75rem">05 Mar 2026 · 4Fun</div><div class="card-title">"Caos Total no Nordschleife" — o evento mais divertido do ano</div><div class="card-desc" style="margin-top:.5rem">Com 30 pilotos e apenas 4 Disconnects, o 4Fun de março vai ficar na memória por muito tempo.</div><a href="#" class="card-link">Assistir replay →</a></div>
-      <div class="card fade-up"><div style="font-size:.72rem;color:var(--yellow);font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.75rem">01 Mar 2026 · Stock Pro</div><div class="card-title">Marcos Braga assume liderança após drama na última volta em Daytona</div><div class="card-desc" style="margin-top:.5rem">Com o líder anterior tendo um incidente mecânico, Braga aproveitou e cruzou em primeiro — assumindo o topo da tabela.</div><a href="#" class="card-link">Ler mais →</a></div>
-      <div class="card fade-up"><div style="font-size:.72rem;color:var(--gray);font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.75rem">25 Fev 2026 · Comunidade</div><div class="card-title">Júlia Rocha: a primeira mulher a pontuar no GT Sprint da SuperGrid</div><div class="card-desc" style="margin-top:.5rem">Em apenas sua segunda corrida na categoria, Júlia marcou pontos pela primeira vez — e ganhou o respeito de todo o grid.</div><a href="#" class="card-link">Ler mais →</a></div>
-    </div>
+    <div class="grid-3" id="communityNewsGrid" style="margin-top:2.5rem"><div class="card fade-up">Carregando notícias das etapas...</div></div>
   </div>
 </section>
+
+<script>
+  const communityRaceFiles = [
+    'supergrid_4fun_2026_05_04_race_brands.html', 'supergrid_4fun_2026_05_11_race_misano.html',
+    'supergrid_4fun_2026_05_18_race_silverstone.html', 'supergrid_4fun_2026_05_25_race_kyalami.html',
+    'supergrid_4fun_2026_06_01_race_laguna_seca.html', 'supergrid_4fun_2026_06_08_race_barcelona.html',
+    'supergrid_4fun_2026_06_15_race_redbullring.html', 'supergrid_4fun_2026_06_22_race_hungaroring.html',
+    'supergrid_4fun_2026_07_06_race_indianapolis.html', 'supergrid_4fun_2026_07_13_race_oulton.html',
+    'supergrid_4fun_2026_07_20_race_suzuka.html', 'supergrid_4fun_2026_07_27_race_donington.html',
+    'supergrid_4fun_2026_08_03_race_snetterton.html', 'supergrid_4fun_2026_08_10_race_monza.html',
+    'supergrid_4fun_2026_08_17_race_watkins.html', 'supergrid_4fun_2026_08_24_race_nurburgring.html'
+  ];
+  const communityEscape = value => String(value).replace(/[&<>"']/g, character => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[character]));
+  const communityPilot = name => name.replace(/\s*\|.*$|\s*\[[^\]]+\]|\s*\([^\)]+\)$/g, '').replace(/\s+-\s+.*$/, '').trim();
+  Promise.all(communityRaceFiles.map(async file => ({file, html: await fetch(file).then(response => response.text())}))).then(pages => {
+    const news = pages.slice(-6).reverse().map(({file, html}) => {
+      const source = new DOMParser().parseFromString(html, 'text/html');
+      const winner = source.querySelector('.acc-table-row .pilot-name')?.textContent.trim() || 'Vencedor não identificado';
+      const match = file.match(/2026_(\d{2})_(\d{2})_race_([^\.]+)/i);
+      const date = match ? `${match[2]}/${match[1]}/2026` : 'Temporada 2026';
+      const track = match ? match[3].replace(/_/g, ' ') : 'Etapa 4Fun';
+      const title = winner === 'Vencedor não identificado' ? `Resultados do 4Fun em ${track}` : `${communityPilot(winner)} vence no ${track}`;
+      return `<article class="card fade-up"><div style="font-size:.72rem;color:var(--green);font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.75rem">${date} · 4Fun ACC</div><div class="card-title">${communityEscape(title)}</div><div class="card-desc" style="margin-top:.5rem">Resultado oficial da etapa de Assetto Corsa Competizione, com classificação final e dados completos da corrida.</div><a href="${file}" class="card-link">Ver resultado →</a></article>`;
+    }).join('');
+    document.getElementById('communityNewsGrid').innerHTML = news;
+    document.querySelectorAll('#noticias .fade-up').forEach(element => element.classList.add('visible'));
+  }).catch(error => { document.getElementById('communityNewsGrid').innerHTML = '<div class="card">Não foi possível carregar as notícias das etapas.</div>'; console.error(error); });
+</script>
 
 <section class="section section-dark" id="live">
   <div class="section-inner">
