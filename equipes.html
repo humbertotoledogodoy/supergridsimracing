@@ -147,32 +147,78 @@
 <!-- ===================== CONTEÚDO DA PÁGINA ===================== -->
 <section class="page-hero">
   <div class="page-hero-inner">
-    <div class="page-hero-eyebrow"><div class="page-hero-line"></div><span class="page-hero-tag">Temporada 2026</span></div>
-    <h1>Nossas <em>Equipes</em></h1>
-    <p>As equipes são o coração da SuperGridBrasil. Cadastre, compita e construa sua legenda no sim racing brasileiro.</p>
-    <div class="page-hero-stats">
-      <div><div class="stat-num">8</div><div class="stat-label">Equipes ativas</div></div>
-      <div><div class="stat-num">4</div><div class="stat-label">Vagas abertas</div></div>
-      <div><div class="stat-num">50</div><div class="stat-label">Pts líderes de equipes</div></div>
-    </div>
-    <div class="page-hero-actions"><a href="#cadastro" class="btn-primary">Cadastrar minha equipe</a><a href="#ranking" class="btn-outline">Ver ranking</a></div>
+    <div class="page-hero-eyebrow"><div class="page-hero-line"></div><span class="page-hero-tag">4Fun Series · 2026</span></div>
+    <h1>Equipes do <em>Grid</em></h1>
+    <p>Equipes identificadas nos resultados oficiais da temporada de Assetto Corsa Competizione.</p>
+    <div class="page-hero-stats" id="teamStats"><div><div class="stat-num">...</div><div class="stat-label">Carregando equipes</div></div></div>
+    <div class="page-hero-actions"><a href="#ranking" class="btn-primary">Ver ranking</a></div>
   </div>
 </section>
 
-<section class="section" id="ranking1">
+<section class="section" id="ranking">
   <div class="section-inner">
-    <div class="section-eyebrow fade-up visible"><div class="section-line"></div><span class="section-eyebrow-text">Classificação</span></div>
-    <h2 class="section-h2 fade-up visible">Ranking de Equipes — GT Sprint</h2>
-    <div class="data-table fade-up visible" style="margin-top:2rem">
-      <div class="table-header" style="grid-template-columns:50px 1fr 140px 80px 60px 80px"><span>Pos</span><span>Equipe</span><span>Pilotos</span><span>Vitórias</span><span>Pódios</span><span>Pontos</span></div>
-      <div class="table-row" style="grid-template-columns:50px 1fr 140px 80px 60px 80px"><span class="col-pos gold">1</span><span style="color:#fff;font-weight:700;font-family:'Sora',sans-serif">⚡ Speed Factory BR</span><span style="color:var(--gray);font-size:.82rem">R. Moura · A. Ferreira</span><span class="col-win">5</span><span class="col-win">8</span><span class="col-pts">448</span></div>
-      <div class="table-row" style="grid-template-columns:50px 1fr 140px 80px 60px 80px"><span class="col-pos silver">2</span><span style="color:#fff;font-weight:700;font-family:'Sora',sans-serif">🔵 Apex Motorsport</span><span style="color:var(--gray);font-size:.82rem">L. Silva · M. Torres</span><span class="col-win">2</span><span class="col-win">6</span><span class="col-pts">390</span></div>
-      <div class="table-row" style="grid-template-columns:50px 1fr 140px 80px 60px 80px"><span class="col-pos bronze">3</span><span style="color:#fff;font-weight:700;font-family:'Sora',sans-serif">🟡 Team Bravo</span><span style="color:var(--gray);font-size:.82rem">G. Costa · J. Pinto</span><span class="col-win">1</span><span class="col-win">5</span><span class="col-pts">352</span></div>
-      <div class="table-row" style="grid-template-columns:50px 1fr 140px 80px 60px 80px"><span class="col-pos">4</span><span style="color:#fff;font-weight:700;font-family:'Sora',sans-serif">🔴 RaceLab SIM</span><span style="color:var(--gray);font-size:.82rem">F. Oliveira · B. Nunes</span><span class="col-win">1</span><span class="col-win">3</span><span class="col-pts">310</span></div>
-      <div class="table-row" style="grid-template-columns:50px 1fr 140px 80px 60px 80px"><span class="col-pos">5</span><span style="color:#fff;font-weight:700;font-family:'Sora',sans-serif">🟢 Turbo Verde Racing</span><span style="color:var(--gray);font-size:.82rem">T. Cardoso · P. Alves</span><span class="col-win">0</span><span class="col-win">2</span><span class="col-pts">274</span></div>
-    </div>
+    <div class="section-eyebrow fade-up"><div class="section-line"></div><span class="section-eyebrow-text">Temporada 4Fun 2026</span></div>
+    <h2 class="section-h2 fade-up">Ranking de equipes por resultados</h2>
+    <p class="section-desc fade-up" style="margin-top:.75rem">Agregado das corridas publicadas. A fonte não informa pontos oficiais; a ordem considera vitórias, pódios, pilotos distintos e participações.</p>
+    <div id="teamRanking" class="data-table fade-up" style="margin-top:2rem;overflow-x:auto"><div class="table-row" style="display:block;padding:1.5rem">Carregando resultados...</div></div>
   </div>
 </section>
+
+<script>
+  const teamSourceFiles = [
+    'supergrid_4fun_2026_05_04_race_brands.html', 'supergrid_4fun_2026_05_11_race_misano.html',
+    'supergrid_4fun_2026_05_18_race_silverstone.html', 'supergrid_4fun_2026_05_25_race_kyalami.html',
+    'supergrid_4fun_2026_06_01_race_laguna_seca.html', 'supergrid_4fun_2026_06_08_race_barcelona.html',
+    'supergrid_4fun_2026_06_15_race_redbullring.html', 'supergrid_4fun_2026_06_22_race_hungaroring.html',
+    'supergrid_4fun_2026_07_06_race_indianapolis.html', 'supergrid_4fun_2026_07_13_race_oulton.html',
+    'supergrid_4fun_2026_07_20_race_suzuka.html', 'supergrid_4fun_2026_07_27_race_donington.html',
+    'supergrid_4fun_2026_08_03_race_snetterton.html', 'supergrid_4fun_2026_08_10_race_monza.html',
+    'supergrid_4fun_2026_08_17_race_watkins.html', 'supergrid_4fun_2026_08_24_race_nurburgring.html'
+  ];
+
+  const escapeTeamHtml = value => String(value).replace(/[&<>"']/g, character => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[character]));
+  const teamFromPilot = name => {
+    const match = name.match(/\|\s*([^|]+)$/) || name.match(/\[([^\]]+)\]/) || name.match(/\s+-\s+([^\-]+)$/);
+    if (!match) return 'Sem equipe informada';
+    const team = match[1].trim().replace(/\s+/g, ' ');
+    const normalized = team.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toUpperCase();
+    if (normalized === 'SUPERGRIDBRASIL') return 'SUPERGRID';
+    return team === 'XÃ”MANOS' ? 'XÔMANOS' : team;
+  };
+  const teamKey = team => team.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+
+  async function loadTeamData() {
+    const teams = new Map();
+    const responses = await Promise.all(teamSourceFiles.map(async file => ({file, html: await fetch(file).then(response => response.text())})));
+    responses.forEach(({file, html}) => {
+      const documentData = new DOMParser().parseFromString(html, 'text/html');
+      [...documentData.querySelectorAll('.acc-table-row')].forEach(row => {
+        const pilotName = row.querySelector('.pilot-name')?.textContent.trim();
+        const position = Number(row.querySelector('.col-pos')?.textContent.trim());
+        if (!pilotName || !position) return;
+        const name = teamFromPilot(pilotName);
+        const key = teamKey(name);
+        if (!teams.has(key)) teams.set(key, {name, pilots: new Set(), races: 0, wins: 0, podiums: 0});
+        const team = teams.get(key);
+        team.pilots.add(pilotName);
+        team.races++;
+        team.wins += position === 1 ? 1 : 0;
+        team.podiums += position <= 3 ? 1 : 0;
+      });
+    });
+    return [...teams.values()].sort((a, b) => b.wins - a.wins || b.podiums - a.podiums || b.pilots.size - a.pilots.size || b.races - a.races || a.name.localeCompare(b.name));
+  }
+
+  function renderTeams(teams) {
+    const namedTeams = teams.filter(team => team.name !== 'Sem equipe informada');
+    document.getElementById('teamStats').innerHTML = `<div><div class="stat-num">${namedTeams.length}</div><div class="stat-label">Equipes identificadas</div></div><div><div class="stat-num">${teamSourceFiles.length}</div><div class="stat-label">Corridas analisadas</div></div><div><div class="stat-num">${namedTeams.reduce((sum, team) => sum + team.pilots.size, 0)}</div><div class="stat-label">Vínculos de pilotos</div></div>`;
+    const columns = '50px minmax(220px,1fr) 120px 100px 90px 110px';
+    document.getElementById('teamRanking').innerHTML = `<div class="table-header" style="grid-template-columns:${columns}"><span>Pos</span><span>Equipe</span><span>Pilotos</span><span>Participações</span><span>Vitórias</span><span>Pódios</span></div>` + namedTeams.map((team, index) => `<div class="table-row" style="grid-template-columns:${columns}"><span class="col-pos ${index < 3 ? ['gold','silver','bronze'][index] : ''}">${index + 1}</span><span style="color:#fff;font-weight:700;font-family:'Sora',sans-serif">${escapeTeamHtml(team.name)}</span><span style="color:var(--gray);font-size:.82rem">${team.pilots.size}</span><span>${team.races}</span><span class="col-win">${team.wins}</span><span class="col-win">${team.podiums}</span></div>`).join('');
+    document.querySelectorAll('.fade-up').forEach(element => element.classList.add('visible'));
+  }
+
+  loadTeamData().then(renderTeams).catch(error => { document.getElementById('teamRanking').innerHTML = '<div class="table-row" style="display:block;padding:1.5rem;color:var(--yellow)">Não foi possível carregar os arquivos de resultados. Abra a página por um servidor web.</div>'; console.error(error); });
+</script>
 
 <!-- <section class="section section-dark" id="lista-equipes"> -->
   <!-- <div class="section-inner"> -->
@@ -192,11 +238,11 @@
 <section class="section section-dark" id="regulamento">
   <div class="section-inner">
     <div class="section-eyebrow fade-up"><div class="section-line"></div><span class="section-eyebrow-text">Regras</span></div>
-    <h2 class="section-h2 fade-up">Regulamento de Equipes</h2>
+    <h2 class="section-h2 fade-up">Informações sobre as equipes</h2>
     <div class="grid-3" style="margin-top:2.5rem">
-      <div class="card fade-up"><div class="card-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div><div class="card-title">Composição</div><div class="card-desc">Mínimo 2 pilotos, máximo 4 por equipe. Pelo menos 1 piloto deve ter SR mínimo B. Capitão responsável pela inscrição.</div></div>
-      <div class="card fade-up"><div class="card-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div class="card-title">Identidade Visual</div><div class="card-desc">Cada equipe deve enviar logotipo e cores para aprovação. Livery personalizada disponível para equipes cadastradas.</div></div>
-      <div class="card fade-up"><div class="card-icon"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18"/></svg></div><div class="card-title">Pontuação de Equipes</div><div class="card-desc">Soma dos pontos dos dois melhores pilotos de cada equipe por etapa. Bônus de +10 pts se ambos terminarem no Top 5.</div></div>
+      <div class="card fade-up"><div class="card-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div><div class="card-title">Identificação</div><div class="card-desc">As equipes são identificadas pelo nome informado no nick do piloto nos resultados publicados do Assetto Corsa Competizione.</div></div>
+      <div class="card fade-up"><div class="card-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div class="card-title">Variações de nome</div><div class="card-desc">Variações reconhecíveis do mesmo nome são agrupadas quando possível. Pilotos sem equipe no nick aparecem como “Sem equipe informada”.</div></div>
+      <div class="card fade-up"><div class="card-icon"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18"/></svg></div><div class="card-title">Critério do ranking</div><div class="card-desc">A ordem usa vitórias, pódios, pilotos distintos e participações em corridas. Os arquivos não fornecem pontuação oficial de equipes.</div></div>
     </div>
   </div>
 </section>
