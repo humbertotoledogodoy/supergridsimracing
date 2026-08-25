@@ -632,24 +632,65 @@
     </div>
     <div class="hero-stats-row">
       <div>
-        <div class="hero-stat-val">30<span>+</span></div>
+                <div class="hero-stat-val" id="homePilotCount">...</div>
         <div class="hero-stat-lbl">Pilotos participantes</div>
       </div>
       <div>
-        <div class="hero-stat-val">5<span>+</span></div>
+                <div class="hero-stat-val" id="homeRaceCount">...</div>
         <div class="hero-stat-lbl">4Fun Realizados</div>
       </div>
       <div>
-        <div class="hero-stat-val">2 <span>k</span></div>
+                <div class="hero-stat-val" id="homeLapCount">...</div>
         <div class="hero-stat-lbl">Voltas completadas</div>
       </div>
       <div>
-        <div class="hero-stat-val">90<span>%</span></div>
+                <div class="hero-stat-val" id="homeFinishRate">...</div>
         <div class="hero-stat-lbl">Taxa de finalização</div>
       </div>
     </div>
   </div>
 </section>
+
+<script>
+    const homeRaceFiles = [
+        'supergrid_4fun_2026_05_04_race_brands.html', 'supergrid_4fun_2026_05_11_race_misano.html',
+        'supergrid_4fun_2026_05_18_race_silverstone.html', 'supergrid_4fun_2026_05_25_race_kyalami.html',
+        'supergrid_4fun_2026_06_01_race_laguna_seca.html', 'supergrid_4fun_2026_06_08_race_barcelona.html',
+        'supergrid_4fun_2026_06_15_race_redbullring.html', 'supergrid_4fun_2026_06_22_race_hungaroring.html',
+        'supergrid_4fun_2026_07_06_race_indianapolis.html', 'supergrid_4fun_2026_07_13_race_oulton.html',
+        'supergrid_4fun_2026_07_20_race_suzuka.html', 'supergrid_4fun_2026_07_27_race_donington.html',
+        'supergrid_4fun_2026_08_03_race_snetterton.html', 'supergrid_4fun_2026_08_10_race_monza.html',
+        'supergrid_4fun_2026_08_17_race_watkins.html', 'supergrid_4fun_2026_08_24_race_nurburgring.html'
+    ];
+    const homePilotName = name => name.replace(/\s*\|.*$|\s*\[[^\]]+\]|\s*\([^\)]+\)$/g, '').replace(/\s+-\s+.*$/, '').trim();
+    const homePilotKey = name => { const normalized = homePilotName(name).normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim(); return normalized === 'humberto godoy supergrid' ? 'humberto godoy' : normalized; };
+    const homeSummaryValue = (html, label) => Number((html.match(new RegExp(label + '[\\s\\S]{0,260}?<span[^>]*>(\\d+)</span>', 'i')) || [])[1]) || 0;
+
+    Promise.all(homeRaceFiles.map(async file => ({ html: await fetch(file).then(response => response.text()) }))).then(pages => {
+        const pilots = new Set();
+        let laps = 0;
+        let starters = 0;
+        let finishers = 0;
+        pages.forEach(({ html }) => {
+            const source = new DOMParser().parseFromString(html, 'text/html');
+            const rows = [...source.querySelectorAll('.acc-table-row')];
+            rows.forEach(row => {
+                const rawName = row.querySelector('.pilot-name')?.textContent.trim();
+                if (rawName) pilots.add(homePilotKey(rawName));
+                const directSpans = [...row.children].filter(child => child.tagName === 'SPAN');
+                laps += Number(directSpans[1]?.textContent.trim()) || 0;
+            });
+            const parsedStarters = homeSummaryValue(html, 'Pilotos largantes');
+            const parsedFinishers = homeSummaryValue(html, 'Finalizaram');
+            starters += parsedStarters || rows.length;
+            finishers += parsedFinishers || rows.length;
+        });
+        document.getElementById('homePilotCount').textContent = pilots.size;
+        document.getElementById('homeRaceCount').textContent = homeRaceFiles.length;
+        document.getElementById('homeLapCount').textContent = laps.toLocaleString('pt-BR');
+        document.getElementById('homeFinishRate').textContent = starters ? `${Math.round((finishers / starters) * 100)}%` : '-';
+    }).catch(error => { ['homePilotCount', 'homeRaceCount', 'homeLapCount', 'homeFinishRate'].forEach(id => { document.getElementById(id).textContent = '-'; }); console.error(error); });
+</script>
 
 
 
