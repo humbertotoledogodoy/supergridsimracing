@@ -147,14 +147,38 @@
 <!-- ===================== CONTEÚDO DA PÁGINA ===================== -->
 <section class="page-hero">
   <div class="page-hero-inner">
-    <div class="page-hero-eyebrow"><div class="page-hero-line"></div><span class="page-hero-tag">Temporada 2026</span></div>
-    <h1>Nossos <em>Pilotos</em></h1>
-    <p>Conheça o grid da SuperGridBrasil. Rankings, perfis, Safety Rating e as estrelas de cada categoria.</p>
-    <div class="page-hero-stats">
-      <div><div class="stat-num">120<span>+</span></div><div class="stat-label">Pilotos ativos</div></div>
-      <div><div class="stat-num">2<span>k+</span></div><div class="stat-label">SA médio</div></div>
-      <div><div class="stat-num">A</div><div class="stat-label">SR médio do grid</div></div>
-      <div><div class="stat-num">18</div><div class="stat-label">Rookies na temporada</div></div>
+    <div class="page-hero-eyebrow"><div class="page-hero-line"></div><span class="page-hero-tag">4Fun Series · 2026</span></div>
+    <h1>Grid de <em>Pilotos</em></h1>
+    <p>Dados calculados diretamente dos resultados oficiais de qualificação e corrida da temporada 4Fun.</p>
+    <div class="page-hero-stats" id="pilotStats"><div><div class="stat-num">...</div><div class="stat-label">Carregando grid</div></div></div>
+  </div>
+</section>
+
+<section class="section section-dark" id="ranking">
+  <div class="section-inner">
+    <div class="section-eyebrow fade-up"><div class="section-line"></div><span class="section-eyebrow-text">Temporada 4Fun 2026</span></div>
+    <h2 class="section-h2 fade-up">Ranking por resultados</h2>
+    <p class="section-desc fade-up" style="margin-top:.75rem">Ordem por vitórias, pódios, melhor posição e presenças. Os arquivos não publicam pontos, SR ou SA.</p>
+    <div id="pilotRanking" class="data-table fade-up" style="margin-top:2rem;overflow-x:auto"><div class="table-row" style="display:block;padding:1.5rem">Carregando resultados...</div></div>
+  </div>
+</section>
+
+<section class="section" id="perfis">
+  <div class="section-inner">
+    <div class="section-eyebrow fade-up"><div class="section-line"></div><span class="section-eyebrow-text">Perfis</span></div>
+    <h2 class="section-h2 fade-up">Pilotos mais presentes</h2>
+    <p class="section-desc fade-up" style="margin-top:.75rem">Resumo dos pilotos com mais participações nas corridas disponíveis.</p>
+    <div id="pilotProfiles" class="grid-4" style="margin-top:2.5rem"><div class="card">Carregando perfis...</div></div>
+  </div>
+</section>
+
+<section class="section section-dark" id="sr">
+  <div class="section-inner">
+    <div class="section-eyebrow fade-up"><div class="section-line"></div><span class="section-eyebrow-text">ACC · Dados de segurança</span></div>
+    <h2 class="section-h2 fade-up">Safety Rating e Safety Awareness</h2>
+    <div class="card fade-up" style="margin-top:2rem;max-width:760px">
+      <div class="card-title" style="margin-bottom:.75rem">Dados não presentes nas fontes</div>
+      <p style="color:var(--gray);line-height:1.7;font-size:.9rem">Os arquivos de resultados fornecem posição, piloto, carro, voltas, melhor volta e tempo total. Eles não trazem SR, SA, licença ou incidentes detalhados por piloto. Por isso, esta página não exibe valores estimados.</p>
     </div>
   </div>
 </section>
@@ -162,104 +186,94 @@
 <section class="section" id="mes">
   <div class="section-inner">
     <div class="section-eyebrow fade-up"><div class="section-line"></div><span class="section-eyebrow-text">Destaque</span></div>
-    <h2 class="section-h2 fade-up">Piloto do Mês — Maio 2026</h2>
-    <div class="grid-2" style="margin-top:2.5rem;align-items:start">
-      <div class="card fade-up" style="text-align:center;padding:2.5rem">
-        <div class="pilot-avatar-lg" style="width:80px;height:80px;font-size:1.5rem;background:var(--yellow)">RM</div>
-        <div style="font-family:'Sora',sans-serif;font-size:1.5rem;font-weight:800;color:#fff;margin-bottom:.25rem">Rafael Moura</div>
-        <div style="color:var(--gray);font-size:.88rem;margin-bottom:1.25rem">Speed Factory BR</div>
-        <div style="display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;margin-bottom:1.5rem">
-          <span class="badge badge-yellow">GT 4Fun Líder</span>
-          <span class="badge badge-green">SR: A 4.81</span>
-          <span class="badge badge-blue">SA: 3.241</span>
-        </div>
-        <p style="font-size:.88rem;color:var(--gray);line-height:1.65">"Corrida perfeita em Spa. Saiu do pit na frente após estratégia brilhante — ganhou 4s no undercut."</p>
-        <div style="display:flex;justify-content:center;gap:2.5rem;margin-top:1.5rem;padding-top:1.25rem;border-top:1px solid var(--border)">
-          <div><div class="pilot-stat-val">4</div><div class="pilot-stat-lbl">Vitórias</div></div>
-          <div><div class="pilot-stat-val">6</div><div class="pilot-stat-lbl">Pódios</div></div>
-          <div><div class="pilot-stat-val">312</div><div class="pilot-stat-lbl">Pontos</div></div>
-        </div>
-      </div>
-      <div style="display:flex;flex-direction:column;gap:1rem">
-        <div class="card fade-up"><div class="card-title" style="margin-bottom:1rem">📊 Estatísticas da Temporada</div>
-          <div style="display:flex;flex-direction:column;gap:.5rem;font-size:.85rem">
-            <div><div class="progress-label"><span style="color:var(--gray)">Vitórias</span><span style="color:var(--green)">4/6 corridas (67%)</span></div><div class="progress-bar"><div class="progress-fill" style="width:67%"></div></div></div>
-            <div><div class="progress-label"><span style="color:var(--gray)">Pódios</span><span style="color:#fff">6/6 corridas (100%)</span></div><div class="progress-bar"><div class="progress-fill" style="width:100%"></div></div></div>
-            <div><div class="progress-label"><span style="color:var(--gray)">Poles</span><span style="color:#fff">3/6 qualifyings</span></div><div class="progress-bar"><div class="progress-fill" style="width:50%"></div></div></div>
-            <div><div class="progress-label"><span style="color:var(--gray)">Voltas rápidas</span><span style="color:#fff">2/6 corridas</span></div><div class="progress-bar"><div class="progress-fill" style="width:33%"></div></div></div>
-          </div>
-        </div>
-        <div class="card fade-up"><div class="card-title" style="margin-bottom:.75rem">🏆 Conquistas</div><div style="display:flex;flex-direction:column;gap:.5rem"><span class="badge badge-yellow" style="display:inline-block;width:fit-content">🥇 Vencedor Etapa 1 — Spa</span><span class="badge badge-green" style="display:inline-block;width:fit-content">⚡ Volta Rápida — Barcelona</span><span class="badge badge-blue" style="display:inline-block;width:fit-content">🏁 Hat-trick Etapas 3,4,5</span></div></div>
-      </div>
-    </div>
+    <h2 class="section-h2 fade-up">Última corrida publicada</h2>
+    <div id="latestRace" class="card fade-up" style="margin-top:2rem;max-width:760px">Carregando etapa mais recente...</div>
   </div>
 </section>
 
-<section class="section section-dark" id="ranking">
-  <div class="section-inner">
-    <div class="section-eyebrow fade-up"><div class="section-line"></div><span class="section-eyebrow-text">Classificação</span></div>
-    <h2 class="section-h2 fade-up">Ranking Geral — Todas as Categorias</h2>
-    <div class="data-table fade-up" style="margin-top:2rem">
-      <div class="table-header" style="grid-template-columns:50px 1fr 120px 80px 80px 70px"><span>Pos</span><span>Piloto</span><span>Categoria</span><span>SR</span><span>SA</span><span>Pontos</span></div>
-      <div class="table-row" style="grid-template-columns:50px 1fr 120px 80px 80px 70px"><span class="col-pos gold">1</span><div class="pilot-cell"><div class="avatar" style="background:var(--yellow)">RM</div><div><div class="pilot-name">Rafael Moura</div><div class="pilot-sub">Speed Factory BR</div></div></div><span><span class="badge badge-green">GT Sprint</span></span><span style="color:var(--green);font-weight:700">A 4.81</span><span style="color:#fff">3.241</span><span class="col-pts">312</span></div>
-      <div class="table-row" style="grid-template-columns:50px 1fr 120px 80px 80px 70px"><span class="col-pos silver">2</span><div class="pilot-cell"><div class="avatar" style="background:#6BA3FF">LS</div><div><div class="pilot-name">Lucas Silva</div><div class="pilot-sub">Apex Motorsport</div></div></div><span><span class="badge badge-green">GT Sprint</span></span><span style="color:var(--green);font-weight:700">A 4.12</span><span style="color:#fff">2.890</span><span class="col-pts">287</span></div>
-      <div class="table-row" style="grid-template-columns:50px 1fr 120px 80px 80px 70px"><span class="col-pos bronze">3</span><div class="pilot-cell"><div class="avatar" style="background:#CD7F32">MB</div><div><div class="pilot-name">Marcos Braga</div><div class="pilot-sub">BR Racing</div></div></div><span><span class="badge badge-blue">Stock Pro</span></span><span style="color:var(--green);font-weight:700">B 3.90</span><span style="color:#fff">2.211</span><span class="col-pts">348</span></div>
-      <div class="table-row" style="grid-template-columns:50px 1fr 120px 80px 80px 70px"><span class="col-pos">4</span><div class="pilot-cell"><div class="avatar" style="background:#555">GC</div><div><div class="pilot-name">Gabriel Costa</div><div class="pilot-sub">Team Bravo</div></div></div><span><span class="badge badge-green">GT Sprint</span></span><span style="color:var(--green);font-weight:700">A 3.75</span><span style="color:#fff">2.650</span><span class="col-pts">261</span></div>
-      <div class="table-row" style="grid-template-columns:50px 1fr 120px 80px 80px 70px"><span class="col-pos">5</span><div class="pilot-cell"><div class="avatar" style="background:#555">CL</div><div><div class="pilot-name">Carlos Lima</div><div class="pilot-sub">Free Agent</div></div></div><span><span class="badge badge-yellow">GT Sprint</span></span><span style="color:var(--green);font-weight:700">A 4.02</span><span style="color:#fff">2.780</span><span class="col-pts">290</span></div>
-    </div>
-  </div>
-</section>
+<section class="section" id="rookies" style="padding-top:0"><div class="section-inner"><p class="section-desc">Fonte: arquivos de resultados 4Fun 2026 publicados no site. A lista é atualizada quando novos arquivos são adicionados à página.</p></div></section>
 
-<section class="section" id="perfis">
-  <div class="section-inner">
-    <div class="section-eyebrow fade-up"><div class="section-line"></div><span class="section-eyebrow-text">Grid</span></div>
-    <h2 class="section-h2 fade-up">Pilotos em Destaque</h2>
-    <div class="grid-4" style="margin-top:2.5rem">
-      <div class="pilot-card fade-up"><div class="pilot-avatar-lg" style="background:var(--yellow)">RM</div><div class="pilot-nm">Rafael Moura</div><div class="pilot-tm">Speed Factory BR</div><div class="pilot-stats"><div><div class="pilot-stat-val">4</div><div class="pilot-stat-lbl">Vitórias</div></div><div><div class="pilot-stat-val">312</div><div class="pilot-stat-lbl">Pontos</div></div></div></div>
-      <div class="pilot-card fade-up"><div class="pilot-avatar-lg" style="background:#6BA3FF">LS</div><div class="pilot-nm">Lucas Silva</div><div class="pilot-tm">Apex Motorsport</div><div class="pilot-stats"><div><div class="pilot-stat-val">2</div><div class="pilot-stat-lbl">Vitórias</div></div><div><div class="pilot-stat-val">287</div><div class="pilot-stat-lbl">Pontos</div></div></div></div>
-      <div class="pilot-card fade-up"><div class="pilot-avatar-lg" style="background:#CD7F32">MB</div><div class="pilot-nm">Marcos Braga</div><div class="pilot-tm">BR Racing</div><div class="pilot-stats"><div><div class="pilot-stat-val">3</div><div class="pilot-stat-lbl">Vitórias</div></div><div><div class="pilot-stat-val">348</div><div class="pilot-stat-lbl">Pontos</div></div></div></div>
-      <div class="pilot-card fade-up"><div class="pilot-avatar-lg" style="background:var(--green)">CL</div><div class="pilot-nm">Carlos Lima</div><div class="pilot-tm">Free Agent</div><div class="pilot-stats"><div><div class="pilot-stat-val">2</div><div class="pilot-stat-lbl">Vitórias</div></div><div><div class="pilot-stat-val">290</div><div class="pilot-stat-lbl">Pontos</div></div></div></div>
-    </div>
-  </div>
-</section>
+<script>
+  const pilotSourceFiles = [
+    'supergrid_4fun_2026_05_04_qualy_brands.html', 'supergrid_4fun_2026_05_04_race_brands.html',
+    'supergrid_4fun_2026_05_11_qualy_misano.html', 'supergrid_4fun_2026_05_11_race_misano.html',
+    'supergrid_4fun_2026_05_18_qualy_silverstone.html', 'supergrid_4fun_2026_05_18_race_silverstone.html',
+    'supergrid_4fun_2026_05_25_qualy_kyalami.html', 'supergrid_4fun_2026_05_25_race_kyalami.html',
+    'supergrid_4fun_2026_06_01_qualy_laguna_seca.html', 'supergrid_4fun_2026_06_01_race_laguna_seca.html',
+    'supergrid_4fun_2026_06_08_qualy_barcelona.html', 'supergrid_4fun_2026_06_08_race_barcelona.html',
+    'supergrid_4fun_2026_06_15_qualy_redbullring.html', 'supergrid_4fun_2026_06_15_race_redbullring.html',
+    'supergrid_4fun_2026_06_22_qualy_hungaroring.html', 'supergrid_4fun_2026_06_22_race_hungaroring.html',
+    'supergrid_4fun_2026_07_06_qualy_indianapolis.html', 'supergrid_4fun_2026_07_06_race_indianapolis.html',
+    'supergrid_4fun_2026_07_13_qualy_oulton.html', 'supergrid_4fun_2026_07_13_race_oulton.html',
+    'supergrid_4fun_2026_07_20_qualy_suzuka.html', 'supergrid_4fun_2026_07_20_race_suzuka.html',
+    'supergrid_4fun_2026_07_27_qualy_donington.html', 'supergrid_4fun_2026_07_27_race_donington.html',
+    'supergrid_4fun_2026_08_03_qualy_snetterton.html', 'supergrid_4fun_2026_08_03_race_snetterton.html',
+    'supergrid_4fun_2026_08_10_qualy_monza.html', 'supergrid_4fun_2026_08_10_race_monza.html',
+    'supergrid_4fun_2026_08_17_qualy_watkins.html', 'supergrid_4fun_2026_08_17_race_watkins.html',
+    'supergrid_4fun_2026_08_24_qualy_nurburgring.html', 'supergrid_4fun_2026_08_24_race_nurburgring.html'
+  ];
 
-<section class="section section-dark" id="sr">
-  <div class="section-inner">
-    <div class="section-eyebrow fade-up"><div class="section-line"></div><span class="section-eyebrow-text">Licença</span></div>
-    <h2 class="section-h2 fade-up">Safety Rating — Guia de Licenças</h2>
-    <div class="grid-2" style="margin-top:2.5rem">
-      <div class="card fade-up"><div class="card-title" style="margin-bottom:1rem">Níveis de Licença</div>
-        <div style="display:flex;flex-direction:column;gap:.6rem;font-size:.85rem">
-          <div style="display:flex;align-items:center;justify-content:space-between;padding:.5rem .75rem;background:rgba(0,196,90,.08);border-radius:8px;border:1px solid rgba(0,196,90,.2)"><span style="color:var(--green);font-weight:700">Classe A · 4.0+</span><span style="color:#fff">GT Sprint Pro, Endurance Pro</span></div>
-          <div style="display:flex;align-items:center;justify-content:space-between;padding:.5rem .75rem;background:rgba(107,163,255,.08);border-radius:8px;border:1px solid rgba(107,163,255,.2)"><span style="color:#6BA3FF;font-weight:700">Classe B · 3.0+</span><span style="color:#fff">Pro-AM, Endurance Pro-AM</span></div>
-          <div style="display:flex;align-items:center;justify-content:space-between;padding:.5rem .75rem;background:rgba(245,196,0,.08);border-radius:8px;border:1px solid rgba(245,196,0,.2)"><span style="color:var(--yellow);font-weight:700">Classe C · 2.0+</span><span style="color:#fff">4Fun Series - Semanal</span></div>
-          <div style="display:flex;align-items:center;justify-content:space-between;padding:.5rem .75rem;background:rgba(255,255,255,.04);border-radius:8px;border:1px solid var(--border)"><span style="color:var(--gray);font-weight:700">Classe D · 2.0+</span><span style="color:#fff">4Fun para novatos · sem requisito</span></div>
-        </div>
-      </div>
-      <div class="card fade-up"><div class="card-title" style="margin-bottom:1rem">Distribuição do Grid</div>
-        <div style="display:flex;flex-direction:column;gap:.75rem">
-          <div><div class="progress-label"><span style="color:var(--green)">Classe A</span><span style="color:#fff">12 pilotos</span></div><div class="progress-bar"><div class="progress-fill" style="width:50%"></div></div></div>
-          <div><div class="progress-label"><span style="color:#6BA3FF">Classe B</span><span style="color:#fff">16 pilotos</span></div><div class="progress-bar"><div class="progress-fill" style="width:60%;background:linear-gradient(90deg,#6BA3FF,#8DC0FF)"></div></div></div>
-          <div><div class="progress-label"><span style="color:var(--yellow)">Classe C</span><span style="color:#fff">18 pilotos</span></div><div class="progress-bar"><div class="progress-fill" style="width:68%;background:linear-gradient(90deg,var(--yellow),var(--accent2))"></div></div></div>
-          <div><div class="progress-label"><span style="color:var(--gray)">Rookies</span><span style="color:#fff">8 pilotos</span></div><div class="progress-bar"><div class="progress-fill" style="width:39%;background:rgba(255,255,255,.3)"></div></div></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+  const escapeHtml = value => String(value).replace(/[&<>"']/g, character => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[character]));
+  const sourceName = name => name.replace(/\s*\|.*$|\s*\[[^\]]+\]|\s*\([^\)]+\)$/g, '').replace(/\s+-\s+.*$/, '').trim();
+  const sourceTeam = name => (name.match(/\|\s*([^|]+)$/) || name.match(/\[([^\]]+)\]/) || name.match(/\(([^\)]+)\)$/) || [])[1] || 'Equipe não informada';
+  const keyName = name => {
+    const normalizedName = sourceName(name).normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+    return normalizedName === 'humberto godoy' || normalizedName === 'humberto godoy supergrid' ? 'humberto godoy' : normalizedName;
+  };
+  const initials = name => sourceName(name).split(/\s+/).filter(Boolean).slice(0, 2).map(part => part[0]).join('').toUpperCase();
+  const raceLabel = file => file.match(/2026_(\d{2})_(\d{2})_race_([^\.]+)/i);
 
-<section class="section" id="rookies">
-  <div class="section-inner">
-    <div class="section-eyebrow fade-up"><div class="section-line"></div><span class="section-eyebrow-text">Revelações</span></div>
-    <h2 class="section-h2 fade-up">Pilotos da Temporada 4Fun 2026</h2>
-    <div class="grid-4" style="margin-top:2.5rem">
-      <div class="pilot-card fade-up"><div class="pilot-avatar-lg" style="background:#7C3AED">RR</div><div class="pilot-nm">Renan Rangel</div><div class="pilot-tm">ZR3</div><div class="pilot-stats"><div><div class="pilot-stat-val">1</div><div class="pilot-stat-lbl">Vitória</div></div><div><div class="pilot-stat-val">SR B</div><div class="pilot-stat-lbl">Licença</div></div></div></div>
-      <div class="pilot-card fade-up"><div class="pilot-avatar-lg" style="background:#0EA5E9">JR</div><div class="pilot-nm">Júlia Rocha</div><div class="pilot-tm">Simgirls BR</div><div class="pilot-stats"><div><div class="pilot-stat-val">0</div><div class="pilot-stat-lbl">Vitórias</div></div><div><div class="pilot-stat-val">0 pódios</div><div class="pilot-stat-lbl">4Fun</div></div></div></div>
-      <div class="pilot-card fade-up"><div class="pilot-avatar-lg" style="background:#F59E0B">PB</div><div class="pilot-nm">Luciano Malagola</div><div class="pilot-tm">MAV</div><div class="pilot-stats"><div><div class="pilot-stat-val">2</div><div class="pilot-stat-lbl">Pódios</div></div><div><div class="pilot-stat-val">SR C+</div><div class="pilot-stat-lbl">Licença</div></div></div></div>
-      <div class="pilot-card fade-up"><div class="pilot-avatar-lg" style="background:#EF4444">MS</div><div class="pilot-nm">Diego Brocca</div><div class="pilot-tm">BRV</div><div class="pilot-stats"><div><div class="pilot-stat-val">0</div><div class="pilot-stat-lbl">Vitórias</div></div><div><div class="pilot-stat-val">Top 5</div><div class="pilot-stat-lbl">Estreia</div></div></div></div>
-    </div>
-  </div>
-</section>
+  async function loadPilotData() {
+    const responses = await Promise.all(pilotSourceFiles.map(async file => ({file, html: await fetch(file).then(response => response.text())})));
+    const pilots = new Map();
+    const races = [];
+    responses.forEach(({file, html}) => {
+      const documentData = new DOMParser().parseFromString(html, 'text/html');
+      const isRace = file.includes('_race_');
+      const rows = [...documentData.querySelectorAll('.acc-table-row')];
+      if (isRace) races.push({file, rows});
+      rows.forEach(row => {
+        const rawName = row.querySelector('.pilot-name')?.textContent.trim();
+        const position = Number(row.querySelector('.col-pos')?.textContent.trim());
+        if (!rawName || !position) return;
+        const key = keyName(rawName);
+        if (!pilots.has(key)) pilots.set(key, {name: sourceName(rawName), team: sourceTeam(rawName), starts: 0, qualys: 0, wins: 0, podiums: 0, best: Infinity, cars: new Set(), results: []});
+        const pilot = pilots.get(key);
+        pilot.name = pilot.name.length >= sourceName(rawName).length ? pilot.name : sourceName(rawName);
+        if (sourceTeam(rawName) !== 'Equipe não informada') pilot.team = sourceTeam(rawName);
+        const car = row.querySelector('.badge-car')?.textContent.trim();
+        if (car) pilot.cars.add(car);
+        if (isRace) { pilot.starts++; pilot.wins += position === 1 ? 1 : 0; pilot.podiums += position <= 3 ? 1 : 0; pilot.best = Math.min(pilot.best, position); }
+        else pilot.qualys++;
+        pilot.results.push({file, position, isRace});
+      });
+    });
+    const humberto = pilots.get('humberto godoy');
+    if (humberto) {
+      humberto.name = 'Humberto Godoy';
+      humberto.team = 'SUPERGRID';
+      humberto.starts = races.length;
+    }
+    return {pilots: [...pilots.values()], races};
+  }
+
+  function renderPilotPage({pilots, races}) {
+    const ranked = pilots.sort((a, b) => b.wins - a.wins || b.podiums - a.podiums || a.best - b.best || b.starts - a.starts || a.name.localeCompare(b.name));
+    const raceCount = races.length;
+    document.getElementById('pilotStats').innerHTML = `<div><div class="stat-num">${ranked.length}</div><div class="stat-label">Pilotos identificados</div></div><div><div class="stat-num">${raceCount}</div><div class="stat-label">Corridas publicadas</div></div><div><div class="stat-num">${ranked.reduce((sum, pilot) => sum + pilot.starts, 0)}</div><div class="stat-label">Participações</div></div><div><div class="stat-num">${ranked.filter(pilot => pilot.starts === 1).length}</div><div class="stat-label">Uma participação</div></div>`;
+    const columns = '50px minmax(220px,1fr) 110px 90px 90px 100px 110px';
+    document.getElementById('pilotRanking').innerHTML = `<div class="table-header" style="grid-template-columns:${columns}"><span>Pos</span><span>Piloto</span><span>Corridas</span><span>Vitórias</span><span>Pódios</span><span>Melhor</span><span>Último carro</span></div>` + ranked.map((pilot, index) => `<div class="table-row" style="grid-template-columns:${columns}"><span class="col-pos ${index < 3 ? ['gold','silver','bronze'][index] : ''}">${index + 1}</span><div class="pilot-cell"><div class="avatar" style="background:${['var(--green)','var(--yellow)','#6BA3FF','#CD7F32'][index % 4]}">${escapeHtml(initials(pilot.name))}</div><div><div class="pilot-name">${escapeHtml(pilot.name)}</div><div class="pilot-sub">${escapeHtml(pilot.team)} · ${pilot.qualys} qualy</div></div></div><span>${pilot.starts}</span><span style="color:var(--yellow);font-weight:700">${pilot.wins}</span><span>${pilot.podiums}</span><span>${pilot.best === Infinity ? '-' : `${pilot.best}º`}</span><span style="color:var(--gray)">${escapeHtml([...pilot.cars].pop() || '-')}</span></div>`).join('');
+    const mostPresent = [...ranked].sort((a, b) => b.starts - a.starts || b.podiums - a.podiums || b.wins - a.wins || a.name.localeCompare(b.name));
+    document.getElementById('pilotProfiles').innerHTML = mostPresent.slice(0, 8).map(pilot => `<div class="pilot-card fade-up"><div class="pilot-avatar-lg" style="background:var(--green)">${escapeHtml(initials(pilot.name))}</div><div class="pilot-nm">${escapeHtml(pilot.name)}</div><div class="pilot-tm">${escapeHtml(pilot.team)}</div><div class="pilot-stats"><div><div class="pilot-stat-val">${pilot.starts}</div><div class="pilot-stat-lbl">Corridas</div></div><div><div class="pilot-stat-val">${pilot.podiums}</div><div class="pilot-stat-lbl">Pódios</div></div></div></div>`).join('');
+    const latest = races[races.length - 1];
+    const latestWinner = latest?.rows.find(row => row.querySelector('.col-pos')?.textContent.trim() === '1')?.querySelector('.pilot-name')?.textContent.trim();
+    const latestInfo = latest?.file.match(/2026_(\d{2})_(\d{2})_race_([^\.]+)/i);
+    document.getElementById('latestRace').innerHTML = latestInfo ? `<div class="card-title">${latestInfo[3].replace(/-/g, ' ')} · ${latestInfo[2]}/${latestInfo[1]}/2026</div><p style="color:var(--gray);margin-top:.65rem;line-height:1.7">Vencedor registrado: <strong style="color:var(--green)">${escapeHtml(sourceName(latestWinner || 'Não identificado'))}</strong>. Consulte a página da etapa para voltas, melhor tempo e classificação completa.</p>` : 'Nenhuma corrida encontrada.';
+    document.querySelectorAll('.fade-up').forEach(element => element.classList.add('visible'));
+  }
+
+  loadPilotData().then(renderPilotPage).catch(error => { document.getElementById('pilotRanking').innerHTML = '<div class="table-row" style="display:block;padding:1.5rem;color:var(--yellow)">Não foi possível carregar os arquivos de resultados. Abra a página por um servidor web.</div>'; console.error(error); });
+</script>
 
 <!-- ===================== FOOTER ===================== -->
 <!-- Componente: footer.html -->
