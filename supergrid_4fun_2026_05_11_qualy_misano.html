@@ -2003,27 +2003,1027 @@
       <div class="section-line"></div>
       <span class="section-eyebrow-text">Resultados do Servidor</span>
     </div>
-    <h2 class="section-h2 fade-up">Qualy - Laguna Seca - 4FUN 01/06</h2>
+    <h2 class="section-h2 fade-up">Qualy - Misano - 4FUN 11/05</h2>
 	
 	<div>
-				<p style="color: var(--gray); margin-bottom: 2rem; font-size: 0.9rem;">Servidor: SUPER GRID - BR Sim Racing - Admin Active - 4Fun - 01/06 - 21h</p>
+				<p style="color: var(--gray); margin-bottom: 2rem; font-size: 0.9rem;">Servidor: SUPERGRIDBRASIL - HTTPS://WWW.SUPERGRIDBRASIL.COM.BR - 4Fun - 11/05 - 21:15h</p>
 
 			</div>
 	<div class="grid-2" style="margin-top:2.5rem">
 			
 			<div style="display:flex;flex-direction:column;gap:1rem">
-				<div class="card fade-up"><div style="font-size:.75rem;color:var(--gray);margin-bottom:.35rem">🏁 VOLTA MAIS RÁPIDA</div><div style="font-family:'Sora',sans-serif;font-size:1.25rem;font-weight:800;color:var(--green)">1:22.675</div><div style="font-size:.85rem;color:#fff;margin-top:.25rem">Roger Rodrigues | OLD — Volta 7</div><span class="badge badge-yellow" style="margin-top:.5rem">+1 pts bônus</span></div>
+				<div class="card fade-up"><div style="font-size:.75rem;color:var(--gray);margin-bottom:.35rem">🏁 VOLTA MAIS RÁPIDA</div><div style="font-family:'Sora',sans-serif;font-size:1.25rem;font-weight:800;color:var(--green)">1:34.670</div><div style="font-size:.85rem;color:#fff;margin-top:.25rem">Ricardo Tibola | FLT - Volta 4</div><span class="badge badge-yellow" style="margin-top:.5rem">+1 pts bônus</span></div>
 				<!-- <div class="card fade-up"><div style="font-size:.75rem;color:var(--gray);margin-bottom:.35rem">🟢 POLE POSITION</div><div style="font-family:'Sora',sans-serif;font-size:1.25rem;font-weight:800;color:var(--yellow)">R. Moura</div><div style="font-size:.85rem;color:#fff;margin-top:.25rem">1:20.112 — Tempo de qualificação</div></div> -->
 			</div>
 			<div style="display:flex;flex-direction:column;gap:1rem">
 				<!-- <div class="card fade-up"><div style="font-size:.75rem;color:var(--gray);margin-bottom:.35rem">🟢 POLE POSITION</div><div style="font-family:'Sora',sans-serif;font-size:1.25rem;font-weight:800;color:var(--yellow)">R. Moura</div><div style="font-size:.85rem;color:#fff;margin-top:.25rem">1:20.112 — Tempo de qualificação</div></div> -->
-				<div class="card fade-up"><div style="font-size:.75rem;color:var(--gray);margin-bottom:.35rem">📊 RESUMO DA CORRIDA</div><div style="display:flex;flex-direction:column;gap:.4rem;font-size:.82rem;margin-top:.5rem"><div style="display:flex;justify-content:space-between"><span style="color:var(--gray)">Pilotos largantes</span><span style="color:#fff">16</span></div><div style="display:flex;justify-content:space-between"><span style="color:var(--gray)">Fizeram tempo</span><span style="color:var(--green)">15</span></div><div style="display:flex;justify-content:space-between"></div><div style="display:flex;justify-content:space-between"><span style="color:var(--gray)">Incidentes</span><span style="color:var(--yellow)">Muitos</span></div></div></div>
+				<div class="card fade-up"><div style="font-size:.75rem;color:var(--gray);margin-bottom:.35rem">📊 RESUMO DA CORRIDA</div><div style="display:flex;flex-direction:column;gap:.4rem;font-size:.82rem;margin-top:.5rem"><div style="display:flex;justify-content:space-between"><span style="color:var(--gray)">Pilotos largantes</span><span style="color:#fff">14</span></div><div style="display:flex;justify-content:space-between"><span style="color:var(--gray)">Fizeram tempo</span><span style="color:var(--green)">12</span></div><div style="display:flex;justify-content:space-between"></div><div style="display:flex;justify-content:space-between"><span style="color:var(--gray)">Incidentes</span><span style="color:var(--yellow)">Muitos</span></div></div></div>
 			</div>
 	  </div>
 	 
 	  <br>
     <input type="text" id="acc-search-input" class="acc-search fade-up" placeholder="Buscar piloto ..." onkeyup="filterAccPilots()">
-driversDetailContainer			
+<div id="driversDetailContainer" class="data-table">
+            <div class="table-header" style="grid-template-columns: 50px 1fr 1fr 100px 120px 120px;">
+                <span>Pos</span>
+                <span>Piloto</span>
+                <span>Carro</span>
+                <span>Voltas</span>
+                <span>Melhor Volta</span>
+                <span>Tempo Total</span>
+            </div>
+        <div class="table-row acc-table-row" data-search="ricardo tibola | flt 31" onclick="toggleAccLaps('driver-laps-1010')" style="grid-template-columns: 50px 1fr 1fr 100px 120px 120px; display: grid;">
+                <span class="col-pos" style="color:var(--yellow);font-weight:800;">1</span>
+                <div class="pilot-cell">
+                    <div class="avatar" style="background:#00C45A">RT</div>
+                    <div>
+                        <div class="pilot-name">Ricardo Tibola | FLT</div>
+                        <div class="pilot-sub">#8 | GT3</div>
+                    </div>
+                </div>
+                <div style="display:flex;align-items:center;">
+                    <span class="badge-car">31</span>
+                </div>
+                <span style="font-weight:500;">4</span>
+                <span style="color:var(--green2);font-weight:600;">1:34.670</span>
+                <span style="color:var(--gray);font-size:0.85rem;">12:50.556</span>
+            </div><div class="acc-laps-container" id="driver-laps-1010">
+                <div class="acc-stats-grid">
+                    <div class="acc-stat-card">
+                        <div class="lbl">Voltas Completadas</div>
+                        <div class="val">4</div>
+                    </div>
+                    <div class="acc-stat-card">
+                        <div class="lbl">Voltas Válidas</div>
+                        <div class="val" style="color:var(--green);">3</div>
+                    </div>
+                    <div class="acc-stat-card">
+                        <div class="lbl">Voltas Inválidas</div>
+                        <div class="val" style="color:#ff4c4c;">1</div>
+                    </div>
+                </div>
+                <table class="acc-lap-table">
+                    <thead>
+                        <tr>
+                            <th>Volta</th><th>Tempo</th><th>Setor 1</th><th>Setor 2</th><th>Setor 3</th><th>Posição</th><th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td style="font-weight:600;color:var(--gray);">V1</td>
+                        <td style="color:#ff4c4c;font-family:monospace;font-size:0.9rem;">1:35.107</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">24.067</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">37.705</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">33.335</td>
+                        <td><span class="badge-pos">P1</span></td>
+                        <td><span class="lap-invalid">✗ Inválida</span></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:600;color:var(--gray);">V2</td>
+                        <td style="color:var(--text);font-family:monospace;font-size:0.9rem;">1:35.012</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">23.745</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">37.907</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">33.360</td>
+                        <td><span class="badge-pos">P1</span></td>
+                        <td><span class="lap-valid">✓ Válida</span></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:600;color:var(--gray);">V3</td>
+                        <td style="color:var(--text);font-family:monospace;font-size:0.9rem;">1:34.860</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">23.827</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">37.697</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">33.335</td>
+                        <td><span class="badge-pos">P1</span></td>
+                        <td><span class="lap-valid">✓ Válida</span></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:600;color:var(--gray);">V4</td>
+                        <td style="color:var(--green2);font-weight:bold;font-family:monospace;font-size:0.9rem;">1:34.670 ⭐</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">23.690</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">37.582</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">33.397</td>
+                        <td><span class="badge-pos">P1</span></td>
+                        <td><span class="lap-valid">✓ Válida</span></td>
+                    </tr></tbody>
+                </table>
+            </div><div class="table-row acc-table-row" data-search="diego delatorre | brv 31" onclick="toggleAccLaps('driver-laps-1002')" style="grid-template-columns: 50px 1fr 1fr 100px 120px 120px; display: grid;">
+                <span class="col-pos" style="color:#C0C0C0;font-weight:800;">2</span>
+                <div class="pilot-cell">
+                    <div class="avatar" style="background:#F5C400">DD</div>
+                    <div>
+                        <div class="pilot-name">Diego Delatorre | BRV</div>
+                        <div class="pilot-sub">#11 | GT3</div>
+                    </div>
+                </div>
+                <div style="display:flex;align-items:center;">
+                    <span class="badge-car">31</span>
+                </div>
+                <span style="font-weight:500;">4</span>
+                <span style="color:var(--green2);font-weight:600;">1:35.365</span>
+                <span style="color:var(--gray);font-size:0.85rem;">13:46.702</span>
+            </div><div class="acc-laps-container" id="driver-laps-1002">
+                <div class="acc-stats-grid">
+                    <div class="acc-stat-card">
+                        <div class="lbl">Voltas Completadas</div>
+                        <div class="val">4</div>
+                    </div>
+                    <div class="acc-stat-card">
+                        <div class="lbl">Voltas Válidas</div>
+                        <div class="val" style="color:var(--green);">2</div>
+                    </div>
+                    <div class="acc-stat-card">
+                        <div class="lbl">Voltas Inválidas</div>
+                        <div class="val" style="color:#ff4c4c;">2</div>
+                    </div>
+                </div>
+                <table class="acc-lap-table">
+                    <thead>
+                        <tr>
+                            <th>Volta</th><th>Tempo</th><th>Setor 1</th><th>Setor 2</th><th>Setor 3</th><th>Posição</th><th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td style="font-weight:600;color:var(--gray);">V1</td>
+                        <td style="color:#ff4c4c;font-family:monospace;font-size:0.9rem;">1:36.217</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">24.095</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">38.055</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">34.067</td>
+                        <td><span class="badge-pos">P5</span></td>
+                        <td><span class="lap-invalid">✗ Inválida</span></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:600;color:var(--gray);">V2</td>
+                        <td style="color:var(--text);font-family:monospace;font-size:0.9rem;">1:35.562</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">24.180</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">37.835</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">33.547</td>
+                        <td><span class="badge-pos">P2</span></td>
+                        <td><span class="lap-valid">✓ Válida</span></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:600;color:var(--gray);">V3</td>
+                        <td style="color:var(--green2);font-weight:bold;font-family:monospace;font-size:0.9rem;">1:35.365 ⭐</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">24.100</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">37.645</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">33.620</td>
+                        <td><span class="badge-pos">P2</span></td>
+                        <td><span class="lap-valid">✓ Válida</span></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:600;color:var(--gray);">V4</td>
+                        <td style="color:#ff4c4c;font-family:monospace;font-size:0.9rem;">1:36.520</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">23.922</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">38.072</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">34.525</td>
+                        <td><span class="badge-pos">P3</span></td>
+                        <td><span class="lap-invalid">✗ Inválida</span></td>
+                    </tr></tbody>
+                </table>
+            </div><div class="table-row acc-table-row" data-search="victor cariok es-d 31" onclick="toggleAccLaps('driver-laps-1005')" style="grid-template-columns: 50px 1fr 1fr 100px 120px 120px; display: grid;">
+                <span class="col-pos" style="color:#CD7F32;font-weight:800;">3</span>
+                <div class="pilot-cell">
+                    <div class="avatar" style="background:#6BA3FF">VC</div>
+                    <div>
+                        <div class="pilot-name">victor cariok ES-D</div>
+                        <div class="pilot-sub">#28 | GT3</div>
+                    </div>
+                </div>
+                <div style="display:flex;align-items:center;">
+                    <span class="badge-car">31</span>
+                </div>
+                <span style="font-weight:500;">7</span>
+                <span style="color:var(--green2);font-weight:600;">1:35.587</span>
+                <span style="color:var(--gray);font-size:0.85rem;">13:58.574</span>
+            </div><div class="acc-laps-container" id="driver-laps-1005">
+                <div class="acc-stats-grid">
+                    <div class="acc-stat-card">
+                        <div class="lbl">Voltas Completadas</div>
+                        <div class="val">7</div>
+                    </div>
+                    <div class="acc-stat-card">
+                        <div class="lbl">Voltas Válidas</div>
+                        <div class="val" style="color:var(--green);">7</div>
+                    </div>
+                    <div class="acc-stat-card">
+                        <div class="lbl">Voltas Inválidas</div>
+                        <div class="val" style="color:#ff4c4c;">0</div>
+                    </div>
+                </div>
+                <table class="acc-lap-table">
+                    <thead>
+                        <tr>
+                            <th>Volta</th><th>Tempo</th><th>Setor 1</th><th>Setor 2</th><th>Setor 3</th><th>Posição</th><th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td style="font-weight:600;color:var(--gray);">V1</td>
+                        <td style="color:var(--text);font-family:monospace;font-size:0.9rem;">1:35.970</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">24.400</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">37.877</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">33.692</td>
+                        <td><span class="badge-pos">P4</span></td>
+                        <td><span class="lap-valid">✓ Válida</span></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:600;color:var(--gray);">V2</td>
+                        <td style="color:var(--text);font-family:monospace;font-size:0.9rem;">1:35.955</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">24.405</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">37.977</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">33.572</td>
+                        <td><span class="badge-pos">P4</span></td>
+                        <td><span class="lap-valid">✓ Válida</span></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:600;color:var(--gray);">V3</td>
+                        <td style="color:var(--text);font-family:monospace;font-size:0.9rem;">1:35.812</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">24.305</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">37.817</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">33.690</td>
+                        <td><span class="badge-pos">P3</span></td>
+                        <td><span class="lap-valid">✓ Válida</span></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:600;color:var(--gray);">V4</td>
+                        <td style="color:var(--text);font-family:monospace;font-size:0.9rem;">1:35.635</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">24.312</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">37.732</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">33.590</td>
+                        <td><span class="badge-pos">P2</span></td>
+                        <td><span class="lap-valid">✓ Válida</span></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:600;color:var(--gray);">V5</td>
+                        <td style="color:var(--text);font-family:monospace;font-size:0.9rem;">1:35.695</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">24.195</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">37.832</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">33.667</td>
+                        <td><span class="badge-pos">P1</span></td>
+                        <td><span class="lap-valid">✓ Válida</span></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:600;color:var(--gray);">V6</td>
+                        <td style="color:var(--text);font-family:monospace;font-size:0.9rem;">1:35.607</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">24.115</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">37.842</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">33.650</td>
+                        <td><span class="badge-pos">P1</span></td>
+                        <td><span class="lap-valid">✓ Válida</span></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:600;color:var(--gray);">V7</td>
+                        <td style="color:var(--green2);font-weight:bold;font-family:monospace;font-size:0.9rem;">1:35.587 ⭐</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">24.075</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">37.947</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">33.565</td>
+                        <td><span class="badge-pos">P1</span></td>
+                        <td><span class="lap-valid">✓ Válida</span></td>
+                    </tr></tbody>
+                </table>
+            </div><div class="table-row acc-table-row" data-search="jean ride | zr3 31" onclick="toggleAccLaps('driver-laps-1009')" style="grid-template-columns: 50px 1fr 1fr 100px 120px 120px; display: grid;">
+                <span class="col-pos" style="color:var(--text);font-weight:700;">4</span>
+                <div class="pilot-cell">
+                    <div class="avatar" style="background:#f97316">JR</div>
+                    <div>
+                        <div class="pilot-name">Jean Ride | ZR3</div>
+                        <div class="pilot-sub">#333 | GT3</div>
+                    </div>
+                </div>
+                <div style="display:flex;align-items:center;">
+                    <span class="badge-car">31</span>
+                </div>
+                <span style="font-weight:500;">5</span>
+                <span style="color:var(--green2);font-weight:600;">1:35.692</span>
+                <span style="color:var(--gray);font-size:0.85rem;">11:22.606</span>
+            </div><div class="acc-laps-container" id="driver-laps-1009">
+                <div class="acc-stats-grid">
+                    <div class="acc-stat-card">
+                        <div class="lbl">Voltas Completadas</div>
+                        <div class="val">5</div>
+                    </div>
+                    <div class="acc-stat-card">
+                        <div class="lbl">Voltas Válidas</div>
+                        <div class="val" style="color:var(--green);">2</div>
+                    </div>
+                    <div class="acc-stat-card">
+                        <div class="lbl">Voltas Inválidas</div>
+                        <div class="val" style="color:#ff4c4c;">3</div>
+                    </div>
+                </div>
+                <table class="acc-lap-table">
+                    <thead>
+                        <tr>
+                            <th>Volta</th><th>Tempo</th><th>Setor 1</th><th>Setor 2</th><th>Setor 3</th><th>Posição</th><th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td style="font-weight:600;color:var(--gray);">V1</td>
+                        <td style="color:var(--green2);font-weight:bold;font-family:monospace;font-size:0.9rem;">1:35.692 ⭐</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">24.410</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">37.730</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">33.552</td>
+                        <td><span class="badge-pos">P2</span></td>
+                        <td><span class="lap-valid">✓ Válida</span></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:600;color:var(--gray);">V2</td>
+                        <td style="color:#ff4c4c;font-family:monospace;font-size:0.9rem;">1:36.545</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">24.395</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">38.335</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">33.815</td>
+                        <td><span class="badge-pos">P5</span></td>
+                        <td><span class="lap-invalid">✗ Inválida</span></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:600;color:var(--gray);">V3</td>
+                        <td style="color:#ff4c4c;font-family:monospace;font-size:0.9rem;">1:36.162</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">24.332</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">38.320</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">33.510</td>
+                        <td><span class="badge-pos">P4</span></td>
+                        <td><span class="lap-invalid">✗ Inválida</span></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:600;color:var(--gray);">V4</td>
+                        <td style="color:#ff4c4c;font-family:monospace;font-size:0.9rem;">1:35.765</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">24.270</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">37.927</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">33.567</td>
+                        <td><span class="badge-pos">P4</span></td>
+                        <td><span class="lap-invalid">✗ Inválida</span></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:600;color:var(--gray);">V5</td>
+                        <td style="color:var(--text);font-family:monospace;font-size:0.9rem;">1:36.297</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">24.267</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">38.112</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">33.917</td>
+                        <td><span class="badge-pos">P2</span></td>
+                        <td><span class="lap-valid">✓ Válida</span></td>
+                    </tr></tbody>
+                </table>
+            </div><div class="table-row acc-table-row" data-search="william miranda 31" onclick="toggleAccLaps('driver-laps-1011')" style="grid-template-columns: 50px 1fr 1fr 100px 120px 120px; display: grid;">
+                <span class="col-pos" style="color:var(--text);font-weight:700;">5</span>
+                <div class="pilot-cell">
+                    <div class="avatar" style="background:#a78bfa">WM</div>
+                    <div>
+                        <div class="pilot-name">WILLIAM MIRANDA</div>
+                        <div class="pilot-sub">#16 | GT3</div>
+                    </div>
+                </div>
+                <div style="display:flex;align-items:center;">
+                    <span class="badge-car">31</span>
+                </div>
+                <span style="font-weight:500;">5</span>
+                <span style="color:var(--green2);font-weight:600;">1:35.705</span>
+                <span style="color:var(--gray);font-size:0.85rem;">13:24.819</span>
+            </div><div class="acc-laps-container" id="driver-laps-1011">
+                <div class="acc-stats-grid">
+                    <div class="acc-stat-card">
+                        <div class="lbl">Voltas Completadas</div>
+                        <div class="val">5</div>
+                    </div>
+                    <div class="acc-stat-card">
+                        <div class="lbl">Voltas Válidas</div>
+                        <div class="val" style="color:var(--green);">3</div>
+                    </div>
+                    <div class="acc-stat-card">
+                        <div class="lbl">Voltas Inválidas</div>
+                        <div class="val" style="color:#ff4c4c;">2</div>
+                    </div>
+                </div>
+                <table class="acc-lap-table">
+                    <thead>
+                        <tr>
+                            <th>Volta</th><th>Tempo</th><th>Setor 1</th><th>Setor 2</th><th>Setor 3</th><th>Posição</th><th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td style="font-weight:600;color:var(--gray);">V1</td>
+                        <td style="color:#ff4c4c;font-family:monospace;font-size:0.9rem;">1:35.875</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">24.030</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">37.960</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">33.885</td>
+                        <td><span class="badge-pos">P3</span></td>
+                        <td><span class="lap-invalid">✗ Inválida</span></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:600;color:var(--gray);">V2</td>
+                        <td style="color:var(--text);font-family:monospace;font-size:0.9rem;">1:35.960</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">23.922</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">38.260</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">33.777</td>
+                        <td><span class="badge-pos">P3</span></td>
+                        <td><span class="lap-valid">✓ Válida</span></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:600;color:var(--gray);">V3</td>
+                        <td style="color:#ff4c4c;font-family:monospace;font-size:0.9rem;">1:41.407</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">24.675</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">42.802</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">33.930</td>
+                        <td><span class="badge-pos">P7</span></td>
+                        <td><span class="lap-invalid">✗ Inválida</span></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:600;color:var(--gray);">V4</td>
+                        <td style="color:var(--text);font-family:monospace;font-size:0.9rem;">1:36.317</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">24.020</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">38.272</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">34.025</td>
+                        <td><span class="badge-pos">P6</span></td>
+                        <td><span class="lap-valid">✓ Válida</span></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:600;color:var(--gray);">V5</td>
+                        <td style="color:var(--green2);font-weight:bold;font-family:monospace;font-size:0.9rem;">1:35.705 ⭐</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">23.827</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">38.202</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">33.675</td>
+                        <td><span class="badge-pos">P3</span></td>
+                        <td><span class="lap-valid">✓ Válida</span></td>
+                    </tr></tbody>
+                </table>
+            </div><div class="table-row acc-table-row" data-search="diego brocca | brv 31" onclick="toggleAccLaps('driver-laps-1007')" style="grid-template-columns: 50px 1fr 1fr 100px 120px 120px; display: grid;">
+                <span class="col-pos" style="color:var(--text);font-weight:700;">6</span>
+                <div class="pilot-cell">
+                    <div class="avatar" style="background:#fb7185">DB</div>
+                    <div>
+                        <div class="pilot-name">Diego Brocca | BRV</div>
+                        <div class="pilot-sub">#232 | GT3</div>
+                    </div>
+                </div>
+                <div style="display:flex;align-items:center;">
+                    <span class="badge-car">31</span>
+                </div>
+                <span style="font-weight:500;">4</span>
+                <span style="color:var(--green2);font-weight:600;">1:36.067</span>
+                <span style="color:var(--gray);font-size:0.85rem;">15:38.614</span>
+            </div><div class="acc-laps-container" id="driver-laps-1007">
+                <div class="acc-stats-grid">
+                    <div class="acc-stat-card">
+                        <div class="lbl">Voltas Completadas</div>
+                        <div class="val">4</div>
+                    </div>
+                    <div class="acc-stat-card">
+                        <div class="lbl">Voltas Válidas</div>
+                        <div class="val" style="color:var(--green);">2</div>
+                    </div>
+                    <div class="acc-stat-card">
+                        <div class="lbl">Voltas Inválidas</div>
+                        <div class="val" style="color:#ff4c4c;">2</div>
+                    </div>
+                </div>
+                <table class="acc-lap-table">
+                    <thead>
+                        <tr>
+                            <th>Volta</th><th>Tempo</th><th>Setor 1</th><th>Setor 2</th><th>Setor 3</th><th>Posição</th><th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td style="font-weight:600;color:var(--gray);">V1</td>
+                        <td style="color:#ff4c4c;font-family:monospace;font-size:0.9rem;">1:36.947</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">24.397</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">38.180</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">34.370</td>
+                        <td><span class="badge-pos">P7</span></td>
+                        <td><span class="lap-invalid">✗ Inválida</span></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:600;color:var(--gray);">V2</td>
+                        <td style="color:var(--text);font-family:monospace;font-size:0.9rem;">1:36.122</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">24.137</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">38.035</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">33.950</td>
+                        <td><span class="badge-pos">P6</span></td>
+                        <td><span class="lap-valid">✓ Válida</span></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:600;color:var(--gray);">V3</td>
+                        <td style="color:#ff4c4c;font-family:monospace;font-size:0.9rem;">1:41.967</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">23.960</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">37.987</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">40.020</td>
+                        <td><span class="badge-pos">P9</span></td>
+                        <td><span class="lap-invalid">✗ Inválida</span></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:600;color:var(--gray);">V4</td>
+                        <td style="color:var(--green2);font-weight:bold;font-family:monospace;font-size:0.9rem;">1:36.067 ⭐</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">24.062</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">37.980</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">34.025</td>
+                        <td><span class="badge-pos">P8</span></td>
+                        <td><span class="lap-valid">✓ Válida</span></td>
+                    </tr></tbody>
+                </table>
+            </div><div class="table-row acc-table-row" data-search="humberto godoy 31" onclick="toggleAccLaps('driver-laps-1001')" style="grid-template-columns: 50px 1fr 1fr 100px 120px 120px; display: grid;">
+                <span class="col-pos" style="color:var(--text);font-weight:700;">7</span>
+                <div class="pilot-cell">
+                    <div class="avatar" style="background:#34d399">HG</div>
+                    <div>
+                        <div class="pilot-name">Humberto Godoy</div>
+                        <div class="pilot-sub">#46 | GT3</div>
+                    </div>
+                </div>
+                <div style="display:flex;align-items:center;">
+                    <span class="badge-car">31</span>
+                </div>
+                <span style="font-weight:500;">5</span>
+                <span style="color:var(--green2);font-weight:600;">1:36.425</span>
+                <span style="color:var(--gray);font-size:0.85rem;">11:37.571</span>
+            </div><div class="acc-laps-container" id="driver-laps-1001">
+                <div class="acc-stats-grid">
+                    <div class="acc-stat-card">
+                        <div class="lbl">Voltas Completadas</div>
+                        <div class="val">5</div>
+                    </div>
+                    <div class="acc-stat-card">
+                        <div class="lbl">Voltas Válidas</div>
+                        <div class="val" style="color:var(--green);">5</div>
+                    </div>
+                    <div class="acc-stat-card">
+                        <div class="lbl">Voltas Inválidas</div>
+                        <div class="val" style="color:#ff4c4c;">0</div>
+                    </div>
+                </div>
+                <table class="acc-lap-table">
+                    <thead>
+                        <tr>
+                            <th>Volta</th><th>Tempo</th><th>Setor 1</th><th>Setor 2</th><th>Setor 3</th><th>Posição</th><th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td style="font-weight:600;color:var(--gray);">V1</td>
+                        <td style="color:var(--text);font-family:monospace;font-size:0.9rem;">1:36.590</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">24.767</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">37.842</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">33.980</td>
+                        <td><span class="badge-pos">P6</span></td>
+                        <td><span class="lap-valid">✓ Válida</span></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:600;color:var(--gray);">V2</td>
+                        <td style="color:var(--text);font-family:monospace;font-size:0.9rem;">1:36.922</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">24.470</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">38.022</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">34.430</td>
+                        <td><span class="badge-pos">P7</span></td>
+                        <td><span class="lap-valid">✓ Válida</span></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:600;color:var(--gray);">V3</td>
+                        <td style="color:var(--text);font-family:monospace;font-size:0.9rem;">1:36.520</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">24.335</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">38.095</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">34.090</td>
+                        <td><span class="badge-pos">P5</span></td>
+                        <td><span class="lap-valid">✓ Válida</span></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:600;color:var(--gray);">V4</td>
+                        <td style="color:var(--green2);font-weight:bold;font-family:monospace;font-size:0.9rem;">1:36.425 ⭐</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">24.217</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">38.382</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">33.825</td>
+                        <td><span class="badge-pos">P5</span></td>
+                        <td><span class="lap-valid">✓ Válida</span></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:600;color:var(--gray);">V5</td>
+                        <td style="color:var(--text);font-family:monospace;font-size:0.9rem;">1:41.392</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">24.537</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">41.682</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">35.172</td>
+                        <td><span class="badge-pos">P4</span></td>
+                        <td><span class="lap-valid">✓ Válida</span></td>
+                    </tr></tbody>
+                </table>
+            </div><div class="table-row acc-table-row" data-search="bruno rocha | vul 31" onclick="toggleAccLaps('driver-laps-1008')" style="grid-template-columns: 50px 1fr 1fr 100px 120px 120px; display: grid;">
+                <span class="col-pos" style="color:var(--text);font-weight:700;">8</span>
+                <div class="pilot-cell">
+                    <div class="avatar" style="background:#60a5fa">BR</div>
+                    <div>
+                        <div class="pilot-name">Bruno Rocha | VUL</div>
+                        <div class="pilot-sub">#10 | GT3</div>
+                    </div>
+                </div>
+                <div style="display:flex;align-items:center;">
+                    <span class="badge-car">31</span>
+                </div>
+                <span style="font-weight:500;">3</span>
+                <span style="color:var(--green2);font-weight:600;">1:36.962</span>
+                <span style="color:var(--gray);font-size:0.85rem;">6:54.805</span>
+            </div><div class="acc-laps-container" id="driver-laps-1008">
+                <div class="acc-stats-grid">
+                    <div class="acc-stat-card">
+                        <div class="lbl">Voltas Completadas</div>
+                        <div class="val">3</div>
+                    </div>
+                    <div class="acc-stat-card">
+                        <div class="lbl">Voltas Válidas</div>
+                        <div class="val" style="color:var(--green);">3</div>
+                    </div>
+                    <div class="acc-stat-card">
+                        <div class="lbl">Voltas Inválidas</div>
+                        <div class="val" style="color:#ff4c4c;">0</div>
+                    </div>
+                </div>
+                <table class="acc-lap-table">
+                    <thead>
+                        <tr>
+                            <th>Volta</th><th>Tempo</th><th>Setor 1</th><th>Setor 2</th><th>Setor 3</th><th>Posição</th><th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td style="font-weight:600;color:var(--gray);">V1</td>
+                        <td style="color:var(--text);font-family:monospace;font-size:0.9rem;">1:37.692</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">24.862</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">38.385</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">34.445</td>
+                        <td><span class="badge-pos">P8</span></td>
+                        <td><span class="lap-valid">✓ Válida</span></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:600;color:var(--gray);">V2</td>
+                        <td style="color:var(--text);font-family:monospace;font-size:0.9rem;">1:38.035</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">24.910</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">38.682</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">34.442</td>
+                        <td><span class="badge-pos">P8</span></td>
+                        <td><span class="lap-valid">✓ Válida</span></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:600;color:var(--gray);">V3</td>
+                        <td style="color:var(--green2);font-weight:bold;font-family:monospace;font-size:0.9rem;">1:36.962 ⭐</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">24.767</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">38.072</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">34.122</td>
+                        <td><span class="badge-pos">P6</span></td>
+                        <td><span class="lap-valid">✓ Válida</span></td>
+                    </tr></tbody>
+                </table>
+            </div><div class="table-row acc-table-row" data-search="adriano romero 31" onclick="toggleAccLaps('driver-laps-1006')" style="grid-template-columns: 50px 1fr 1fr 100px 120px 120px; display: grid;">
+                <span class="col-pos" style="color:var(--text);font-weight:700;">9</span>
+                <div class="pilot-cell">
+                    <div class="avatar" style="background:#fbbf24">AR</div>
+                    <div>
+                        <div class="pilot-name">Adriano Romero</div>
+                        <div class="pilot-sub">#29 | GT3</div>
+                    </div>
+                </div>
+                <div style="display:flex;align-items:center;">
+                    <span class="badge-car">31</span>
+                </div>
+                <span style="font-weight:500;">5</span>
+                <span style="color:var(--green2);font-weight:600;">1:37.127</span>
+                <span style="color:var(--gray);font-size:0.85rem;">15:14.569</span>
+            </div><div class="acc-laps-container" id="driver-laps-1006">
+                <div class="acc-stats-grid">
+                    <div class="acc-stat-card">
+                        <div class="lbl">Voltas Completadas</div>
+                        <div class="val">5</div>
+                    </div>
+                    <div class="acc-stat-card">
+                        <div class="lbl">Voltas Válidas</div>
+                        <div class="val" style="color:var(--green);">4</div>
+                    </div>
+                    <div class="acc-stat-card">
+                        <div class="lbl">Voltas Inválidas</div>
+                        <div class="val" style="color:#ff4c4c;">1</div>
+                    </div>
+                </div>
+                <table class="acc-lap-table">
+                    <thead>
+                        <tr>
+                            <th>Volta</th><th>Tempo</th><th>Setor 1</th><th>Setor 2</th><th>Setor 3</th><th>Posição</th><th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td style="font-weight:600;color:var(--gray);">V1</td>
+                        <td style="color:var(--text);font-family:monospace;font-size:0.9rem;">1:38.252</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">24.577</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">39.355</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">34.320</td>
+                        <td><span class="badge-pos">P10</span></td>
+                        <td><span class="lap-valid">✓ Válida</span></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:600;color:var(--gray);">V2</td>
+                        <td style="color:var(--text);font-family:monospace;font-size:0.9rem;">1:37.952</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">24.525</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">38.612</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">34.815</td>
+                        <td><span class="badge-pos">P9</span></td>
+                        <td><span class="lap-valid">✓ Válida</span></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:600;color:var(--gray);">V3</td>
+                        <td style="color:var(--text);font-family:monospace;font-size:0.9rem;">1:37.530</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">24.362</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">38.802</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">34.365</td>
+                        <td><span class="badge-pos">P8</span></td>
+                        <td><span class="lap-valid">✓ Válida</span></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:600;color:var(--gray);">V4</td>
+                        <td style="color:var(--green2);font-weight:bold;font-family:monospace;font-size:0.9rem;">1:37.127 ⭐</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">24.430</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">38.615</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">34.082</td>
+                        <td><span class="badge-pos">P7</span></td>
+                        <td><span class="lap-valid">✓ Válida</span></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:600;color:var(--gray);">V5</td>
+                        <td style="color:#ff4c4c;font-family:monospace;font-size:0.9rem;">1:53.415</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">24.572</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">39.205</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">49.637</td>
+                        <td><span class="badge-pos">P5</span></td>
+                        <td><span class="lap-invalid">✗ Inválida</span></td>
+                    </tr></tbody>
+                </table>
+            </div><div class="table-row acc-table-row" data-search="renan rangel | zr3 31" onclick="toggleAccLaps('driver-laps-1013')" style="grid-template-columns: 50px 1fr 1fr 100px 120px 120px; display: grid;">
+                <span class="col-pos" style="color:var(--text);font-weight:700;">10</span>
+                <div class="pilot-cell">
+                    <div class="avatar" style="background:#e879f9">RR</div>
+                    <div>
+                        <div class="pilot-name">Renan Rangel | ZR3</div>
+                        <div class="pilot-sub">#31 | GT3</div>
+                    </div>
+                </div>
+                <div style="display:flex;align-items:center;">
+                    <span class="badge-car">31</span>
+                </div>
+                <span style="font-weight:500;">1</span>
+                <span style="color:var(--green2);font-weight:600;">1:37.782</span>
+                <span style="color:var(--gray);font-size:0.85rem;">8:59.463</span>
+            </div><div class="acc-laps-container" id="driver-laps-1013">
+                <div class="acc-stats-grid">
+                    <div class="acc-stat-card">
+                        <div class="lbl">Voltas Completadas</div>
+                        <div class="val">1</div>
+                    </div>
+                    <div class="acc-stat-card">
+                        <div class="lbl">Voltas Válidas</div>
+                        <div class="val" style="color:var(--green);">1</div>
+                    </div>
+                    <div class="acc-stat-card">
+                        <div class="lbl">Voltas Inválidas</div>
+                        <div class="val" style="color:#ff4c4c;">0</div>
+                    </div>
+                </div>
+                <table class="acc-lap-table">
+                    <thead>
+                        <tr>
+                            <th>Volta</th><th>Tempo</th><th>Setor 1</th><th>Setor 2</th><th>Setor 3</th><th>Posição</th><th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td style="font-weight:600;color:var(--gray);">V1</td>
+                        <td style="color:var(--green2);font-weight:bold;font-family:monospace;font-size:0.9rem;">1:37.782 ⭐</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">24.900</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">38.587</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">34.295</td>
+                        <td><span class="badge-pos">P9</span></td>
+                        <td><span class="lap-valid">✓ Válida</span></td>
+                    </tr></tbody>
+                </table>
+            </div><div class="table-row acc-table-row" data-search=". fabio 31" onclick="toggleAccLaps('driver-laps-1012')" style="grid-template-columns: 50px 1fr 1fr 100px 120px 120px; display: grid;">
+                <span class="col-pos" style="color:var(--text);font-weight:700;">11</span>
+                <div class="pilot-cell">
+                    <div class="avatar" style="background:#38bdf8">.F</div>
+                    <div>
+                        <div class="pilot-name">. Fabio</div>
+                        <div class="pilot-sub">#12 | GT3</div>
+                    </div>
+                </div>
+                <div style="display:flex;align-items:center;">
+                    <span class="badge-car">31</span>
+                </div>
+                <span style="font-weight:500;">4</span>
+                <span style="color:var(--green2);font-weight:600;">1:38.775</span>
+                <span style="color:var(--gray);font-size:0.85rem;">15:59.047</span>
+            </div><div class="acc-laps-container" id="driver-laps-1012">
+                <div class="acc-stats-grid">
+                    <div class="acc-stat-card">
+                        <div class="lbl">Voltas Completadas</div>
+                        <div class="val">4</div>
+                    </div>
+                    <div class="acc-stat-card">
+                        <div class="lbl">Voltas Válidas</div>
+                        <div class="val" style="color:var(--green);">3</div>
+                    </div>
+                    <div class="acc-stat-card">
+                        <div class="lbl">Voltas Inválidas</div>
+                        <div class="val" style="color:#ff4c4c;">1</div>
+                    </div>
+                </div>
+                <table class="acc-lap-table">
+                    <thead>
+                        <tr>
+                            <th>Volta</th><th>Tempo</th><th>Setor 1</th><th>Setor 2</th><th>Setor 3</th><th>Posição</th><th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td style="font-weight:600;color:var(--gray);">V1</td>
+                        <td style="color:var(--text);font-family:monospace;font-size:0.9rem;">1:38.905</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">25.140</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">38.877</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">34.887</td>
+                        <td><span class="badge-pos">P11</span></td>
+                        <td><span class="lap-valid">✓ Válida</span></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:600;color:var(--gray);">V2</td>
+                        <td style="color:#ff4c4c;font-family:monospace;font-size:0.9rem;">1:43.885</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">28.587</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">40.000</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">35.297</td>
+                        <td><span class="badge-pos">P10</span></td>
+                        <td><span class="lap-invalid">✗ Inválida</span></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:600;color:var(--gray);">V3</td>
+                        <td style="color:var(--text);font-family:monospace;font-size:0.9rem;">1:39.517</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">24.997</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">38.925</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">35.595</td>
+                        <td><span class="badge-pos">P10</span></td>
+                        <td><span class="lap-valid">✓ Válida</span></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:600;color:var(--gray);">V4</td>
+                        <td style="color:var(--green2);font-weight:bold;font-family:monospace;font-size:0.9rem;">1:38.775 ⭐</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">24.782</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">38.827</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">35.165</td>
+                        <td><span class="badge-pos">P9</span></td>
+                        <td><span class="lap-valid">✓ Válida</span></td>
+                    </tr></tbody>
+                </table>
+            </div><div class="table-row acc-table-row" data-search="ozzy mike[br] 19" onclick="toggleAccLaps('driver-laps-1014')" style="grid-template-columns: 50px 1fr 1fr 100px 120px 120px; display: grid;">
+                <span class="col-pos" style="color:var(--text);font-weight:700;">12</span>
+                <div class="pilot-cell">
+                    <div class="avatar" style="background:#f472b6">OM</div>
+                    <div>
+                        <div class="pilot-name">Ozzy Mike[BR]</div>
+                        <div class="pilot-sub">#13 | GT3</div>
+                    </div>
+                </div>
+                <div style="display:flex;align-items:center;">
+                    <span class="badge-car">19</span>
+                </div>
+                <span style="font-weight:500;">4</span>
+                <span style="color:var(--green2);font-weight:600;">1:40.742</span>
+                <span style="color:var(--gray);font-size:0.85rem;">14:26.294</span>
+            </div><div class="acc-laps-container" id="driver-laps-1014">
+                <div class="acc-stats-grid">
+                    <div class="acc-stat-card">
+                        <div class="lbl">Voltas Completadas</div>
+                        <div class="val">4</div>
+                    </div>
+                    <div class="acc-stat-card">
+                        <div class="lbl">Voltas Válidas</div>
+                        <div class="val" style="color:var(--green);">2</div>
+                    </div>
+                    <div class="acc-stat-card">
+                        <div class="lbl">Voltas Inválidas</div>
+                        <div class="val" style="color:#ff4c4c;">2</div>
+                    </div>
+                </div>
+                <table class="acc-lap-table">
+                    <thead>
+                        <tr>
+                            <th>Volta</th><th>Tempo</th><th>Setor 1</th><th>Setor 2</th><th>Setor 3</th><th>Posição</th><th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td style="font-weight:600;color:var(--gray);">V1</td>
+                        <td style="color:#ff4c4c;font-family:monospace;font-size:0.9rem;">1:48.712</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">25.547</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">45.590</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">37.575</td>
+                        <td><span class="badge-pos">P12</span></td>
+                        <td><span class="lap-invalid">✗ Inválida</span></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:600;color:var(--gray);">V2</td>
+                        <td style="color:#ff4c4c;font-family:monospace;font-size:0.9rem;">1:47.390</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">26.392</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">40.620</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">40.377</td>
+                        <td><span class="badge-pos">P11</span></td>
+                        <td><span class="lap-invalid">✗ Inválida</span></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:600;color:var(--gray);">V3</td>
+                        <td style="color:var(--text);font-family:monospace;font-size:0.9rem;">1:41.817</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">25.905</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">39.320</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">36.592</td>
+                        <td><span class="badge-pos">P11</span></td>
+                        <td><span class="lap-valid">✓ Válida</span></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:600;color:var(--gray);">V4</td>
+                        <td style="color:var(--green2);font-weight:bold;font-family:monospace;font-size:0.9rem;">1:40.742 ⭐</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">25.670</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">39.495</td>
+                        <td style="font-family:monospace;font-size:0.85rem;">35.577</td>
+                        <td><span class="badge-pos">P10</span></td>
+                        <td><span class="lap-valid">✓ Válida</span></td>
+                    </tr></tbody>
+                </table>
+            </div><div class="table-row acc-table-row" data-search="guilherme baldin | vul 31" onclick="toggleAccLaps('driver-laps-1003')" style="grid-template-columns: 50px 1fr 1fr 100px 120px 120px; display: grid;">
+                <span class="col-pos" style="color:var(--text);font-weight:700;">13</span>
+                <div class="pilot-cell">
+                    <div class="avatar" style="background:#4ade80">GB</div>
+                    <div>
+                        <div class="pilot-name">Guilherme Baldin | VUL</div>
+                        <div class="pilot-sub">#22 | GT3</div>
+                    </div>
+                </div>
+                <div style="display:flex;align-items:center;">
+                    <span class="badge-car">31</span>
+                </div>
+                <span style="font-weight:500;">0</span>
+                <span style="color:var(--green2);font-weight:600;">--:--.---</span>
+                <span style="color:var(--gray);font-size:0.85rem;">--:--.---</span>
+            </div><div class="acc-laps-container" id="driver-laps-1003">
+                <div class="acc-stats-grid">
+                    <div class="acc-stat-card">
+                        <div class="lbl">Voltas Completadas</div>
+                        <div class="val">0</div>
+                    </div>
+                    <div class="acc-stat-card">
+                        <div class="lbl">Voltas Válidas</div>
+                        <div class="val" style="color:var(--green);">0</div>
+                    </div>
+                    <div class="acc-stat-card">
+                        <div class="lbl">Voltas Inválidas</div>
+                        <div class="val" style="color:#ff4c4c;">0</div>
+                    </div>
+                </div>
+                <table class="acc-lap-table">
+                    <thead>
+                        <tr>
+                            <th>Volta</th><th>Tempo</th><th>Setor 1</th><th>Setor 2</th><th>Setor 3</th><th>Posição</th><th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody><tr><td colspan="7" style="padding:12px;color:var(--gray);">Nenhuma volta registrada</td></tr></tbody>
+                </table>
+            </div><div class="table-row acc-table-row" data-search="adriano romero 32" onclick="toggleAccLaps('driver-laps-1004')" style="grid-template-columns: 50px 1fr 1fr 100px 120px 120px; display: grid;">
+                <span class="col-pos" style="color:var(--text);font-weight:700;">14</span>
+                <div class="pilot-cell">
+                    <div class="avatar" style="background:#facc15">AR</div>
+                    <div>
+                        <div class="pilot-name">Adriano Romero</div>
+                        <div class="pilot-sub">#27 | GT3</div>
+                    </div>
+                </div>
+                <div style="display:flex;align-items:center;">
+                    <span class="badge-car">32</span>
+                </div>
+                <span style="font-weight:500;">0</span>
+                <span style="color:var(--green2);font-weight:600;">--:--.---</span>
+                <span style="color:var(--gray);font-size:0.85rem;">--:--.---</span>
+            </div><div class="acc-laps-container" id="driver-laps-1004">
+                <div class="acc-stats-grid">
+                    <div class="acc-stat-card">
+                        <div class="lbl">Voltas Completadas</div>
+                        <div class="val">0</div>
+                    </div>
+                    <div class="acc-stat-card">
+                        <div class="lbl">Voltas Válidas</div>
+                        <div class="val" style="color:var(--green);">0</div>
+                    </div>
+                    <div class="acc-stat-card">
+                        <div class="lbl">Voltas Inválidas</div>
+                        <div class="val" style="color:#ff4c4c;">0</div>
+                    </div>
+                </div>
+                <table class="acc-lap-table">
+                    <thead>
+                        <tr>
+                            <th>Volta</th><th>Tempo</th><th>Setor 1</th><th>Setor 2</th><th>Setor 3</th><th>Posição</th><th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody><tr><td colspan="7" style="padding:12px;color:var(--gray);">Nenhuma volta registrada</td></tr></tbody>
+                </table>
+            </div></div>			
 
   </div>
 </section>
