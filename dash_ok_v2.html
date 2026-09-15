@@ -709,8 +709,7 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <!-- Ajustado colspan para 6 devido à remoção da coluna carro -->
-                        <td colspan="6" class="empty-state">Nenhum dado carregado. Por favor, faça upload de um arquivo JSON do servidor ACC.</td>
+                        <td colspan="5" class="empty-state">Nenhum dado carregado. Por favor, faça upload de um arquivo JSON do servidor ACC.</td>
                     </tr>
                 </tbody>
             </table>
@@ -721,10 +720,9 @@
         <h2>Histórico Detalhado por Piloto</h2>
         <input type="text" id="acc-search-input" class="acc-search" placeholder="🔍  Buscar piloto ..." onkeyup="filterAccPilots()">
         <div id="driversDetailContainer" class="data-table">
-            <div class="table-header" style="grid-template-columns: 50px 1fr 1fr 100px 120px 120px;">
+            <div class="table-header" style="grid-template-columns: 50px 1fr 100px 120px 120px;">
                 <span>Pos</span>
                 <span>Piloto</span>
-                <span>Carro</span>
                 <span>Voltas</span>
                 <span>Melhor Volta</span>
                 <span>Tempo Total</span>
@@ -899,7 +897,7 @@ document.getElementById('server-name').innerText = data.serverName || "Nome não
         tbody.innerHTML = '';
 
         if (lines.length === 0) {
-            tbody.innerHTML = `<tr><td colspan="6" class="empty-state">Nenhum dado de tabela encontrado no JSON.</td></tr>`;
+            tbody.innerHTML = `<tr><td colspan="5" class="empty-state">Nenhum dado de tabela encontrado no JSON.</td></tr>`;
             return;
         }
 
@@ -944,10 +942,9 @@ document.getElementById('server-name').innerText = data.serverName || "Nome não
         const detailsContainer = document.getElementById('driversDetailContainer');
         // Rebuild with template-style header
         detailsContainer.innerHTML = `
-            <div class="table-header" style="grid-template-columns: 50px 1fr 1fr 100px 120px 120px;">
+            <div class="table-header" style="grid-template-columns: 50px 1fr 100px 120px 120px;">
                 <span>Pos</span>
                 <span>Piloto</span>
-                <span>Carro</span>
                 <span>Voltas</span>
                 <span>Melhor Volta</span>
                 <span>Tempo Total</span>
@@ -961,10 +958,6 @@ document.getElementById('server-name').innerText = data.serverName || "Nome não
             const pName = drivers.length > 0 ? drivers.map(d => `${d.firstName || ''} ${d.lastName || ''}`).join(' / ') : "Piloto Desconhecido";
             const carId = line.car ? line.car.carId : index;
             const timing = line.timing || {};
-            const carModelRaw = (line.car && line.car.carModel !== undefined) ? line.car.carModel : '';
-            const carNum = (line.car && line.car.raceNumber !== undefined) ? line.car.raceNumber : '';
-            const carLabel = carModelRaw !== '' ? String(carModelRaw) : 'GT3';
-
             const driverLaps = data.laps ? data.laps.filter(l => l.carId === carId) : [];
             const validLaps = driverLaps.filter(lap => lap.isValidForBest).length;
             const invalidLaps = driverLaps.length - validLaps;
@@ -980,11 +973,11 @@ document.getElementById('server-name').innerText = data.serverName || "Nome não
             else if (index === 2) posStyle = 'color:#CD7F32;font-weight:800;';
 
             const lapContainerId = `driver-laps-${carId}`;
-            const searchStr = (pName + ' ' + carLabel).toLowerCase();
+            const searchStr = pName.toLowerCase();
 
             const rowDiv = document.createElement('div');
             rowDiv.className = 'table-row acc-table-row';
-            rowDiv.style.gridTemplateColumns = '50px 1fr 1fr 100px 120px 120px';
+            rowDiv.style.gridTemplateColumns = '50px 1fr 100px 120px 120px';
             rowDiv.setAttribute('data-search', searchStr);
             rowDiv.setAttribute('onclick', `toggleAccLaps('${lapContainerId}')`);
             rowDiv.innerHTML = `
@@ -993,11 +986,8 @@ document.getElementById('server-name').innerText = data.serverName || "Nome não
                     <div class="avatar" style="background:${avatarColor}">${initials}</div>
                     <div>
                         <div class="pilot-name">${pName}</div>
-                        <div class="pilot-sub">#${carNum} | GT3</div>
+                        <div class="pilot-sub">Resultado detalhado</div>
                     </div>
-                </div>
-                <div style="display:flex;align-items:center;">
-                    <span class="badge-car">${carLabel}</span>
                 </div>
                 <span style="font-weight:500;">${timing.lapCount || 0}</span>
                 <span style="color:var(--green2);font-weight:600;">${formatLaptime(timing.bestLap)}</span>
