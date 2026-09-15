@@ -661,7 +661,7 @@
         'supergrid_4fun_2026_07_20_race_suzuka.html', 'supergrid_4fun_2026_07_27_race_donington.html',
         'supergrid_4fun_2026_08_03_race_snetterton.html', 'supergrid_4fun_2026_08_10_race_monza.html',
         'supergrid_4fun_2026_08_17_race_watkins.html', 'supergrid_4fun_2026_08_24_race_nurburgring.html',
-        'supergrid_4fun_2026_09_07_race_zolder.html'
+        'supergrid_4fun_2026_09_07_race_zolder.html', 'supergrid_4fun_2026_09_14_race_imola.html'
     ];
     const homePilotName = name => name.replace(/\s*\|.*$|\s*\[[^\]]+\]|\s*\([^\)]+\)$/g, '').replace(/\s+-\s+.*$/, '').trim();
     const homePilotKey = name => { const normalized = homePilotName(name).normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim(); return normalized === 'humberto godoy supergrid' ? 'humberto godoy' : normalized; };
