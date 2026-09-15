@@ -2006,6 +2006,7 @@
             <div class="drawer-item"><button class="drawer-toggle" onclick="toggleDrawerItem(this)">Minha Área <svg class="chevron" viewBox="0 0 10 6" style="width:10px;height:10px"><polyline points="1 1 5 5 9 1" /></svg></button><div class="drawer-sub"><a href="meus-campeonatos.html">Campeonatos</a><a href="meus-4funs.html">4Funs</a><a href="meus-resultados.html">Resultados</a><a href="meus-historicos.html">Histórico</a><a href="minha-classificacao.html">Classificação</a><a href="minhas-equipes.html">Equipes</a><a href="dicas-e-ferramentas.html">Ferramentas</a></div></div>
         </div>
     </nav>
+    <script>(function(){const drawer=document.getElementById('navDrawer');const menu=document.getElementById('navMenu');if(!drawer||!menu)return;drawer.innerHTML=[...menu.querySelectorAll(':scope > li[data-menu]')].map(item=>{const title=item.querySelector(':scope > a')?.textContent.trim()||'';const links=[...item.querySelectorAll(':scope > .dropdown a')];return '<div class="drawer-item"><button class="drawer-toggle" onclick="toggleDrawerItem(this)">'+title+' <svg class="chevron" viewBox="0 0 10 6" style="width:10px;height:10px"><polyline points="1 1 5 5 9 1"/></svg></button><div class="drawer-sub">'+links.map(link=>'<a href="'+link.getAttribute('href')+'"'+(link.target?' target="'+link.target+'" rel="noopener"':'')+'>'+link.textContent.trim()+'</a>').join('')+'</div></div>';}).join('');})();</script>
 
     <section class="page-hero" id="ResultadosClassificacao">
         <div class="page-hero-inner">

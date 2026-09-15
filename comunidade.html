@@ -140,6 +140,7 @@
     <div class="drawer-item"><button class="drawer-toggle" onclick="toggleDrawerItem(this)">Comunidade <svg class="chevron" viewBox="0 0 10 6" style="width:10px;height:10px"><polyline points="1 1 5 5 9 1"/></svg></button><div class="drawer-sub"><a href="comunidade.html#noticias">Notícias</a><a href="comunidade.html#live">Lives</a><a href="https://discord.com/invite/ZJPTdwJSnH" target="_blank" rel="noopener">Discord</a></div></div>
   </div>
 </nav>
+<script>(function(){const drawer=document.getElementById('navDrawer');const menu=document.getElementById('navMenu');if(!drawer||!menu)return;drawer.innerHTML=[...menu.querySelectorAll(':scope > li[data-menu]')].map(item=>{const title=item.querySelector(':scope > a')?.textContent.trim()||'';const links=[...item.querySelectorAll(':scope > .dropdown a')];return '<div class="drawer-item"><button class="drawer-toggle" onclick="toggleDrawerItem(this)">'+title+' <svg class="chevron" viewBox="0 0 10 6" style="width:10px;height:10px"><polyline points="1 1 5 5 9 1"/></svg></button><div class="drawer-sub">'+links.map(link=>'<a href="'+link.getAttribute('href')+'"'+(link.target?' target="'+link.target+'" rel="noopener"':'')+'>'+link.textContent.trim()+'</a>').join('')+'</div></div>';}).join('');})();</script>
 
 <!-- ===================== CONTEÚDO DA PÁGINA ===================== -->
 <section class="page-hero">
