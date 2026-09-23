@@ -268,7 +268,7 @@
         const match = file.match(/2026_(\d{2})_(\d{2})_race_([^\.]+)/i);
         const date = match ? `${match[2]}/${match[1]}/2026` : 'Temporada 2026';
         const track = match ? match[3].replace(/_/g, ' ') : 'Etapa 4Fun';
-        const title = winner === 'Vencedor não identificado' ? `Resultados do 4Fun em ${track}` : `${communityPilot(winner)} vence no ${track}`;
+        const title = winner === 'Vencedor não identificado' ? `Resultados do 4Fun em ${track}` : `${communityPilot(winner)} vence em ${track}`;
         return `<article class="card fade-up"><div style="font-size:.72rem;color:var(--green);font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.75rem">${date} · 4Fun ACC</div><div class="card-title">${communityEscape(title)}</div><div class="card-desc" style="margin-top:.5rem">Resultado oficial da etapa de Assetto Corsa Competizione, com classificação final e dados completos da corrida.</div><a href="${file}" class="card-link">Ver resultado →</a></article>`;
       }).join('');
       document.getElementById('communityNewsGrid').innerHTML = news;
