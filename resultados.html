@@ -2017,10 +2017,10 @@
             <h1><em>Resultados</em> & Classificação</h1>
             <p>Acompanhe os resultados de cada etapa, ranking atualizado e estatísticas completas da temporada.</p>
             <div class="page-hero-stats">
-                <div><div class="stat-num">21</div><div class="stat-label">Etapas realizadas</div></div>
-                <div><div class="stat-num">0</div><div class="stat-label">Etapas restantes</div></div>
-                <div><div class="stat-num">312</div><div class="stat-label">Pts do líder GT Sprint</div></div>
-                <div><div class="stat-num">10.723</div><div class="stat-label">Voltas completadas</div></div>
+                <div><div class="stat-num" data-season-stat="races">...</div><div class="stat-label">Etapas realizadas</div></div>
+                <div><div class="stat-num" data-season-stat="pilots">...</div><div class="stat-label">Pilotos identificados</div></div>
+                <div><div class="stat-num" data-season-stat="participations">...</div><div class="stat-label">Participações</div></div>
+                <div><div class="stat-num" data-season-stat="laps">...</div><div class="stat-label">Voltas completadas</div></div>
             </div>
         </div>
     </section>
@@ -2460,6 +2460,7 @@
         }).catch(error => { document.getElementById('resultsTeamRanking').innerHTML = '<div class="table-row" style="display:block;padding:1.5rem;color:var(--yellow)">Não foi possível carregar os resultados. Abra a página por um servidor web.</div>'; console.error(error); });
     </script>
 
+    <script src="season-stats.js"></script>
     <footer>
         <div class="footer-inner">
             <div class="footer-top">

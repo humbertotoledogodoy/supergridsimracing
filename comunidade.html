@@ -221,16 +221,20 @@
       </p>
       <div class="page-hero-stats">
         <div>
-          <div class="stat-num">70<span>+</span></div>
-          <div class="stat-label">Membros no Discord</div>
+          <div class="stat-num" data-season-stat="races">...</div>
+          <div class="stat-label">Etapas realizadas</div>
         </div>
         <div>
-          <div class="stat-num">2<span>+</span></div>
-          <div class="stat-label">Inscritos no YouTube</div>
+          <div class="stat-num" data-season-stat="pilots">...</div>
+          <div class="stat-label">Pilotos identificados</div>
         </div>
         <div>
-          <div class="stat-num">0<span>+</span></div>
-          <div class="stat-label">Replays disponíveis</div>
+          <div class="stat-num" data-season-stat="participations">...</div>
+          <div class="stat-label">Participações</div>
+        </div>
+        <div>
+          <div class="stat-num" data-season-stat="laps">...</div>
+          <div class="stat-label">Voltas completadas</div>
         </div>
       </div>
     </div>
@@ -278,6 +282,7 @@
       document.querySelectorAll('#noticias .fade-up').forEach(element => element.classList.add('visible'));
     }).catch(error => { document.getElementById('communityNewsGrid').innerHTML = '<div class="card">Não foi possível carregar as notícias das etapas.</div>'; console.error(error); });
   </script>
+  <script src="season-stats.js"></script>
 
   <section class="section section-dark" id="live">
     <div class="section-inner">

@@ -273,8 +273,7 @@
 
   function renderPilotPage({pilots, races}) {
     const ranked = pilots.sort((a, b) => b.wins - a.wins || b.podiums - a.podiums || a.best - b.best || b.starts - a.starts || a.name.localeCompare(b.name));
-    const raceCount = races.length;
-    document.getElementById('pilotStats').innerHTML = `<div><div class="stat-num">${ranked.length}</div><div class="stat-label">Pilotos identificados</div></div><div><div class="stat-num">${raceCount}</div><div class="stat-label">Corridas publicadas</div></div><div><div class="stat-num">${ranked.reduce((sum, pilot) => sum + pilot.starts, 0)}</div><div class="stat-label">Participações</div></div><div><div class="stat-num">${ranked.filter(pilot => pilot.starts === 1).length}</div><div class="stat-label">Uma participação</div></div>`;
+    document.getElementById('pilotStats').innerHTML = `<div><div class="stat-num" data-season-stat="races">...</div><div class="stat-label">Etapas realizadas</div></div><div><div class="stat-num" data-season-stat="pilots">...</div><div class="stat-label">Pilotos identificados</div></div><div><div class="stat-num" data-season-stat="participations">...</div><div class="stat-label">Participações</div></div><div><div class="stat-num" data-season-stat="laps">...</div><div class="stat-label">Voltas completadas</div></div>`;
     const columns = '50px minmax(220px,1fr) 110px 90px 90px 100px';
     document.getElementById('pilotRanking').innerHTML = `<div class="table-header" style="grid-template-columns:${columns}"><span>Pos</span><span>Piloto</span><span>Corridas</span><span>Vitórias</span><span>Pódios</span><span>Melhor</span></div>` + ranked.map((pilot, index) => `<div class="table-row" style="grid-template-columns:${columns}"><span class="col-pos ${index < 3 ? ['gold','silver','bronze'][index] : ''}">${index + 1}</span><div class="pilot-cell"><div class="avatar" style="background:${['var(--green)','var(--yellow)','#6BA3FF','#CD7F32'][index % 4]}">${escapeHtml(initials(pilot.name))}</div><div><div class="pilot-name">${escapeHtml(pilot.name)}</div><div class="pilot-sub">${escapeHtml(pilot.team)} · ${pilot.qualys} qualy</div></div></div><span>${pilot.starts}</span><span style="color:var(--yellow);font-weight:700">${pilot.wins}</span><span>${pilot.podiums}</span><span>${pilot.best === Infinity ? '-' : `${pilot.best}º`}</span></div>`).join('');
     const mostPresent = [...ranked].sort((a, b) => b.starts - a.starts || b.podiums - a.podiums || b.wins - a.wins || a.name.localeCompare(b.name));
@@ -288,6 +287,7 @@
 
   loadPilotData().then(renderPilotPage).catch(error => { document.getElementById('pilotRanking').innerHTML = '<div class="table-row" style="display:block;padding:1.5rem;color:var(--yellow)">Não foi possível carregar os arquivos de resultados. Abra a página por um servidor web.</div>'; console.error(error); });
 </script>
+<script src="season-stats.js"></script>
 
 <!-- ===================== FOOTER ===================== -->
 <!-- Componente: footer.html -->

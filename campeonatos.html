@@ -161,10 +161,10 @@
             <h1>Nossas <em>Categorias</em></h1>
             <p>Campeonatos para todos os perfis — do piloto iniciante ao competidor mais experiente. Escolha sua categoria e acelere.</p>
             <div class="page-hero-stats">
-                <div><div class="stat-num">1<span>+</span></div><div class="stat-label">Categorias ativas</div></div>
-                <div><div class="stat-num">1<span>+</span></div><div class="stat-label">Pilotos inscritos</div></div>
-                <div><div class="stat-num">4</div><div class="stat-label">Etapas por série</div></div>
-                <div><div class="stat-num">1<span>ª</span></div><div class="stat-label">Temporada</div></div>
+                <div><div class="stat-num" data-season-stat="races">...</div><div class="stat-label">Etapas realizadas</div></div>
+                <div><div class="stat-num" data-season-stat="pilots">...</div><div class="stat-label">Pilotos identificados</div></div>
+                <div><div class="stat-num" data-season-stat="participations">...</div><div class="stat-label">Participações</div></div>
+                <div><div class="stat-num" data-season-stat="laps">...</div><div class="stat-label">Voltas completadas</div></div>
             </div>
         </div>
     </section>
@@ -299,6 +299,7 @@
     </script>
 
     <!-- SuperGridBrasil — Dynamic -->
+    <script src="season-stats.js"></script>
     <!-- <script src="js/api.js"></script> -->
     <!-- <script src="js/pages.js"></script> -->
 </body>
