@@ -2017,7 +2017,7 @@
             <h1><em>Resultados</em> & Classificação</h1>
             <p>Acompanhe os resultados de cada etapa, ranking atualizado e estatísticas completas da temporada.</p>
             <div class="page-hero-stats">
-                <div><div class="stat-num">20</div><div class="stat-label">Etapas realizadas</div></div>
+                <div><div class="stat-num">21</div><div class="stat-label">Etapas realizadas</div></div>
                 <div><div class="stat-num">0</div><div class="stat-label">Etapas restantes</div></div>
                 <div><div class="stat-num">312</div><div class="stat-label">Pts do líder GT Sprint</div></div>
                 <div><div class="stat-num">10.723</div><div class="stat-label">Voltas completadas</div></div>
@@ -2277,6 +2277,7 @@
             var track = document.getElementById('carouselTrack');
             var dotsContainer = document.getElementById('carouselDots');
             var stages = [
+                ['21', 'Zandvoort', '05/10/2026', 'supergrid_4fun_2026_10_05_qualy_zandvoort.html', 'supergrid_4fun_2026_10_05_race_zandvoort.html'],
                 ['20', 'Mount Panorama', '28/09/2026', 'supergrid_4fun_2026_09_28_qualy_mountpanorama.html', 'supergrid_4fun_2026_09_28_race_mountpanorama.html'],
                 ['19', 'Spa', '21/09/2026', 'supergrid_4fun_2026_09_21_qualy_spa.html', 'supergrid_4fun_2026_09_21_race_spa.html'],
                 ['18', 'Imola', '14/09/2026', 'supergrid_4fun_2026_09_14_qualy_imola.html', 'supergrid_4fun_2026_09_14_race_imola.html'],
@@ -2333,7 +2334,7 @@
         <div class="section-inner">
             <div class="section-eyebrow fade-up"><div class="section-line"></div><span class="section-eyebrow-text">Classificação Geral</span></div>
             <h2 class="section-h2 fade-up">Ranking de Pilotos — 4Fun 2026</h2>
-            <p class="section-desc fade-up" style="margin-top:.75rem">Resultados agregados das 18 corridas publicadas. A fonte não informa pontos oficiais; a ordem considera vitórias, pódios, melhor posição e participações.</p>
+            <p class="section-desc fade-up" style="margin-top:.75rem">Resultados agregados das 21 corridas publicadas. A fonte não informa pontos oficiais; a ordem considera vitórias, pódios, melhor posição e participações.</p>
             <div id="resultsPilotRanking" class="data-table fade-up" style="margin-top:2rem;overflow-x:auto"><div class="table-row" style="display:block;padding:1.5rem">Carregando classificação...</div></div>
         </div>
     </section>
@@ -2349,7 +2350,8 @@
             'supergrid_4fun_2026_08_03_race_snetterton.html', 'supergrid_4fun_2026_08_10_race_monza.html',
             'supergrid_4fun_2026_08_17_race_watkins.html', 'supergrid_4fun_2026_08_24_race_nurburgring.html',
             'supergrid_4fun_2026_09_07_race_zolder.html', 'supergrid_4fun_2026_09_14_race_imola.html',
-            'supergrid_4fun_2026_09_21_race_spa.html', 'supergrid_4fun_2026_09_28_race_mountpanorama.html'
+            'supergrid_4fun_2026_09_21_race_spa.html', 'supergrid_4fun_2026_09_28_race_mountpanorama.html',
+            'supergrid_4fun_2026_10_05_race_zandvoort.html'
         ];
         const resultsEscape = value => String(value).replace(/[&<>"']/g, character => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[character]));
         const resultsPilotName = name => name.replace(/\s*\|.*$|\s*\[[^\]]+\]|\s*\([^\)]+\)$/g, '').replace(/\s+-\s+.*$/, '').trim();
