@@ -1,5 +1,6 @@
 // Minimal interactions for static pre-rendered leaderboard
-document.addEventListener('DOMContentLoaded', () => {
+// Keep minimal static interactions for pre-rendered pages
+(() => {
   // Delegate row clicks to toggle corresponding detail panel
   const toggleDetailForRow = row => {
     if (!row) return;
@@ -24,10 +25,9 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('click', delegatedHandler);
 
   // attach direct handlers to existing rows (useful if some children stop propagation)
-  const bindExisting = () => document.querySelectorAll('.row[data-id]').forEach(r => {
+  document.querySelectorAll('.row[data-id]').forEach(r => {
     if (r.__acc_bound) return; r.__acc_bound = true; r.addEventListener('click', () => toggleDetailForRow(r));
   });
-  bindExisting();
 
   // Search/filter for pre-rendered rows
   const search = document.getElementById('search');
@@ -58,4 +58,4 @@ document.addEventListener('DOMContentLoaded', () => {
       document.querySelectorAll('.detail.open').forEach(d => d.classList.remove('open'));
     });
   }
-});
+})();
