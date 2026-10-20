@@ -20,7 +20,8 @@
     'supergrid_4fun_2026_09_14_race_imola.html',
     'supergrid_4fun_2026_09_21_race_spa.html',
     'supergrid_4fun_2026_09_28_race_mountpanorama.html',
-    'supergrid_4fun_2026_10_05_race_zandvoort.html'
+    'supergrid_4fun_2026_10_05_race_zandvoort.html',
+    'supergrid_4fun_2026_10_12_race_nords.html'
   ];
 
   const cleanPilotName = name => name
