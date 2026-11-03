@@ -153,19 +153,28 @@
 <!-- ===================== CONTEÚDO DA PÁGINA ===================== -->
 <section class="page-hero">
   <div class="page-hero-inner">
-    <div class="page-hero-eyebrow"><div class="page-hero-line"></div><span class="page-hero-tag">4Fun Series · 2026</span></div>
+    <div class="page-hero-eyebrow"><div class="page-hero-line"></div><span class="page-hero-tag">4Fun · Temporada 2</span></div>
     <h1>Equipes do <em>Grid</em></h1>
-    <p>Equipes identificadas nos resultados oficiais da temporada de Assetto Corsa Competizione.</p>
+    <p>Ranking da temporada atual em destaque, com histórico da primeira temporada e estatísticas consolidadas do 4Fun.</p>
     <div class="page-hero-stats" id="teamStats"><div><div class="stat-num">...</div><div class="stat-label">Carregando equipes</div></div></div>
-    <div class="page-hero-actions"><a href="#ranking" class="btn-primary">Ver ranking</a></div>
+    <div class="page-hero-actions"><a href="#ranking" class="btn-primary">Ver ranking da temporada atual</a></div>
   </div>
 </section>
 
 <section class="section" id="ranking">
   <div class="section-inner">
-    <div class="section-eyebrow fade-up"><div class="section-line"></div><span class="section-eyebrow-text">Temporada 4Fun 2026</span></div>
-    <h2 class="section-h2 fade-up">Ranking de equipes por resultados</h2>
-    <p class="section-desc fade-up" style="margin-top:.75rem">Agregado das corridas publicadas. A fonte não informa pontos oficiais; a ordem considera vitórias, pódios, pilotos distintos e participações.</p>
+    <div class="section-eyebrow fade-up"><div class="section-line"></div><span class="section-eyebrow-text">Ranking Atual</span></div>
+    <h2 class="section-h2 fade-up">Ranking de equipes · 4Fun Temporada 2</h2>
+    <p class="section-desc fade-up" style="margin-top:.75rem">Agregado das corridas publicadas da temporada atual. A ordem considera vitórias, pódios, pilotos distintos e participações.</p>
+    <div id="teamRankingSeason2" class="data-table fade-up" style="margin-top:2rem;overflow-x:auto"><div class="table-row" style="display:block;padding:1.5rem">Carregando resultados...</div></div>
+  </div>
+</section>
+
+<section class="section section-dark" id="ranking-temporada1">
+  <div class="section-inner">
+    <div class="section-eyebrow fade-up"><div class="section-line"></div><span class="section-eyebrow-text">Temporada 1 · Histórico</span></div>
+    <h2 class="section-h2 fade-up">Ranking de equipes · 4Fun Temporada 1</h2>
+    <p class="section-desc fade-up" style="margin-top:.75rem">Agregado das corridas publicadas da primeira temporada. A ordem considera vitórias, pódios, pilotos distintos e participações.</p>
     <div id="teamRanking" class="data-table fade-up" style="margin-top:2rem;overflow-x:auto"><div class="table-row" style="display:block;padding:1.5rem">Carregando resultados...</div></div>
   </div>
 </section>
@@ -193,6 +202,10 @@
     'supergrid_4fun_2026_09_21_race_spa.html', 'supergrid_4fun_2026_09_28_race_mountpanorama.html',
     'supergrid_4fun_2026_10_05_race_zandvoort.html', 'supergrid_4fun_2026_10_12_race_nords.html'
   ];
+  const teamSourceFilesSeason2 = [
+    '4Fun_ST/20261019_barcelona_race.html',
+    '4Fun_ST/20261102_hungaroring_race.html'
+  ];
 
   const escapeTeamHtml = value => String(value).replace(/[&<>"']/g, character => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[character]));
   const teamFromPilot = name => {
@@ -205,6 +218,17 @@
   };
   const teamKey = team => team.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
   const pilotFromTeamName = name => name.replace(/\s*\|.*$|\s*\[[^\]]+\]|\s*\([^\)]+\)$/g, '').replace(/\s+-\s+.*$/, '').trim();
+  const uniqueSeason2Rows = rows => {
+    const pilots = new Map();
+    rows.forEach(row => {
+      const name = row.querySelector('.name')?.textContent.trim();
+      if (!name) return;
+      const key = teamKey(pilotFromTeamName(name));
+      const laps = Number([...row.children].filter(child => child.tagName === 'SPAN')[1]?.textContent.trim()) || 0;
+      if (!pilots.has(key) || laps > pilots.get(key).laps) pilots.set(key, {row, laps});
+    });
+    return [...pilots.values()].map(({row}) => row);
+  };
 
   function toggleTeamPilots(button) {
     const details = button.closest('.team-ranking-row').nextElementSibling;
@@ -213,14 +237,20 @@
     details.hidden = !expanded;
   }
 
-  async function loadTeamData() {
+  async function loadTeamData(files, season) {
     const teams = new Map();
-    const responses = await Promise.all(teamSourceFiles.map(async file => ({file, html: await fetch(file).then(response => response.text())})));
+    const responses = await Promise.all(files.map(async file => {
+      const response = await fetch(file);
+      if (!response.ok) throw new Error(`Falha ao carregar ${file}: ${response.status}`);
+      return {file, html: await response.text()};
+    }));
     responses.forEach(({file, html}) => {
       const documentData = new DOMParser().parseFromString(html, 'text/html');
-      [...documentData.querySelectorAll('.acc-table-row')].forEach(row => {
-        const pilotName = row.querySelector('.pilot-name')?.textContent.trim();
-        const position = Number(row.querySelector('.col-pos')?.textContent.trim());
+      let rows = [...documentData.querySelectorAll(season === 1 ? '.acc-table-row' : '#leaderboard .row.clickable')];
+      if (season === 2) rows = uniqueSeason2Rows(rows);
+      rows.forEach(row => {
+        const pilotName = row.querySelector(season === 1 ? '.pilot-name' : '.name')?.textContent.trim();
+        const position = Number(row.querySelector(season === 1 ? '.col-pos' : '.pos')?.textContent.trim());
         if (!pilotName || !position) return;
         const name = teamFromPilot(pilotName);
         const key = teamKey(name);
@@ -235,17 +265,18 @@
     return [...teams.values()].sort((a, b) => b.wins - a.wins || b.podiums - a.podiums || b.pilots.size - a.pilots.size || b.races - a.races || a.name.localeCompare(b.name));
   }
 
-  function renderTeams(teams) {
+  function renderTeams(teams, targetId, addStats = false) {
     const namedTeams = teams.filter(team => team.name !== 'Sem equipe informada');
-    document.getElementById('teamStats').innerHTML = `<div><div class="stat-num" data-season-stat="races">...</div><div class="stat-label">Etapas realizadas</div></div><div><div class="stat-num" data-season-stat="pilots">...</div><div class="stat-label">Pilotos identificados</div></div><div><div class="stat-num" data-season-stat="participations">...</div><div class="stat-label">Participações</div></div><div><div class="stat-num" data-season-stat="laps">...</div><div class="stat-label">Voltas completadas</div></div>`;
+    if (addStats) document.getElementById('teamStats').innerHTML = `<div><div class="stat-num" data-season-stat="races">...</div><div class="stat-label">Etapas realizadas</div></div><div><div class="stat-num" data-season-stat="pilots">...</div><div class="stat-label">Pilotos identificados</div></div><div><div class="stat-num" data-season-stat="participations">...</div><div class="stat-label">Participações</div></div><div><div class="stat-num" data-season-stat="laps">...</div><div class="stat-label">Voltas completadas</div></div>`;
     const columns = '50px minmax(220px,1fr) 120px 100px 90px 110px';
-    document.getElementById('teamRanking').innerHTML = `<div class="table-header" style="grid-template-columns:${columns}"><span>Pos</span><span>Equipe</span><span>Pilotos</span><span>Participações</span><span>Vitórias</span><span>Pódios</span></div>` + namedTeams.map((team, index) => { const pilots = [...new Map([...team.pilots].map(pilot => [pilotFromTeamName(pilot).toLowerCase(), pilotFromTeamName(pilot)])).values()].sort((a, b) => a.localeCompare(b)); return `<div class="table-row team-ranking-row" style="grid-template-columns:${columns}"><span class="col-pos ${index < 3 ? ['gold','silver','bronze'][index] : ''}">${index + 1}</span><button type="button" class="team-name-toggle" aria-expanded="false" onclick="toggleTeamPilots(this)">${escapeTeamHtml(team.name)}</button><span style="color:var(--gray);font-size:.82rem">${team.pilots.size}</span><span>${team.races}</span><span class="col-win">${team.wins}</span><span class="col-win">${team.podiums}</span></div><div class="team-pilots-details" hidden><strong>Pilotos da equipe</strong><span>${pilots.map(pilot => escapeTeamHtml(pilot)).join('</span><span>')}</span></div>`; }).join('');
-    document.querySelectorAll('.fade-up').forEach(element => element.classList.add('visible'));
+    document.getElementById(targetId).innerHTML = `<div class="table-header" style="grid-template-columns:${columns}"><span>Pos</span><span>Equipe</span><span>Pilotos</span><span>Participações</span><span>Vitórias</span><span>Pódios</span></div>` + namedTeams.map((team, index) => { const pilots = [...new Map([...team.pilots].map(pilot => [pilotFromTeamName(pilot).toLowerCase(), pilotFromTeamName(pilot)])).values()].sort((a, b) => a.localeCompare(b)); return `<div class="table-row team-ranking-row" style="grid-template-columns:${columns}"><span class="col-pos ${index < 3 ? ['gold','silver','bronze'][index] : ''}">${index + 1}</span><button type="button" class="team-name-toggle" aria-expanded="false" onclick="toggleTeamPilots(this)">${escapeTeamHtml(team.name)}</button><span style="color:var(--gray);font-size:.82rem">${team.pilots.size}</span><span>${team.races}</span><span class="col-win">${team.wins}</span><span class="col-win">${team.podiums}</span></div><div class="team-pilots-details" hidden><strong>Pilotos da equipe</strong><span>${pilots.map(pilot => escapeTeamHtml(pilot)).join('</span><span>')}</span></div>`; }).join('');
+    document.querySelectorAll('#' + targetId + ' .fade-up').forEach(element => element.classList.add('visible'));
   }
 
-  loadTeamData().then(renderTeams).catch(error => { document.getElementById('teamRanking').innerHTML = '<div class="table-row" style="display:block;padding:1.5rem;color:var(--yellow)">Não foi possível carregar os arquivos de resultados. Abra a página por um servidor web.</div>'; console.error(error); });
+  loadTeamData(teamSourceFilesSeason2, 2).then(teams => renderTeams(teams, 'teamRankingSeason2')).catch(error => { document.getElementById('teamRankingSeason2').innerHTML = '<div class="table-row" style="display:block;padding:1.5rem;color:var(--yellow)">Não foi possível carregar os resultados da temporada 2.</div>'; console.error(error); });
+  loadTeamData(teamSourceFiles, 1).then(teams => renderTeams(teams, 'teamRanking', true)).catch(error => { document.getElementById('teamRanking').innerHTML = '<div class="table-row" style="display:block;padding:1.5rem;color:var(--yellow)">Não foi possível carregar os resultados da temporada 1.</div>'; console.error(error); });
 </script>
-<script src="season-stats.js"></script>
+<script src="season-stats.js?v=20261103-dedup"></script>
 
 <!-- <section class="section section-dark" id="lista-equipes"> -->
   <!-- <div class="section-inner"> -->
@@ -288,7 +319,7 @@
       </div>
       <div><div class="footer-col-title">Campeonatos</div><ul class="footer-links"><li><a href="campeonatos.html#gt-sprint">GT Sprint Series</a></li><li><a href="campeonatos.html#4fun">4Fun Series</a></li><li><a href="campeonatos.html#endurance">SuperGrid Endurance</a></li> <li><a href="campeonatos.html#regulamentos">Regulamento Geral</a></li></ul></div>
       <div><div class="footer-col-title">Plataforma</div><ul class="footer-links"><li><a href="pilotos.html#ranking">Ranking de Pilotos</a></li><li><a href="resultados.html">Resultados</a></li><li><a href="campeonatos.html#calendario">Calendário</a></li><li><a href="campeonatos.html#regulamento">Regulamento</a></li><li><a href="equipes.html#cadastro">Cadastrar Equipe</a></li></ul></div>
-      <div><div class="footer-col-title">Comunidade</div><ul class="footer-links"><li><a href="https://discord.com/invite/ZJPTdwJSnH" target="_blank" rel="noopener">Discord Oficial</a></li><li><a href="comunidade.html#youtube">Canal YouTube</a></li><li><a href="comunidade.html#noticias">Blog & Notícias</a></li><li><a href="https://www.instagram.com/supergridbrasil/">Instagram</a></li><li><a href="inscricao.html">Fale conosco</a></li></ul></div>
+      <div><div class="footer-col-title">Comunidade</div><ul class="footer-links"><li><a href="https://discord.com/invite/ZJPTdwJSnH" target="_blank" rel="noopener">Discord Oficial</a></li><li><a href="comunidade.html#youtube">Canal YouTube</a></li><li><a href="comunidade.html#noticias">Blog & Notícias</a></li><li><a href="https://www.instagram.com/supergridbrasil/">Instagram</a></li><li><a href="https://chat.whatsapp.com/FxhfRS7uC2AE3RBBZ9kvOe">Fale conosco</a></li></ul></div>
     </div>
     <div class="footer-bottom">
       <div>© 2026 SuperGridBrasil — Sim Racing Brasileiro</div>

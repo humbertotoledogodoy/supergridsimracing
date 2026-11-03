@@ -1,5 +1,5 @@
 (() => {
-  const raceFiles = [
+  const raceFilesSeason1 = [
     'supergrid_4fun_2026_05_04_race_brands.html',
     'supergrid_4fun_2026_05_11_race_misano.html',
     'supergrid_4fun_2026_05_18_race_silverstone.html',
@@ -23,6 +23,10 @@
     'supergrid_4fun_2026_10_05_race_zandvoort.html',
     'supergrid_4fun_2026_10_12_race_nords.html'
   ];
+  const raceFilesSeason2 = [
+    '4Fun_ST/20261019_barcelona_race.html',
+    '4Fun_ST/20261102_hungaroring_race.html'
+  ];
 
   const cleanPilotName = name => name
     .replace(/\s*\|.*$|\s*\[[^\]]+\]|\s*\([^\)]+\)$/g, '')
@@ -39,22 +43,37 @@
   const parseCount = value => Number(value.replace(/[^\d]/g, '')) || 0;
 
   async function loadRaceStats() {
-    const pages = await Promise.all(raceFiles.map(async file => {
+    const pages = await Promise.all([
+      ...raceFilesSeason1.map(file => ({ file, season: 1 })),
+      ...raceFilesSeason2.map(file => ({ file, season: 2 }))
+    ].map(async ({ file, season }) => {
       const response = await fetch(file);
       if (!response.ok) throw new Error(`Falha ao carregar ${file}: ${response.status}`);
-      return new DOMParser().parseFromString(await response.text(), 'text/html');
+      return { page: new DOMParser().parseFromString(await response.text(), 'text/html'), season };
     }));
     const pilots = new Set();
     let races = 0;
     let participations = 0;
     let laps = 0;
 
-    pages.forEach(page => {
-      const rows = [...page.querySelectorAll('.acc-table-row')];
+    pages.forEach(({ page, season }) => {
+      let rows = [...page.querySelectorAll(season === 1 ? '.acc-table-row' : '#leaderboard .row.clickable')];
+      if (season === 2) {
+        const uniquePilots = new Map();
+        rows.forEach(row => {
+          const name = row.querySelector('.name')?.textContent.trim();
+          if (!name) return;
+          const key = pilotKey(name);
+          const directSpans = [...row.children].filter(child => child.tagName === 'SPAN');
+          const rowLaps = parseCount(directSpans[1]?.textContent.trim() || '');
+          if (!uniquePilots.has(key) || rowLaps > uniquePilots.get(key).laps) uniquePilots.set(key, {row, laps: rowLaps});
+        });
+        rows = [...uniquePilots.values()].map(({row}) => row);
+      }
       if (!rows.length) return;
       races++;
       rows.forEach(row => {
-        const name = row.querySelector('.pilot-name')?.textContent.trim();
+        const name = row.querySelector(season === 1 ? '.pilot-name' : '.name')?.textContent.trim();
         if (!name) return;
         pilots.add(pilotKey(name));
         participations++;
@@ -76,6 +95,16 @@
     document.querySelectorAll('[data-season-stat]').forEach(element => {
       const value = String(values[element.dataset.seasonStat] ?? '-');
       if (element.textContent !== value) element.textContent = value;
+    });
+    const statsSectionValues = {
+      seasonRaces: stats.races,
+      seasonPilots: stats.pilots,
+      seasonEntries: stats.participations,
+      seasonLaps: stats.laps.toLocaleString('pt-BR')
+    };
+    Object.entries(statsSectionValues).forEach(([id, value]) => {
+      const element = document.getElementById(id);
+      if (element) element.textContent = value;
     });
   }
 
