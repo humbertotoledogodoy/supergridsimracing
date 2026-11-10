@@ -25,7 +25,9 @@
   ];
   const raceFilesSeason2 = [
     '4Fun_ST/20261019_barcelona_race.html',
-    '4Fun_ST/20261102_hungaroring_race.html'
+      '4Fun_ST/20261102_hungaroring_race.html',
+      '4Fun_ST/20261109_suzuka_race.html'
+
   ];
 
   const cleanPilotName = name => name

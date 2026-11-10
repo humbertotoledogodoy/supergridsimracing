@@ -2350,6 +2350,7 @@
             const track = document.getElementById('season2CarouselTrack');
             const dotsContainer = document.getElementById('season2CarouselDots');
             const events = [
+                { round: '03', track: 'Suzuka', date: '09/11/2026', qualy: '4Fun_ST/20261109_suzuka_qualy.html', race: '4Fun_ST/20261109_suzuka_race.html' },
                 { round: '02', track: 'Hungaroring', date: '02/11/2026', qualy: '4Fun_ST/20261102_hungaroring_qualy.html', race: '4Fun_ST/20261102_hungaroring_race.html' },
                 { round: '01', track: 'Barcelona', date: '19/10/2026', qualy: '4Fun_ST/20261019_barcelona_qualy.html', race: '4Fun_ST/20261019_barcelona_race.html' }
             ];
@@ -2403,7 +2404,9 @@
         ];
         const resultsRaceFilesSeason2 = [
             '4Fun_ST/20261019_barcelona_race.html',
-            '4Fun_ST/20261102_hungaroring_race.html'
+            '4Fun_ST/20261102_hungaroring_race.html',
+            '4Fun_ST/20261109_suzuka_race.html'
+
         ];
         const resultsEscape = value => String(value).replace(/[&<>"']/g, character => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[character]));
         const resultsPilotName = name => name.replace(/\s*\|.*$|\s*\[[^\]]+\]|\s*\([^\)]+\)$/g, '').replace(/\s+-\s+.*$/, '').trim();
